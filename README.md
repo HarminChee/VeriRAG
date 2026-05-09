@@ -135,10 +135,10 @@ All results in our paper can be **directly reproduced** with this repository:
 If you use this dataset, code, or experimental results in your work, **please cite** the following:
 
 ```bibtex
-@misc{qi2025veriragretrievalaugmentedframeworkautomated,
+@misc{qi2026veriragretrievalaugmentedframeworkautomated,
       title={VeriRAG: A Retrieval-Augmented Framework for Automated RTL Testability Repair}, 
       author={Haomin Qi and Yuyang Du and Lihao Zhang and Soung Chang Liew and Kexin Chen and Yining Du},
-      year={2025},
+      year={2026},
       eprint={2507.15664},
       archivePrefix={arXiv},
       primaryClass={cs.AR},
