@@ -1,0 +1,75 @@
+`timescale 1ps/1ps
+module iodelay_ctrl #
+  (
+   parameter TCQ              = 100,           
+   parameter IODELAY_GRP      = "IODELAY_MIG", 
+   parameter INPUT_CLK_TYPE   = "DIFFERENTIAL", 
+   parameter RST_ACT_LOW      = 1,            
+   parameter DIFF_TERM_REFCLK = "TRUE"
+   )
+  (
+   input  wire test_i,
+   input  wire clk_ref_p,
+   input  wire clk_ref_n,
+   input  wire clk_ref_i,
+   input  wire sys_rst,
+   output wire clk_ref,
+   output wire iodelay_ctrl_rdy
+   );
+  localparam RST_SYNC_NUM = 15;
+  wire                   clk_ref_bufg;  
+  wire                   clk_ref_ibufg;
+  wire                   rst_ref;
+  wire                   dft_clk_ref;
+  wire                   dft_rst_ref;
+  reg [RST_SYNC_NUM-1:0] rst_ref_sync_r ;  
+  wire                   rst_tmp_idelay;
+  wire                   sys_rst_act_hi;
+  assign  sys_rst_act_hi = RST_ACT_LOW ? ~sys_rst : sys_rst;
+  generate
+    if (INPUT_CLK_TYPE == "DIFFERENTIAL") begin: diff_clk_ref
+      IBUFGDS #
+        (
+         .DIFF_TERM    (DIFF_TERM_REFCLK),
+         .IBUF_LOW_PWR ("FALSE")         
+         )
+        u_ibufg_clk_ref
+          (
+           .I  (clk_ref_p),
+           .IB (clk_ref_n),
+           .O  (clk_ref_ibufg)
+           );      
+    end else if (INPUT_CLK_TYPE == "SINGLE_ENDED") begin : se_clk_ref 
+      IBUFG #
+        (
+         .IBUF_LOW_PWR ("FALSE")
+         )
+        u_ibufg_clk_ref
+          (
+           .I (clk_ref_i),
+           .O (clk_ref_ibufg)
+           );      
+    end
+  endgenerate
+  BUFG u_bufg_clk_ref
+    (
+     .O (clk_ref_bufg),
+     .I (clk_ref_ibufg)
+     );
+  assign clk_ref = clk_ref_bufg;
+  assign rst_tmp_idelay = sys_rst_act_hi;
+  assign dft_clk_ref = test_i ? sys_rst : clk_ref_bufg;
+  assign dft_rst_ref = test_i ? sys_rst : rst_ref;
+  always @(posedge dft_clk_ref or posedge rst_tmp_idelay)
+    if (rst_tmp_idelay)
+      rst_ref_sync_r <= #TCQ {RST_SYNC_NUM{1'b1}};
+    else
+      rst_ref_sync_r <= #TCQ rst_ref_sync_r << 1;
+  assign rst_ref  = rst_ref_sync_r[RST_SYNC_NUM-1];
+  (* IODELAY_GROUP = IODELAY_GRP *) IDELAYCTRL u_idelayctrl
+    (
+     .RDY    (iodelay_ctrl_rdy),
+     .REFCLK (dft_clk_ref),
+     .RST    (dft_rst_ref)
+     );
+endmodule

@@ -1,0 +1,1028 @@
+{
+  "modules": {
+    "eth10g_interface": {
+      "modules": {
+        "eth10g_interface": {
+          "ports": {
+            "reset": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "aresetn": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "xphy_refclk_p": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "xphy_refclk_n": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "xphy0_txp": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "xphy0_txn": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "xphy0_rxp": {
+              "direction": "input",
+              "bits": [
+                8
+              ]
+            },
+            "xphy0_rxn": {
+              "direction": "input",
+              "bits": [
+                9
+              ]
+            },
+            "xphy1_txp": {
+              "direction": "output",
+              "bits": [
+                10
+              ]
+            },
+            "xphy1_txn": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            },
+            "xphy1_rxp": {
+              "direction": "input",
+              "bits": [
+                12
+              ]
+            },
+            "xphy1_rxn": {
+              "direction": "input",
+              "bits": [
+                13
+              ]
+            },
+            "xphy2_txp": {
+              "direction": "output",
+              "bits": [
+                14
+              ]
+            },
+            "xphy2_txn": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "xphy2_rxp": {
+              "direction": "input",
+              "bits": [
+                16
+              ]
+            },
+            "xphy2_rxn": {
+              "direction": "input",
+              "bits": [
+                17
+              ]
+            },
+            "xphy3_txp": {
+              "direction": "output",
+              "bits": [
+                18
+              ]
+            },
+            "xphy3_txn": {
+              "direction": "output",
+              "bits": [
+                19
+              ]
+            },
+            "xphy3_rxp": {
+              "direction": "input",
+              "bits": [
+                20
+              ]
+            },
+            "xphy3_rxn": {
+              "direction": "input",
+              "bits": [
+                21
+              ]
+            },
+            "axis_i_0_tdata": {
+              "direction": "output",
+              "bits": [
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85
+              ]
+            },
+            "axis_i_0_tvalid": {
+              "direction": "output",
+              "bits": [
+                86
+              ]
+            },
+            "axis_i_0_tlast": {
+              "direction": "output",
+              "bits": [
+                87
+              ]
+            },
+            "axis_i_0_tuser": {
+              "direction": "output",
+              "bits": [
+                88
+              ]
+            },
+            "axis_i_0_tkeep": {
+              "direction": "output",
+              "bits": [
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96
+              ]
+            },
+            "axis_i_0_tready": {
+              "direction": "input",
+              "bits": [
+                97
+              ]
+            },
+            "nic_rx_fifo_overflow": {
+              "direction": "output",
+              "bits": [
+                98
+              ]
+            },
+            "nic_rx_statistics_vector": {
+              "direction": "output",
+              "bits": [
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107,
+                108,
+                109,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128
+              ]
+            },
+            "nic_rx_statistics_valid": {
+              "direction": "output",
+              "bits": [
+                129
+              ]
+            },
+            "axis_o_0_tdata": {
+              "direction": "input",
+              "bits": [
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                182,
+                183,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193
+              ]
+            },
+            "axis_o_0_tvalid": {
+              "direction": "input",
+              "bits": [
+                194
+              ]
+            },
+            "axis_o_0_tlast": {
+              "direction": "input",
+              "bits": [
+                195
+              ]
+            },
+            "axis_o_0_tuser": {
+              "direction": "input",
+              "bits": [
+                196
+              ]
+            },
+            "axis_o_0_tkeep": {
+              "direction": "input",
+              "bits": [
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204
+              ]
+            },
+            "axis_o_0_tready": {
+              "direction": "output",
+              "bits": [
+                205
+              ]
+            },
+            "sfp_tx_disable": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "clk156_out": {
+              "direction": "output",
+              "bits": [
+                206
+              ]
+            },
+            "clk_ref_200_out": {
+              "direction": "output",
+              "bits": [
+                207
+              ]
+            },
+            "network_reset_done": {
+              "direction": "output",
+              "bits": [
+                208
+              ]
+            },
+            "led": {
+              "direction": "output",
+              "bits": [
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_17925.v:207$3": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  217,
+                  218,
+                  219,
+                  220,
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232,
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238,
+                  239,
+                  240,
+                  241,
+                  209
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  242,
+                  243,
+                  244,
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252,
+                  253,
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267
+                ]
+              }
+            },
+            "$not$./module_17925.v:74$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  268
+                ],
+                "Y": [
+                  208
+                ]
+              }
+            },
+            "$procdff$4": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  206
+                ],
+                "D": [
+                  242,
+                  243,
+                  244,
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252,
+                  253,
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267
+                ],
+                "Q": [
+                  217,
+                  218,
+                  219,
+                  220,
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232,
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238,
+                  239,
+                  240,
+                  241,
+                  209
+                ]
+              }
+            },
+            "network_inst_0": {
+              "type": "network_module",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "areset_clk156": [
+                  269
+                ],
+                "areset_refclk_bufh": [
+                  270
+                ],
+                "aresetn": [
+                  3
+                ],
+                "clk156": [
+                  206
+                ],
+                "core_reset": [
+                  268
+                ],
+                "core_status": [
+                  211,
+                  271,
+                  272,
+                  273,
+                  274,
+                  275,
+                  276,
+                  277
+                ],
+                "dclk": [
+                  278
+                ],
+                "gtrxreset": [
+                  279
+                ],
+                "gttxreset": [
+                  280
+                ],
+                "gttxreset_txusrclk2": [
+                  281
+                ],
+                "mmcm_locked_clk156": [
+                  282
+                ],
+                "qplllock": [
+                  283
+                ],
+                "qplloutclk": [
+                  284
+                ],
+                "qplloutrefclk": [
+                  285
+                ],
+                "reset": [
+                  2
+                ],
+                "reset_counter_done": [
+                  286
+                ],
+                "rx_axis_tdata": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85
+                ],
+                "rx_axis_tkeep": [
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96
+                ],
+                "rx_axis_tlast": [
+                  87
+                ],
+                "rx_axis_tready": [
+                  97
+                ],
+                "rx_axis_tuser": [
+                  88
+                ],
+                "rx_axis_tvalid": [
+                  86
+                ],
+                "rx_fifo_overflow": [
+                  98
+                ],
+                "rx_statistics_valid": [
+                  129
+                ],
+                "rx_statistics_vector": [
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  119,
+                  120,
+                  121,
+                  122,
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128
+                ],
+                "rxn": [
+                  9
+                ],
+                "rxp": [
+                  8
+                ],
+                "signal_detect": [
+                  "1"
+                ],
+                "tx_axis_tdata": [
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143,
+                  144,
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162,
+                  163,
+                  164,
+                  165,
+                  166,
+                  167,
+                  168,
+                  169,
+                  170,
+                  171,
+                  172,
+                  173,
+                  174,
+                  175,
+                  176,
+                  177,
+                  178,
+                  179,
+                  180,
+                  181,
+                  182,
+                  183,
+                  184,
+                  185,
+                  186,
+                  187,
+                  188,
+                  189,
+                  190,
+                  191,
+                  192,
+                  193
+                ],
+                "tx_axis_tkeep": [
+                  197,
+                  198,
+                  199,
+                  200,
+                  201,
+                  202,
+                  203,
+                  204
+                ],
+                "tx_axis_tlast": [
+                  195
+                ],
+                "tx_axis_tready": [
+                  205
+                ],
+                "tx_axis_tuser": [
+                  "0"
+                ],
+                "tx_axis_tvalid": [
+                  194
+                ],
+                "tx_disable": [],
+                "tx_fault": [
+                  287
+                ],
+                "tx_ifg_delay": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "tx_resetdone": [
+                  288
+                ],
+                "txclk322": [
+                  289
+                ],
+                "txn": [
+                  7
+                ],
+                "txp": [
+                  6
+                ],
+                "txuserrdy": [
+                  290
+                ],
+                "txusrclk": [
+                  291
+                ],
+                "txusrclk2": [
+                  292
+                ]
+              }
+            },
+            "xgbaser_gt_wrapper_inst": {
+              "type": "xgbaser_gt_same_quad_wrapper",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "areset": [
+                  2
+                ],
+                "areset_clk_156_25": [
+                  269
+                ],
+                "areset_clk_156_25_bufh": [
+                  270
+                ],
+                "clk156": [
+                  206
+                ],
+                "core_reset": [
+                  268
+                ],
+                "dclk": [
+                  278
+                ],
+                "gt0_tx_resetdone": [
+                  288
+                ],
+                "gt1_tx_resetdone": [
+                  "1"
+                ],
+                "gt2_tx_resetdone": [
+                  "1"
+                ],
+                "gt3_tx_resetdone": [
+                  "1"
+                ],
+                "gt_refclk": [
+                  293
+                ],
+                "gt_txclk322": [
+                  289
+                ],
+                "gt_txusrclk": [
+                  291
+                ],
+                "gt_txusrclk2": [
+                  292
+                ],
+                "gtrxreset": [
+                  279
+                ],
+                "gttxreset": [
+                  280
+                ],
+                "gttxreset_txusrclk2": [
+                  281
+                ],
+                "mmcm_locked_clk156": [
+                  282
+                ],
+                "qplllock": [
+                  283
+                ],
+                "qplllock_txusrclk2": [
+                  294
+                ],
+                "qplloutclk": [
+                  284
+                ],
+                "qplloutrefclk": [
+                  285
+                ],
+                "qpllrefclklost": [
+                  295
+                ],
+                "reset_counter_done": [
+                  286
+                ],
+                "tx_fault": [
+                  287
+                ],
+                "txuserrdy": [
+                  290
+                ]
+              }
+            },
+            "xgphy_refclk_ibuf": {
+              "type": "IBUFDS_GTE2",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CEB": [
+                  "0"
+                ],
+                "I": [
+                  4
+                ],
+                "IB": [
+                  5
+                ],
+                "O": [
+                  293
+                ],
+                "ODIV2": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "modules": {
+    "pcie_clocking_v6": {
+      "modules": {
+        "pcie_clocking_v6": {
+          "ports": {
+            "sys_clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "gt_pll_lock": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "sel_lnk_rate": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "sel_lnk_width": {
+              "direction": "input",
+              "bits": [
+                5,
+                6
+              ]
+            },
+            "sys_clk_bufg": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "pipe_clk": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            },
+            "user_clk": {
+              "direction": "output",
+              "bits": [
+                9
+              ]
+            },
+            "block_clk": {
+              "direction": "output",
+              "bits": [
+                10
+              ]
+            },
+            "drp_clk": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            },
+            "clock_locked": {
+              "direction": "output",
+              "bits": [
+                12
+              ]
+            }
+          },
+          "cells": {
+            "$and$./module_68016.v:155$4": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13
+                ],
+                "B": [
+                  14
+                ],
+                "Y": [
+                  12
+                ]
+              }
+            },
+            "$logic_not$./module_68016.v:150$2": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  15
+                ]
+              }
+            },
+            "$logic_not$./module_68016.v:155$3": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  16
+                ],
+                "Y": [
+                  13
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  8
+                ],
+                "D": [
+                  "0",
+                  17
+                ],
+                "Q": [
+                  17,
+                  16
+                ]
+              }
+            },
+            "GEN1_LINK.pipe_clk_bufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  18
+                ],
+                "O": [
+                  8
+                ]
+              }
+            },
+            "clkfbin_bufg_i": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  19
+                ],
+                "O": [
+                  20
+                ]
+              }
+            },
+            "drp_clk_bufg_i": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  18
+                ],
+                "O": [
+                  11
+                ]
+              }
+            },
+            "mmcm_adv_i": {
+              "type": "MMCM_ADV",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFBIN": [
+                  20
+                ],
+                "CLKFBOUT": [
+                  19
+                ],
+                "CLKFBOUTB": [],
+                "CLKFBSTOPPED": [],
+                "CLKIN1": [
+                  2
+                ],
+                "CLKIN2": [
+                  "0"
+                ],
+                "CLKINSEL": [
+                  "1"
+                ],
+                "CLKINSTOPPED": [],
+                "CLKOUT0": [
+                  21
+                ],
+                "CLKOUT0B": [],
+                "CLKOUT1": [
+                  18
+                ],
+                "CLKOUT1B": [],
+                "CLKOUT2": [
+                  22
+                ],
+                "CLKOUT2B": [],
+                "CLKOUT3": [
+                  23
+                ],
+                "CLKOUT3B": [],
+                "CLKOUT4": [],
+                "CLKOUT5": [],
+                "CLKOUT6": [],
+                "DADDR": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DCLK": [
+                  "0"
+                ],
+                "DEN": [
+                  "0"
+                ],
+                "DI": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DO": [],
+                "DRDY": [],
+                "DWE": [
+                  "0"
+                ],
+                "LOCKED": [
+                  14
+                ],
+                "PSCLK": [
+                  "0"
+                ],
+                "PSDONE": [],
+                "PSEN": [
+                  "0"
+                ],
+                "PSINCDEC": [
+                  "0"
+                ],
+                "PWRDWN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ]
+              }
+            },
+            "sys_clk_bufg_i": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  2
+                ],
+                "O": [
+                  7
+                ]
+              }
+            },
+            "x8_GEN1_250_00.user_clk_bufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  21
+                ],
+                "O": [
+                  9
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

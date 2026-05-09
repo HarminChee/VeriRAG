@@ -1,0 +1,41 @@
+`timescale 1ns/1ns
+`timescale 1ns/1ns
+module mvs_cha(
+	input [15:0] SDA,
+	input nSLOTCS,
+	output [31:0] CR,
+	input CA4, S2H1,
+	input PCK2B, PCK1B,
+	input [23:0] PBUS,
+	input CLK_24M, CLK_12M, CLK_8M,
+	input nRESET,
+	output [7:0] FIXD,
+	input SDRD0, SDRD1, nSDROM, nSDMRD,
+	inout [7:0] SDD
+);
+	wire [19:0] C_LATCH;
+	reg [1:0] C_LATCH_U;
+	wire [15:0] S_LATCH;
+	wire [20:0] C_ADDR;
+	wire [16:0] S_ADDR;
+	wire [15:0] C_ODD_DATA;
+	wire [15:0] C_EVEN_DATA;
+	wire [21:11] MA;
+	assign C_ADDR = {C_LATCH[19:4], CA4, C_LATCH[3:0]};
+	assign S_ADDR = {S_LATCH[15:3], S2H1, S_LATCH[2:0]};
+	assign CR = {C_EVEN_DATA[7:0], C_EVEN_DATA[15:8], C_ODD_DATA[7:0], C_ODD_DATA[15:8]};
+	rom_c1 C1(C_ADDR, C_ODD_DATA, nPAIR0_CE);
+	rom_c2 C2(C_ADDR, C_EVEN_DATA, nPAIR0_CE);
+	rom_c3 C3(C_ADDR, C_ODD_DATA, nPAIR1_CE);
+	rom_c4 C4(C_ADDR, C_EVEN_DATA, nPAIR1_CE);
+	rom_s1 S1(S_ADDR, FIXD);
+	rom_m1 M1({MA[16:11], SDA[10:0]}, SDD, nSDROM, nSDMRD);
+	zmc ZMC(SDRD0, SDA[1:0], SDA[15:8], MA);
+	neo_273 N273(PBUS[19:0], PCK1B, PCK2B, C_LATCH, S_LATCH);
+	always @(posedge PCK1B)
+	begin
+		C_LATCH_U <= {1'bz, PBUS[21:20]};
+	end
+	assign nPAIR0_CE = (C_LATCH_U[0] == 1'b0) ? 1'b0 : 1'b1;
+	assign nPAIR1_CE = (C_LATCH_U[0] == 1'b1) ? 1'b0 : 1'b1;
+endmodule

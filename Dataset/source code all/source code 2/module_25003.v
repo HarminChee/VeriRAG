@@ -1,0 +1,150 @@
+module etx_io (
+   txo_lclk_p, txo_lclk_n, txo_frame_p, txo_frame_n, txo_data_p,
+   txo_data_n, tx_wr_wait, tx_rd_wait,
+   tx_lclk_io, tx_lclk_div4, tx_lclk90, txi_wr_wait_p, txi_wr_wait_n,
+   txi_rd_wait_p, txi_rd_wait_n, tx_data_slow, tx_frame_slow
+   );
+   parameter IOSTD_ELINK = "LVDS_25";
+   parameter PW          = 104;
+   parameter ETYPE       = 0; 
+   input 	tx_lclk_io;	     
+   input 	tx_lclk_div4;	     
+   input 	tx_lclk90;           
+   output 	txo_lclk_p,   txo_lclk_n;     
+   output 	txo_frame_p, txo_frame_n;     
+   output [7:0] txo_data_p, txo_data_n;       
+   input 	txi_wr_wait_p,txi_wr_wait_n;  
+   input 	txi_rd_wait_p, txi_rd_wait_n; 
+   input [63:0]   tx_data_slow;    
+   input  [3:0]   tx_frame_slow;   
+   output 	  tx_wr_wait;
+   output 	  tx_rd_wait;
+   reg [63:0] 	  tx_data;
+   reg [3:0] 	  tx_frame;
+   wire [15:0] 	  tx_data16;
+   wire  	  tx_frame16;
+   reg 		  tx_wr_wait_sync;
+   reg 		  tx_rd_wait_sync; 
+   reg 		  tx_wr_wait_reg;
+   reg 		  tx_rd_wait_reg;
+   reg 		  tx_wr_wait_reg2;
+   reg 		  tx_rd_wait_reg2;
+   wire [15:0] 	  tx_data_mux;   
+   wire 	  txo_frame_ddr;
+   wire 	  txo_lclk90;   
+   wire 	  tx_wr_wait_async;
+   wire 	  tx_rd_wait_async;
+   wire [7:0] 	  txo_data_ddr;
+   wire 	  invert_pins;
+`ifdef TARGET_E64
+   assign invert_pins=1'b1;
+`else
+   assign invert_pins=1'b0;
+`endif
+   oh_edgealign edgealign0 (.firstedge	(firstedge),
+  			    .fastclk	(tx_lclk_io),
+			    .slowclk	(tx_lclk_div4)
+			   );
+   always @ (posedge tx_lclk_io)
+     if(firstedge) 
+       begin
+	  tx_data[63:0]   <= tx_data_slow[63:0]; 
+	  tx_frame[3:0]   <= tx_frame_slow[3:0];	
+       end
+     else 
+       begin
+	  tx_data[63:0]   <= {16'b0,tx_data[63:16]};
+	  tx_frame[3:0]   <= {tx_frame[2:0],1'b0};	  
+       end
+   assign tx_data16[15:0] = tx_data[15:0];   
+   assign tx_frame16      = tx_frame[3];
+   always @ (negedge tx_lclk_io)
+     begin
+	tx_wr_wait_sync <= tx_wr_wait_async ^ invert_pins;
+	tx_rd_wait_sync <= tx_rd_wait_async ^ invert_pins;
+     end
+   always @ (posedge tx_lclk_div4)
+     begin
+	tx_wr_wait_reg  <= tx_wr_wait_sync; 
+	tx_wr_wait_reg2 <= tx_wr_wait_reg;
+	tx_rd_wait_reg  <= tx_rd_wait_sync;
+	tx_rd_wait_reg2 <= tx_rd_wait_reg;	
+     end
+   assign tx_wr_wait = tx_wr_wait_reg | tx_wr_wait_reg2;
+   assign tx_rd_wait = tx_rd_wait_reg | tx_rd_wait_reg2;
+   genvar        i;
+   generate for(i=0; i<8; i=i+1)
+     begin : gen_oddr
+	ODDR #(.DDR_CLK_EDGE  ("SAME_EDGE"))
+	oddr_data (
+		   .Q  (txo_data_ddr[i]),
+		   .C  (tx_lclk_io),
+		   .CE (1'b1),
+		   .D1 (tx_data16[i+8] ^ invert_pins),
+		   .D2 (tx_data16[i] ^ invert_pins),
+		   .R  (1'b0),
+		   .S  (1'b0)
+		   );
+     end
+     endgenerate
+   ODDR #(.DDR_CLK_EDGE  ("SAME_EDGE"))
+   oddr_frame (
+	      .Q  (txo_frame_ddr),
+	      .C  (tx_lclk_io),
+	      .CE (1'b1),
+	      .D1 (tx_frame16 ^ invert_pins),
+	      .D2 (tx_frame16 ^ invert_pins),
+	      .R  (1'b0), 
+	      .S  (1'b0)
+	      );
+   ODDR #(.DDR_CLK_EDGE  ("SAME_EDGE"))
+   oddr_lclk (
+	      .Q  (txo_lclk90),
+	      .C  (tx_lclk90),
+	      .CE (1'b1),
+	      .D1 (1'b1 ^ invert_pins),
+	      .D2 (1'b0 ^ invert_pins),
+	      .R  (1'b0),
+	      .S  (1'b0)
+	      );
+   OBUFDS obufds_data[7:0] (
+			     .O   (txo_data_p[7:0]),
+			     .OB  (txo_data_n[7:0]),
+			     .I   (txo_data_ddr[7:0])
+			     );
+   OBUFDS obufds_frame ( .O   (txo_frame_p),
+			 .OB  (txo_frame_n),
+			 .I   (txo_frame_ddr)
+			 );
+   OBUFDS obufds_lclk ( .O   (txo_lclk_p),
+			.OB  (txo_lclk_n),
+			.I   (txo_lclk90)
+			);
+   generate
+      if(ETYPE==1)
+	begin
+	   assign tx_wr_wait_async = txi_wr_wait_p;
+	end
+      else if (ETYPE==0)
+	begin
+	   IBUFDS
+	     #(.DIFF_TERM  ("TRUE"),     
+	       .IOSTANDARD (IOSTD_ELINK))
+	   ibufds_wrwait
+	     (.I     (txi_wr_wait_p),
+	      .IB    (txi_wr_wait_n),
+	      .O     (tx_wr_wait_async));	 
+	end
+   endgenerate
+`ifdef TODO
+  IBUFDS
+     #(.DIFF_TERM  ("TRUE"),     
+       .IOSTANDARD (IOSTD_ELINK))
+      ibufds_rdwait
+     (.I     (txi_rd_wait_p),
+      .IB    (txi_rd_wait_n),
+      .O     (tx_rd_wait_async));
+`else
+   assign tx_rd_wait_async = txi_rd_wait_p;
+`endif
+endmodule 

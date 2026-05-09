@@ -1,0 +1,116 @@
+`timescale 1ns / 1ps
+`timescale 1ns / 1ps
+module sensor_ctl(
+input [0:0] clk,
+input rst_32,
+input [31:0] din_32,
+input [0:0] wr_en_32,
+input [0:0] rd_en_32,
+output [31:0] dout_32,
+output [0:0] full_32,
+output [0:0] empty_32,
+input [0:0] SPI_DI_a,
+output [0:0] SPI_SS_a,
+output [0:0] SPI_CK_a,
+output [0:0] SPI_DO_a
+);
+parameter INIT_32 		= 0,
+			READY_RCV_32 	= 1,
+			RCV_DATA_32 	= 2,
+			POSE_32			= 3,
+			READY_SND_32	= 4,
+			SND_DATA_32_x	= 5,
+			SND_DATA_32_y	= 6,
+			SND_DATA_32_z	= 7;
+wire [31:0] rcv_data_32;
+wire rcv_en_32;
+wire data_empty_32;
+wire [31:0] snd_data_32;
+wire snd_en_32;
+wire data_full_32;
+reg [3:0] state_32;
+wire [15:0] accel_x;
+wire [15:0] accel_y;
+wire [15:0] accel_z;
+reg [15:0] accel_x_reg;
+reg [15:0] accel_y_reg;
+reg [15:0] accel_z_reg;
+wire arm_rd_en_a;
+fifo_32x512 input_fifo_32(
+	.clk(clk),
+	.srst(rst_32),
+	.din(din_32),
+	.wr_en(wr_en_32),
+	.full(full_32),
+	.dout(rcv_data_32),
+	.rd_en(rcv_en_32),
+	.empty(data_empty_32)
+	);
+fifo_32x512 output_fifo_32(
+	.clk(clk),
+	.srst(rst_32),
+	.din(snd_data_32),
+	.wr_en(snd_en_32),
+	.full(data_full_32),
+	.dout(dout_32),
+	.rd_en(rd_en_32),
+	.empty(empty_32)
+	);
+MPU_accel_controller MPU_accel_controller(
+	.clk(clk),
+	.reset(rst_32),
+	.accel_x(accel_x),
+	.accel_y(accel_y),
+	.accel_z(accel_z),
+	.SPI_SS_a(SPI_SS_a),						
+	.SPI_CK_a(SPI_CK_a),						
+	.SPI_DO_a(SPI_DO_a),						
+	.SPI_DI_a(SPI_DI_a),						
+	.arm_read_enable_a(arm_rd_en_a) 						
+);
+always @(posedge clk)begin
+	if(rst_32)
+		state_32 <= 0;
+	else
+		case (state_32)
+			INIT_32: 										state_32 <= READY_RCV_32;
+			READY_RCV_32: if(1) 							state_32 <= RCV_DATA_32;
+			RCV_DATA_32: 									state_32 <= POSE_32;
+			POSE_32:	     if(arm_rd_en_a)				state_32 <= READY_SND_32;
+			READY_SND_32: if(data_full_32 == 0)		state_32 <= SND_DATA_32_x;
+			SND_DATA_32_x:									state_32 <= SND_DATA_32_y;
+			SND_DATA_32_y:									state_32 <= SND_DATA_32_z;
+			SND_DATA_32_z:									state_32 <= READY_RCV_32;
+		endcase
+end
+assign rcv_en_32 = (state_32 == RCV_DATA_32);
+assign snd_en_32 = (state_32 > READY_SND_32);
+assign snd_data_32 = (state_32 == SND_DATA_32_x)? accel_x_reg:
+							(state_32 == SND_DATA_32_y)? accel_y_reg:
+							(state_32 == SND_DATA_32_z)? accel_z_reg:0;
+always @(posedge clk) begin
+	if (rst_32) begin
+		accel_x_reg <= 0;
+		accel_y_reg <= 0;
+		accel_z_reg <= 0;
+	end
+	else
+		case (state_32)
+			INIT_32: begin
+				accel_x_reg <= 0;
+				accel_y_reg <= 0;
+				accel_z_reg <= 0;
+			end
+			READY_RCV_32: begin
+				accel_x_reg <= 0;
+				accel_y_reg <= 0;
+				accel_z_reg <= 0;
+			end
+			POSE_32: begin
+				accel_x_reg <= accel_x;
+				accel_y_reg <= accel_y;
+				accel_z_reg <= accel_z;
+			end
+		endcase
+end
+endmodule

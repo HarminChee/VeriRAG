@@ -1,0 +1,63 @@
+module blink_corrected_clk (
+  input clk_12MHz,
+  output [4:0] LED
+);
+  localparam WLOG = 4;
+  localparam W = 1 << WLOG;
+  localparam HI = W - 1;
+  wire rdy, err;
+  wire [HI:0] res;
+  reg go;
+  reg [31:0] clk_count;
+  reg blink;
+  wire rst;
+  wire por_rst;
+  localparam F = 16;
+
+  // Power-On Reset
+  por por_inst(.clk(clk_12MHz), .rst(por_rst));
+  assign rst = por_rst;
+
+  // Primitive Generator
+  primogen #(.WIDTH_LOG(WLOG)) pg(
+    .clk(clk_12MHz),
+    .go(go),
+    .rst(rst),
+    .ready(rdy),
+    .error(err),
+    .res(res)
+  );
+
+  // Blink timer
+  localparam BLINK_COUNT = F * 1000000 * 5;
+  always @(posedge clk_12MHz) begin
+    if (rst) begin
+      blink <= 0;
+      clk_count <= 0;
+    end else begin
+      if (clk_count == BLINK_COUNT) begin
+        blink <= 1;
+        clk_count <= 0;
+      end else begin
+        blink <= 0;
+        clk_count <= clk_count + 1'd1;
+      end
+    end
+  end
+
+  // Control signal
+  always @(posedge clk_12MHz) begin
+    if (rst) begin
+      go <= 0;
+    end else begin
+      go <= 0;
+      if (rdy && !err && !go && blink) begin
+        go <= 1;
+      end
+    end
+  end
+
+  // LED output
+  assign LED[3:0] = res[3:0];
+  assign LED[4] = err;
+endmodule

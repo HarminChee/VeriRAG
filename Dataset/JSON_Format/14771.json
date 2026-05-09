@@ -1,0 +1,102 @@
+{
+  "modules": {
+    "CC_DLatch": {
+      "modules": {
+        "CC_DLatch": {
+          "ports": {
+            "en": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "d": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "q": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            }
+          },
+          "cells": {
+            "$not$code_after_filter/module_14771.v:7$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "Y": [
+                  5
+                ]
+              }
+            },
+            "$techmap\\r.$procdff$522": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  "0"
+                ],
+                "CLK": [
+                  5
+                ],
+                "D": [
+                  6
+                ],
+                "Q": [
+                  7
+                ]
+              }
+            },
+            "$techmap\\r.$procmux$520": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "B": [
+                  3
+                ],
+                "S": [
+                  "1"
+                ],
+                "Y": [
+                  6
+                ]
+              }
+            },
+            "$ternary$code_after_filter/module_14771.v:8$2": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "B": [
+                  3
+                ],
+                "S": [
+                  2
+                ],
+                "Y": [
+                  4
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,459 @@
+`timescale 1 ns / 1 ns
+`timescale 1 ns / 1 ns
+module altera_jtag_streaming #(
+    parameter PURPOSE = 0,
+    parameter UPSTREAM_FIFO_SIZE = 0,
+    parameter DOWNSTREAM_FIFO_SIZE = 0,
+    parameter MGMT_CHANNEL_WIDTH = -1
+) (
+    input wire        test_i, // Added test mode input
+    input  wire       tck,
+    input  wire       tdi,
+    output reg        tdo,
+    input  wire [2:0] ir_in,
+    input  wire       virtual_state_cdr,
+    input  wire       virtual_state_sdr,
+    input  wire       virtual_state_udr,
+    input  wire       reset_n, // Primary asynchronous reset
+    output wire [7:0] source_data,
+    output wire       source_valid,
+    input  wire [7:0] sink_data,
+    input  wire       sink_valid,
+    output wire       sink_ready,
+    input  wire       clock_to_sample, // Primary clock for another domain
+    input  wire       reset_to_sample, // Related to clock_to_sample domain? Assume synchronous to tck for now or needs sync.
+    output reg        resetrequest,
+    output wire       debug_reset,
+    output reg        mgmt_valid,
+    output reg  [(MGMT_CHANNEL_WIDTH>0?MGMT_CHANNEL_WIDTH:1)-1:0] mgmt_channel,
+    output reg        mgmt_data
+);
+    function integer flog2;
+      input [31:0] Depth;
+      integer i;
+      begin
+        i = Depth;
+        if ( i <= 0 ) flog2 = 0;
+        else begin
+          for(flog2 = -1; i > 0; flog2 = flog2 + 1)
+          i = i >> 1;
+        end
+      end
+    endfunction
+    localparam UPSTREAM_ENCODED_SIZE = flog2(UPSTREAM_FIFO_SIZE);
+    localparam DOWNSTREAM_ENCODED_SIZE = flog2(DOWNSTREAM_FIFO_SIZE);
+    localparam TCK_TO_SYSCLK_SYNC_DEPTH = 8; // Depth for tck -> clock_to_sample
+    localparam SYSCLK_TO_TCK_SYNC_DEPTH = 3; // Depth for clock_to_sample -> tck
+    localparam DATA     = 0;
+    localparam LOOPBACK = 1;
+    localparam DEBUG    = 2;
+    localparam INFO     = 3;
+    localparam CONTROL  = 4;
+    localparam MGMT     = 5;
+    localparam IRWIDTH = 3;
+    localparam ST_BYPASS     = 'h0;
+    localparam ST_HEADER_1   = 'h1;
+    localparam ST_HEADER_2   = 'h2;
+    localparam ST_WRITE_DATA = 'h3;
+    localparam ST_HEADER    = 'h0;
+    localparam ST_PADDED    = 'h1;
+    localparam ST_READ_DATA = 'h2;
+    reg [1:0] write_state = ST_BYPASS;
+    reg [1:0] read_state  = ST_HEADER;
+    reg [ 7:0] dr_data_in  = 'b0;
+    reg [ 7:0] dr_data_out = 'b0;
+    reg        dr_loopback = 'b0;
+    reg [ 2:0] dr_debug    = 'b0;
+    reg [10:0] dr_info     = 'b0;
+    reg [ 8:0] dr_control  = 'b0;
+    reg [MGMT_CHANNEL_WIDTH+2:0] dr_mgmt = 'b0;
+    reg [ 8:0] padded_bit_counter             = 'b0;
+    reg [ 7:0] bypass_bit_counter             = 'b0;
+    reg [ 2:0] write_data_bit_counter         = 'b0;
+    reg [ 2:0] read_data_bit_counter          = 'b0;
+    reg [ 3:0] header_in_bit_counter          = 'b0;
+    reg [ 3:0] header_out_bit_counter         = 'b0;
+    reg [18:0] scan_length_byte_counter       = 'b0;
+    reg [18:0] valid_write_data_length_byte_counter  = 'b0;
+    reg write_data_valid     = 'b0;
+    reg read_data_valid      = 'b0;
+    reg read_data_all_valid  = 'b0;
+    reg decode_header_1 = 'b0;
+    reg decode_header_2 = 'b0;
+    wire write_data_byte_aligned;
+    wire read_data_byte_aligned;
+    wire padded_bit_byte_aligned;
+    wire bytestream_end;
+    assign write_data_byte_aligned = (write_data_bit_counter == 1);
+    assign read_data_byte_aligned  = (read_data_bit_counter == 1);
+    assign padded_bit_byte_aligned = (padded_bit_counter[2:0] == 'b0);
+    assign bytestream_end          = (scan_length_byte_counter == 'b0);
+    reg [ 7:0] offset     = 'b0;
+    reg [15:0] header_in  = 'b0;
+    reg [9:0] scan_length       = 'b0;
+    reg [2:0] read_data_length  = 'b0;
+    reg [2:0] write_data_length = 'b0;
+    wire [7:0] idle_inserter_sink_data;
+    wire       idle_inserter_sink_valid;
+    wire       idle_inserter_sink_ready;
+    wire [7:0] idle_inserter_source_data;
+    reg        idle_inserter_source_ready = 'b0;
+    reg  [7:0] idle_remover_sink_data     = 'b0;
+    reg        idle_remover_sink_valid    = 'b0;
+    wire [7:0] idle_remover_source_data;
+    wire       idle_remover_source_valid;
+    assign source_data  = idle_remover_source_data;
+    assign source_valid = idle_remover_source_valid;
+    assign sink_ready   = idle_inserter_sink_ready;
+    assign idle_inserter_sink_data  = sink_data;
+    assign idle_inserter_sink_valid = sink_valid;
+    reg clock_sensor         = 'b0;
+    reg clock_to_sample_div2 = 'b0;
+    (* altera_attribute = {"-name GLOBAL_SIGNAL OFF"}*) reg clock_sense_reset_n  = 'b1; // Internal signal based on JTAG state
+    wire data_available;
+    assign data_available = sink_valid;
+    wire [18:0] decoded_scan_length;
+    wire [18:0] decoded_write_data_length;
+    wire [18:0] decoded_read_data_length;
+    assign decoded_scan_length =  { scan_length, {8{1'b1}} };
+    assign decoded_write_data_length = (write_data_length == 0) ? 19'h0 : (19'h00080 << write_data_length);
+    assign decoded_read_data_length  = (read_data_length == 0)  ? 19'h0 : (19'h00080 << read_data_length);
+
+    // Synchronizers for signals crossing clock domains
+    wire clock_sensor_sync;
+    wire reset_to_sample_sync;
+    wire clock_to_sample_div2_sync;
+    wire clock_sense_reset_n_sync; // Output of the synchronizer
+    wire dft_clock_sense_reset_n_sync; // Muxed reset for DFT
+
+    altera_std_synchronizer #(.depth(SYSCLK_TO_TCK_SYNC_DEPTH)) clock_sensor_synchronizer (
+        .clk(tck),
+        .reset_n(reset_n), // Use primary reset for synchronizer FF
+        .din(clock_sensor),
+        .dout(clock_sensor_sync));
+    altera_std_synchronizer #(.depth(SYSCLK_TO_TCK_SYNC_DEPTH)) reset_to_sample_synchronizer (
+        .clk(tck),
+        .reset_n(reset_n), // Use primary reset for synchronizer FF
+        .din(reset_to_sample),
+        .dout(reset_to_sample_sync));
+    altera_std_synchronizer #(.depth(SYSCLK_TO_TCK_SYNC_DEPTH)) clock_to_sample_div2_synchronizer (
+        .clk(tck),
+        .reset_n(reset_n), // Use primary reset for synchronizer FF
+        .din(clock_to_sample_div2),
+        .dout(clock_to_sample_div2_sync));
+    altera_std_synchronizer #(.depth(TCK_TO_SYSCLK_SYNC_DEPTH)) clock_sense_reset_n_synchronizer (
+        .clk(clock_to_sample),
+        .reset_n(reset_n), // Use primary reset for synchronizer FF
+        .din(clock_sense_reset_n), // Synchronize the internally generated reset signal
+        .dout(clock_sense_reset_n_sync));
+
+    // DFT Fix: Mux the asynchronous reset for clock_sensor FF
+    // In test mode (test_i=1), use primary reset_n. Otherwise, use functional synced reset.
+    assign dft_clock_sense_reset_n_sync = test_i ? reset_n : clock_sense_reset_n_sync;
+
+    // Flip-flop with asynchronous reset (ACNCPI violation fixed)
+    always @ (posedge clock_to_sample or negedge dft_clock_sense_reset_n_sync) begin
+        if (~dft_clock_sense_reset_n_sync) begin // Use the DFT-controlled reset
+            clock_sensor <= 1'b0;
+        end else begin
+            clock_sensor <= 1'b1;
+        end
+    end
+
+    // Flip-flop without asynchronous reset
+    always @ (posedge clock_to_sample) begin
+        clock_to_sample_div2 <= ~clock_to_sample_div2;
+    end
+
+    // Main logic clocked by tck
+    always @ (posedge tck or negedge reset_n) begin // Added primary reset
+        if (~reset_n) begin
+            // Reset state for tck domain logic
+            write_state <= ST_BYPASS;
+            read_state  <= ST_HEADER;
+            dr_data_in  <= 'b0;
+            dr_data_out <= 'b0;
+            dr_loopback <= 'b0;
+            dr_debug    <= 'b0;
+            dr_info     <= 'b0;
+            dr_control  <= 'b0;
+            dr_mgmt     <= 'b0;
+            padded_bit_counter <= 'b0;
+            bypass_bit_counter <= 'b0;
+            write_data_bit_counter <= 'b0;
+            read_data_bit_counter <= 'b0;
+            header_in_bit_counter <= 'b0;
+            header_out_bit_counter <= 'b0;
+            scan_length_byte_counter <= 'b0;
+            valid_write_data_length_byte_counter <= 'b0;
+            write_data_valid <= 'b0;
+            read_data_valid <= 'b0;
+            read_data_all_valid <= 'b0;
+            decode_header_1 <= 'b0;
+            decode_header_2 <= 'b0;
+            offset <= 'b0;
+            header_in <= 'b0;
+            scan_length <= 'b0;
+            read_data_length <= 'b0;
+            write_data_length <= 'b0;
+            idle_inserter_source_ready <= 'b0;
+            idle_remover_sink_data <= 'b0;
+            idle_remover_sink_valid <= 'b0;
+            clock_sense_reset_n <= 'b1; // Reset internal signal
+            resetrequest <= 1'b0;
+
+        end else begin
+            // Default assignments to avoid latches (optional but good practice)
+            idle_remover_sink_valid <= 1'b0;
+            idle_inserter_source_ready <= 1'b0;
+            // Keep clock_sense_reset_n high unless driven low
+            clock_sense_reset_n <= 1'b1;
+
+            if (ir_in == DATA) begin
+                if (virtual_state_cdr) begin
+                    if (offset == 'b0) begin
+                        write_state <= ST_HEADER_1;
+                    end else begin
+                        write_state <= ST_BYPASS;
+                    end
+                    bypass_bit_counter <= offset;
+                    header_in_bit_counter <= 15;
+                    write_data_bit_counter <= 0;
+                    decode_header_1 <= 1'b0;
+                    decode_header_2 <= 1'b0;
+                    read_data_all_valid  <= 1'b0;
+                    valid_write_data_length_byte_counter  <= 0;
+
+                    // Read side CDR logic
+                    read_state <= ST_HEADER;
+                    if (|offset[2:0]) begin
+                        padded_bit_counter[8:3] <= offset[7:3] + 1'b1;
+                        padded_bit_counter[2:0] <= 3'b0;
+                    end else begin
+                        padded_bit_counter <= {1'b0, offset};
+                    end
+                    header_out_bit_counter <= 0;
+                    read_data_bit_counter <= 0;
+                    // Capture data_available status in CDR
+                    dr_data_out <= {{7{1'b0}}, data_available};
+                    read_data_valid <= 0;
+                end
+                if (virtual_state_sdr) begin
+                    // Write side SDR logic
+                    case (write_state)
+                        ST_BYPASS: begin
+                            bypass_bit_counter <= bypass_bit_counter - 1'b1;
+                            if (bypass_bit_counter == 1) begin
+                                write_state <= ST_HEADER_1;
+                            end
+                        end
+                        ST_HEADER_1: begin
+                            header_in <= {tdi, header_in[15:1]};
+                            header_in_bit_counter <= header_in_bit_counter - 1'b1;
+                            if (header_in_bit_counter == 3) begin
+                                read_data_length  <= {tdi, header_in[15:14]};
+                                scan_length       <= header_in[13:4];
+                                write_state <= ST_HEADER_2;
+                                decode_header_1 <= 1'b1;
+                            end
+                        end
+                        ST_HEADER_2: begin
+                            header_in <= {tdi, header_in[15:1]};
+                            header_in_bit_counter <= header_in_bit_counter - 1'b1;
+                            if (decode_header_1) begin
+                                decode_header_1 <= 1'b0;
+                                if (read_data_length == 3'b111) begin
+                                    read_data_all_valid <= 1'b1;
+                                end
+                                scan_length_byte_counter <= decoded_scan_length;
+                            end
+                            if (header_in_bit_counter == 0) begin
+                                write_data_length <= {tdi, header_in[15:14]};
+                                write_state <= ST_WRITE_DATA;
+                                decode_header_2 <= 1'b1;
+                            end
+                        end
+                        ST_WRITE_DATA: begin
+                            dr_data_in <= {tdi, dr_data_in[7:1]};
+                            if (decode_header_2) begin
+                                decode_header_2 <= 1'b0;
+                                case (write_data_length)
+                                    3'b111:  valid_write_data_length_byte_counter <= decoded_scan_length + 1'b1;
+                                    3'b000:  valid_write_data_length_byte_counter <= 'b0;
+                                    default: valid_write_data_length_byte_counter <= decoded_write_data_length;
+                                endcase
+                            end
+                            write_data_bit_counter <= write_data_bit_counter - 1'b1;
+                            write_data_valid <= (valid_write_data_length_byte_counter != 0);
+                            if (write_data_byte_aligned && write_data_valid) begin
+                                valid_write_data_length_byte_counter <= valid_write_data_length_byte_counter - 1'b1;
+                                idle_remover_sink_valid <= 1'b1;
+                                idle_remover_sink_data <= {tdi, dr_data_in[7:1]};
+                            end
+                        end
+                    endcase
+
+                    // Read side SDR logic
+                    dr_data_out <= {1'b0, dr_data_out[7:1]}; // Shift out captured data
+                    case (read_state)
+                        ST_HEADER: begin
+                            header_out_bit_counter <= header_out_bit_counter - 1'b1;
+                            if (header_out_bit_counter == 2) begin
+                                if (padded_bit_counter == 0) begin
+                                    // Assert ready only if no padding and all data is valid (or not needed)
+                                    idle_inserter_source_ready <= read_data_all_valid;
+                                end
+                            end
+                            if (header_out_bit_counter == 1) begin
+                                if (padded_bit_counter == 0) begin
+                                    read_state <= ST_READ_DATA;
+                                    // Determine if read data is valid based on state and counters
+                                    read_data_valid <= read_data_all_valid || (scan_length_byte_counter <= decoded_read_data_length + 1);
+                                    // Load first byte of data or placeholder
+                                    dr_data_out <= read_data_all_valid ? idle_inserter_source_data : 8'h4a;
+                                end else begin
+                                    read_state <= ST_PADDED;
+                                    padded_bit_counter <= padded_bit_counter - 1'b1;
+                                    idle_inserter_source_ready <= 1'b0; // Not ready during padding
+                                    dr_data_out <= 8'h4a; // Output placeholder during padding
+                                end
+                            end
+                        end
+                        ST_PADDED: begin
+                            padded_bit_counter <= padded_bit_counter - 1'b1;
+                            if (padded_bit_byte_aligned) begin
+                                dr_data_out <= 8'h4a; // Continue placeholder
+                            end
+                            if (padded_bit_counter == 1) begin
+                                // Assert ready just before switching to READ_DATA if needed
+                                idle_inserter_source_ready <= read_data_all_valid;
+                            end
+                            if (padded_bit_counter == 0) begin
+                                read_state <= ST_READ_DATA;
+                                // Determine validity and load first byte after padding
+                                read_data_valid <= read_data_all_valid || (scan_length_byte_counter <= decoded_read_data_length + 1);
+                                dr_data_out <= read_data_all_valid ? idle_inserter_source_data : 8'h4a;
+                            end
+                        end
+                        ST_READ_DATA: begin
+                            read_data_bit_counter <= read_data_bit_counter - 1'b1;
+                            if (read_data_bit_counter == 2) begin
+                                // Assert ready if not end of stream and data is valid
+                                idle_inserter_source_ready <= bytestream_end ? 1'b0 : read_data_valid;
+                            end
+                            if (read_data_byte_aligned) begin
+                                if (~bytestream_end) begin
+                                    scan_length_byte_counter <= scan_length_byte_counter - 1'b1;
+                                end
+                                // Update validity for the next byte
+                                read_data_valid <= read_data_all_valid || (scan_length_byte_counter <= decoded_read_data_length + 1);
+                                // Load next byte or placeholder
+                                dr_data_out <= (read_data_valid & ~bytestream_end) ? idle_inserter_source_data : 8'h4a;
+                            end
+                        end
+                    endcase
+                end
+            end // if (ir_in == DATA)
+
+            if (ir_in == LOOPBACK) begin
+                if (virtual_state_cdr) begin
+                    dr_loopback <= 1'b0;
+                end
+                if (virtual_state_sdr) begin
+                    dr_loopback <= tdi;
+                end
+            end
+
+            if (ir_in == DEBUG) begin
+                if (virtual_state_cdr) begin
+                    // Capture synchronized status signals
+                    dr_debug <= {clock_sensor_sync, clock_to_sample_div2_sync, reset_to_sample_sync};
+                end
+                if (virtual_state_sdr) begin
+                    dr_debug <= {1'b0, dr_debug[2:1]}; // Shift out status
+                end
+                // Control the internal reset signal based on UDR state
+                if (virtual_state_udr) begin
+                    clock_sense_reset_n <= 1'b0;
+                end else begin
+                    clock_sense_reset_n <= 1'b1;
+                end
+            end
+
+            if (ir_in == INFO) begin
+                if (virtual_state_cdr) begin
+                    // Load info register
+                    dr_info <= {PURPOSE[2:0], UPSTREAM_ENCODED_SIZE[3:0], DOWNSTREAM_ENCODED_SIZE[3:0]};
+                end
+                if (virtual_state_sdr) begin
+                    dr_info <= {1'b0, dr_info[10:1]}; // Shift out info
+                end
+            end
+
+            if (ir_in == CONTROL) begin
+                if (virtual_state_cdr) begin
+                    dr_control <= 'b0; // Clear on CDR
+                end
+                if (virtual_state_sdr) begin
+                    dr_control <= {tdi, dr_control[8:1]}; // Shift in control bits
+                end
+                if (virtual_state_udr) begin
+                    // Update control outputs on UDR
+                    {resetrequest, offset} <= dr_control;
+                end
+            end
+
+             // MGMT logic within the generate block is clocked by tck as well for its DR part
+             // No changes needed here for the MGMT DR logic based on DFT rules
+
+        end // else: !if(~reset_n)
+    end // always @ (posedge tck or negedge reset_n)
+
+    // Combinational logic for TDO mux
+    always @ * begin
+        // Default TDO to prevent latches if conditions aren't met
+        tdo = 1'b0;
+        if (virtual_state_sdr) begin
+            case (ir_in)
+                DATA:     tdo = dr_data_out[0];
+                LOOPBACK: tdo = dr_loopback;
+                DEBUG:    tdo = dr_debug[0];
+                INFO:     tdo = dr_info[0];
+                CONTROL:  tdo = dr_control[0];
+                MGMT:     tdo = dr_mgmt[0];
+                default:  tdo = 1'b0;
+            endcase
+        end
+        // else TDO remains 0 (assigned by default)
+    end
+
+    // Instantiation of Avalon ST Idle Remover/Inserter
+    // Assumes these modules follow DFT rules internally (clocked by tck, reset by reset_n)
+    altera_avalon_st_idle_remover idle_remover (
+        .clk     (tck),
+        .reset_n (reset_n),
+        .in_ready (), // Output, not driven here
+        .in_valid (idle_remover_sink_valid),
+        .in_data  (idle_remover_sink_data),
+        .out_ready (1'b1), // Assuming downstream is always ready
+        .out_valid (idle_remover_source_valid),
+        .out_data  (idle_remover_source_data)
+    );
+
+    altera_avalon_st_idle_inserter idle_inserter (
+        .clk     (tck),
+        .reset_n (reset_n),
+        .in_ready (idle_inserter_sink_ready),
+        .in_valid (idle_inserter_sink_valid),
+        .in_data  (idle_inserter_sink_data),
+        .out_ready (idle_inserter_source_ready),
+        .out_valid (), // Output, not driven here
+        .out_data  (idle_inserter_source_data)
+    );
+
+   // Generate block for optional MGMT channel
+   generate
+    if (MGMT_CHANNEL_WIDTH > 0)
+      begin : has_mgmt
+        // Registers clocked by tck (DR logic)
+        reg [MGMT_CHANNEL_WIDTH+2:0] mgmt_out = 'b0;

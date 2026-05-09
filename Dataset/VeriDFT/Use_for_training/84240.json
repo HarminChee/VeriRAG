@@ -1,0 +1,711 @@
+{
+  "modules": {
+    "lo_edge_detect": {
+      "modules": {
+        "lo_edge_detect": {
+          "ports": {
+            "pck0": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "ck_1356meg": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "ck_1356megb": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "pwr_lo": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "pwr_hi": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_oe1": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_oe2": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "pwr_oe3": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "pwr_oe4": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "adc_d": {
+              "direction": "input",
+              "bits": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            "adc_clk": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "ssp_frame": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "ssp_din": {
+              "direction": "output",
+              "bits": [
+                17
+              ]
+            },
+            "ssp_dout": {
+              "direction": "input",
+              "bits": [
+                18
+              ]
+            },
+            "ssp_clk": {
+              "direction": "output",
+              "bits": [
+                19
+              ]
+            },
+            "cross_hi": {
+              "direction": "input",
+              "bits": [
+                20
+              ]
+            },
+            "cross_lo": {
+              "direction": "input",
+              "bits": [
+                19
+              ]
+            },
+            "dbg": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "divisor": {
+              "direction": "input",
+              "bits": [
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28
+              ]
+            },
+            "lf_field": {
+              "direction": "input",
+              "bits": [
+                29
+              ]
+            }
+          },
+          "cells": {
+            "$add$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:51$9": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69
+                ]
+              }
+            },
+            "$and$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:28$2": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  18
+                ],
+                "B": [
+                  70
+                ],
+                "Y": [
+                  6
+                ]
+              }
+            },
+            "$and$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:30$4": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  71
+                ],
+                "B": [
+                  29
+                ],
+                "Y": [
+                  72
+                ]
+              }
+            },
+            "$and$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:30$5": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  72
+                ],
+                "B": [
+                  73
+                ],
+                "Y": [
+                  5
+                ]
+              }
+            },
+            "$eq$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:44$7": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "B": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "Y": [
+                  74
+                ]
+              }
+            },
+            "$eq$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:66$12": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  75
+                ]
+              }
+            },
+            "$ge$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:67$15": {
+              "type": "$ge",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "B": [
+                  "0",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "Y": [
+                  76
+                ]
+              }
+            },
+            "$le$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:68$16": {
+              "type": "$le",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "B": [
+                  "0",
+                  "1",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0"
+                ],
+                "Y": [
+                  77
+                ]
+              }
+            },
+            "$logic_and$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:66$14": {
+              "type": "$logic_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  75
+                ],
+                "B": [
+                  78
+                ],
+                "Y": [
+                  79
+                ]
+              }
+            },
+            "$logic_not$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:28$1": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  29
+                ],
+                "Y": [
+                  70
+                ]
+              }
+            },
+            "$logic_not$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:30$3": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  18
+                ],
+                "Y": [
+                  71
+                ]
+              }
+            },
+            "$logic_not$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:47$8": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  73
+                ],
+                "Y": [
+                  80
+                ]
+              }
+            },
+            "$logic_not$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:66$13": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  73
+                ],
+                "Y": [
+                  78
+                ]
+              }
+            },
+            "$not$/home/master/Desktop/dataset/code_delete_comments/module_84240.v:55$10": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  73
+                ],
+                "Y": [
+                  15
+                ]
+              }
+            },
+            "$procdff$35": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  81
+                ],
+                "D": [
+                  82
+                ],
+                "Q": [
+                  16
+                ]
+              }
+            },
+            "$procdff$36": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  83
+                ],
+                "Q": [
+                  84
+                ]
+              }
+            },
+            "$procdff$37": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  85
+                ],
+                "Q": [
+                  81
+                ]
+              }
+            },
+            "$procdff$38": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93
+                ],
+                "Q": [
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ]
+              }
+            },
+            "$procdff$39": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  94
+                ],
+                "Q": [
+                  73
+                ]
+              }
+            },
+            "$procmux$18": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  16
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  81
+                ],
+                "Y": [
+                  95
+                ]
+              }
+            },
+            "$procmux$21": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  95
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  84
+                ],
+                "Y": [
+                  82
+                ]
+              }
+            },
+            "$procmux$24": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  81
+                ],
+                "B": [
+                  77
+                ],
+                "S": [
+                  79
+                ],
+                "Y": [
+                  85
+                ]
+              }
+            },
+            "$procmux$27": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  84
+                ],
+                "B": [
+                  76
+                ],
+                "S": [
+                  79
+                ],
+                "Y": [
+                  83
+                ]
+              }
+            },
+            "$procmux$30": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  73
+                ],
+                "B": [
+                  80
+                ],
+                "S": [
+                  74
+                ],
+                "Y": [
+                  94
+                ]
+              }
+            },
+            "$procmux$33": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  74
+                ],
+                "Y": [
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

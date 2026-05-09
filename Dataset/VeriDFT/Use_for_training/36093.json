@@ -1,0 +1,260 @@
+{
+  "modules": {
+    "main": {
+      "modules": {
+        "main": {
+          "ports": {
+            "clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "rst": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "c0": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "c1": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "c2": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "c3": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "c4": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            },
+            "c5": {
+              "direction": "output",
+              "bits": [
+                9
+              ]
+            },
+            "c6": {
+              "direction": "output",
+              "bits": [
+                10
+              ]
+            },
+            "c7": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_36093.v:34$5": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43
+                ]
+              }
+            },
+            "$eq$./module_36093.v:31$4": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  44
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  45
+                ]
+              }
+            },
+            "$not$./module_36093.v:27$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  46
+                ],
+                "Y": [
+                  44
+                ]
+              }
+            },
+            "$not$./module_36093.v:28$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  47
+                ],
+                "Y": [
+                  48
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  44
+                ],
+                "CLK": [
+                  48
+                ],
+                "D": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ],
+                "Q": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ]
+              }
+            },
+            "io_pin": {
+              "type": "SB_IO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "D_IN_0": [
+                  47
+                ],
+                "PACKAGE_PIN": [
+                  2
+                ]
+              }
+            },
+            "io_pin2": {
+              "type": "SB_IO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "D_IN_0": [
+                  46
+                ],
+                "PACKAGE_PIN": [
+                  3
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

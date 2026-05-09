@@ -1,0 +1,3423 @@
+{
+  "modules": {
+    "adc_mkid_4x_interface": {
+      "modules": {
+        "adc_mkid_4x_interface": {
+          "ports": {
+            "DRDY_I_p": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "DRDY_I_n": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "DRDY_Q_p": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "DRDY_Q_n": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "ADC_ext_in_p": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "ADC_ext_in_n": {
+              "direction": "input",
+              "bits": [
+                7
+              ]
+            },
+            "DI_p": {
+              "direction": "input",
+              "bits": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            },
+            "DI_n": {
+              "direction": "input",
+              "bits": [
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+              ]
+            },
+            "DQ_p": {
+              "direction": "input",
+              "bits": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43
+              ]
+            },
+            "DQ_n": {
+              "direction": "input",
+              "bits": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+              ]
+            },
+            "fpga_clk": {
+              "direction": "input",
+              "bits": [
+                56
+              ]
+            },
+            "adc_clk_out": {
+              "direction": "output",
+              "bits": [
+                57
+              ]
+            },
+            "adc_clk90_out": {
+              "direction": "output",
+              "bits": [
+                58
+              ]
+            },
+            "adc_clk180_out": {
+              "direction": "output",
+              "bits": [
+                59
+              ]
+            },
+            "adc_clk270_out": {
+              "direction": "output",
+              "bits": [
+                60
+              ]
+            },
+            "adc_dcm_locked": {
+              "direction": "output",
+              "bits": [
+                61
+              ]
+            },
+            "user_data_i0": {
+              "direction": "output",
+              "bits": [
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73
+              ]
+            },
+            "user_data_i1": {
+              "direction": "output",
+              "bits": [
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85
+              ]
+            },
+            "user_data_i2": {
+              "direction": "output",
+              "bits": [
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97
+              ]
+            },
+            "user_data_i3": {
+              "direction": "output",
+              "bits": [
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107,
+                108,
+                109
+              ]
+            },
+            "user_data_q0": {
+              "direction": "output",
+              "bits": [
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121
+              ]
+            },
+            "user_data_q1": {
+              "direction": "output",
+              "bits": [
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133
+              ]
+            },
+            "user_data_q2": {
+              "direction": "output",
+              "bits": [
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145
+              ]
+            },
+            "user_data_q3": {
+              "direction": "output",
+              "bits": [
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157
+              ]
+            },
+            "user_sync": {
+              "direction": "output",
+              "bits": [
+                158
+              ]
+            }
+          },
+          "cells": {
+            "$logic_not$./module_45785.v:125$10": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  160
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$11": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  161
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$12": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  162
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$13": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  163
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$2": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  164
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$3": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  165
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$4": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  166
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$5": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  167
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$6": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  168
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$7": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  169
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$8": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  170
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:125$9": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  171
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$14": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  172
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$15": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  173
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$16": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  174
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$17": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  175
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$18": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  176
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$19": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  177
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$20": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  178
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$21": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  179
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$22": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  180
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$23": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  181
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$24": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  182
+                ]
+              }
+            },
+            "$logic_not$./module_45785.v:187$25": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  159
+                ],
+                "Y": [
+                  183
+                ]
+              }
+            },
+            "$procdff$26": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  185,
+                  186,
+                  187,
+                  188,
+                  189,
+                  190,
+                  191,
+                  192,
+                  193,
+                  194,
+                  195,
+                  196
+                ],
+                "Q": [
+                  197,
+                  198,
+                  199,
+                  200,
+                  201,
+                  202,
+                  203,
+                  204,
+                  205,
+                  206,
+                  207,
+                  208
+                ]
+              }
+            },
+            "$procdff$27": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  209,
+                  210,
+                  211,
+                  212,
+                  213,
+                  214,
+                  215,
+                  216,
+                  217,
+                  218,
+                  219,
+                  220
+                ],
+                "Q": [
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232
+                ]
+              }
+            },
+            "$procdff$28": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238,
+                  239,
+                  240,
+                  241,
+                  242,
+                  243,
+                  244
+                ],
+                "Q": [
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252,
+                  253,
+                  254,
+                  255,
+                  256
+                ]
+              }
+            },
+            "$procdff$29": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268
+                ],
+                "Q": [
+                  269,
+                  270,
+                  271,
+                  272,
+                  273,
+                  274,
+                  275,
+                  276,
+                  277,
+                  278,
+                  279,
+                  280
+                ]
+              }
+            },
+            "$procdff$30": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  281,
+                  282,
+                  283,
+                  284,
+                  285,
+                  286,
+                  287,
+                  288,
+                  289,
+                  290,
+                  291,
+                  292
+                ],
+                "Q": [
+                  293,
+                  294,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  302,
+                  303,
+                  304
+                ]
+              }
+            },
+            "$procdff$31": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  305,
+                  306,
+                  307,
+                  308,
+                  309,
+                  310,
+                  311,
+                  312,
+                  313,
+                  314,
+                  315,
+                  316
+                ],
+                "Q": [
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325,
+                  326,
+                  327,
+                  328
+                ]
+              }
+            },
+            "$procdff$32": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  329,
+                  330,
+                  331,
+                  332,
+                  333,
+                  334,
+                  335,
+                  336,
+                  337,
+                  338,
+                  339,
+                  340
+                ],
+                "Q": [
+                  341,
+                  342,
+                  343,
+                  344,
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352
+                ]
+              }
+            },
+            "$procdff$33": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  184
+                ],
+                "D": [
+                  353,
+                  354,
+                  355,
+                  356,
+                  357,
+                  358,
+                  359,
+                  360,
+                  361,
+                  362,
+                  363,
+                  364
+                ],
+                "Q": [
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372,
+                  373,
+                  374,
+                  375,
+                  376
+                ]
+              }
+            },
+            "ADC_FIFO_Q_generate.ADC_FIFO_I": {
+              "type": "FIFO_DUALCLOCK_MACRO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ALMOSTEMPTY": [],
+                "ALMOSTFULL": [],
+                "DI": [
+                  197,
+                  198,
+                  199,
+                  200,
+                  201,
+                  202,
+                  203,
+                  204,
+                  205,
+                  206,
+                  207,
+                  208,
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232,
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252,
+                  253,
+                  254,
+                  255,
+                  256,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273,
+                  274,
+                  275,
+                  276,
+                  277,
+                  278,
+                  279,
+                  280
+                ],
+                "DO": [
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109
+                ],
+                "EMPTY": [
+                  377
+                ],
+                "FULL": [
+                  378
+                ],
+                "RDCLK": [
+                  56
+                ],
+                "RDCOUNT": [],
+                "RDEN": [
+                  "1"
+                ],
+                "RDERR": [],
+                "RST": [
+                  "0"
+                ],
+                "WRCLK": [
+                  184
+                ],
+                "WRCOUNT": [],
+                "WREN": [
+                  "1"
+                ],
+                "WRERR": []
+              }
+            },
+            "ADC_FIFO_Q_generate.ADC_FIFO_Q": {
+              "type": "FIFO_DUALCLOCK_MACRO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ALMOSTEMPTY": [],
+                "ALMOSTFULL": [],
+                "DI": [
+                  293,
+                  294,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  302,
+                  303,
+                  304,
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325,
+                  326,
+                  327,
+                  328,
+                  341,
+                  342,
+                  343,
+                  344,
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352,
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372,
+                  373,
+                  374,
+                  375,
+                  376
+                ],
+                "DO": [
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  119,
+                  120,
+                  121,
+                  122,
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143,
+                  144,
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157
+                ],
+                "EMPTY": [
+                  379
+                ],
+                "FULL": [
+                  380
+                ],
+                "RDCLK": [
+                  56
+                ],
+                "RDCOUNT": [],
+                "RDEN": [
+                  "1"
+                ],
+                "RDERR": [],
+                "RST": [
+                  "0"
+                ],
+                "WRCLK": [
+                  184
+                ],
+                "WRCOUNT": [],
+                "WREN": [
+                  "1"
+                ],
+                "WRERR": []
+              }
+            },
+            "BUFG_clk0": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  381
+                ],
+                "O": [
+                  184
+                ]
+              }
+            },
+            "BUFG_clk180": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  382
+                ],
+                "O": [
+                  383
+                ]
+              }
+            },
+            "BUFG_clk270": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  384
+                ],
+                "O": [
+                  385
+                ]
+              }
+            },
+            "BUFG_clk2x": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  386
+                ],
+                "O": [
+                  159
+                ]
+              }
+            },
+            "BUFG_clk90": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  387
+                ],
+                "O": [
+                  388
+                ]
+              }
+            },
+            "BUFG_data_clk": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  389
+                ],
+                "O": [
+                  390
+                ]
+              }
+            },
+            "CLK_DCM": {
+              "type": "MMCM_BASE",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFBIN": [
+                  184
+                ],
+                "CLKFBOUT": [],
+                "CLKFBOUTB": [],
+                "CLKIN1": [
+                  390
+                ],
+                "CLKOUT0": [
+                  381
+                ],
+                "CLKOUT0B": [],
+                "CLKOUT1": [
+                  387
+                ],
+                "CLKOUT1B": [],
+                "CLKOUT2": [
+                  382
+                ],
+                "CLKOUT2B": [],
+                "CLKOUT3": [
+                  384
+                ],
+                "CLKOUT3B": [],
+                "CLKOUT4": [
+                  386
+                ],
+                "CLKOUT5": [],
+                "CLKOUT6": [],
+                "LOCKED": [
+                  61
+                ],
+                "PWRDWN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ]
+              }
+            },
+            "IBUFDS_inst_adc_clk": {
+              "type": "IBUFGDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  2
+                ],
+                "IB": [
+                  3
+                ],
+                "O": [
+                  389
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[0].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  8
+                ],
+                "IB": [
+                  20
+                ],
+                "O": [
+                  391
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[10].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  18
+                ],
+                "IB": [
+                  30
+                ],
+                "O": [
+                  392
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[11].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  19
+                ],
+                "IB": [
+                  31
+                ],
+                "O": [
+                  393
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[1].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  9
+                ],
+                "IB": [
+                  21
+                ],
+                "O": [
+                  394
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[2].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  10
+                ],
+                "IB": [
+                  22
+                ],
+                "O": [
+                  395
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[3].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  11
+                ],
+                "IB": [
+                  23
+                ],
+                "O": [
+                  396
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[4].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  12
+                ],
+                "IB": [
+                  24
+                ],
+                "O": [
+                  397
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[5].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  13
+                ],
+                "IB": [
+                  25
+                ],
+                "O": [
+                  398
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[6].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  14
+                ],
+                "IB": [
+                  26
+                ],
+                "O": [
+                  399
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[7].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  15
+                ],
+                "IB": [
+                  27
+                ],
+                "O": [
+                  400
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[8].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  16
+                ],
+                "IB": [
+                  28
+                ],
+                "O": [
+                  401
+                ]
+              }
+            },
+            "IBUFDS_inst_data_i_generate[9].IBUFDS_inst_data_i": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  17
+                ],
+                "IB": [
+                  29
+                ],
+                "O": [
+                  402
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[0].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  32
+                ],
+                "IB": [
+                  44
+                ],
+                "O": [
+                  403
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[10].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  42
+                ],
+                "IB": [
+                  54
+                ],
+                "O": [
+                  404
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[11].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  43
+                ],
+                "IB": [
+                  55
+                ],
+                "O": [
+                  405
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[1].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  33
+                ],
+                "IB": [
+                  45
+                ],
+                "O": [
+                  406
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[2].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  34
+                ],
+                "IB": [
+                  46
+                ],
+                "O": [
+                  407
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[3].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  35
+                ],
+                "IB": [
+                  47
+                ],
+                "O": [
+                  408
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[4].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  36
+                ],
+                "IB": [
+                  48
+                ],
+                "O": [
+                  409
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[5].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  37
+                ],
+                "IB": [
+                  49
+                ],
+                "O": [
+                  410
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[6].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  38
+                ],
+                "IB": [
+                  50
+                ],
+                "O": [
+                  411
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[7].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  39
+                ],
+                "IB": [
+                  51
+                ],
+                "O": [
+                  412
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[8].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  40
+                ],
+                "IB": [
+                  52
+                ],
+                "O": [
+                  413
+                ]
+              }
+            },
+            "IBUFDS_inst_data_q_generate[9].IBUFDS_inst_data_q": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  41
+                ],
+                "IB": [
+                  53
+                ],
+                "O": [
+                  414
+                ]
+              }
+            },
+            "IBUFDS_inst_user_sync": {
+              "type": "IBUFGDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  6
+                ],
+                "IB": [
+                  7
+                ],
+                "O": [
+                  158
+                ]
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[0].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  164
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  391
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  257
+                ],
+                "Q2": [
+                  233
+                ],
+                "Q3": [
+                  209
+                ],
+                "Q4": [
+                  185
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[10].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  162
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  392
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  267
+                ],
+                "Q2": [
+                  243
+                ],
+                "Q3": [
+                  219
+                ],
+                "Q4": [
+                  195
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[11].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  163
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  393
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  268
+                ],
+                "Q2": [
+                  244
+                ],
+                "Q3": [
+                  220
+                ],
+                "Q4": [
+                  196
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[1].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  165
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  394
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  258
+                ],
+                "Q2": [
+                  234
+                ],
+                "Q3": [
+                  210
+                ],
+                "Q4": [
+                  186
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[2].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  166
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  395
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  259
+                ],
+                "Q2": [
+                  235
+                ],
+                "Q3": [
+                  211
+                ],
+                "Q4": [
+                  187
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[3].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  167
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  396
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  260
+                ],
+                "Q2": [
+                  236
+                ],
+                "Q3": [
+                  212
+                ],
+                "Q4": [
+                  188
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[4].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  168
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  397
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  261
+                ],
+                "Q2": [
+                  237
+                ],
+                "Q3": [
+                  213
+                ],
+                "Q4": [
+                  189
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[5].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  169
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  398
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  262
+                ],
+                "Q2": [
+                  238
+                ],
+                "Q3": [
+                  214
+                ],
+                "Q4": [
+                  190
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[6].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  170
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  399
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  263
+                ],
+                "Q2": [
+                  239
+                ],
+                "Q3": [
+                  215
+                ],
+                "Q4": [
+                  191
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[7].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  171
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  400
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  264
+                ],
+                "Q2": [
+                  240
+                ],
+                "Q3": [
+                  216
+                ],
+                "Q4": [
+                  192
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[8].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  160
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  401
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  265
+                ],
+                "Q2": [
+                  241
+                ],
+                "Q3": [
+                  217
+                ],
+                "Q4": [
+                  193
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_i_generate[9].ISERDES_NODELAY_inst_i": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  161
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  402
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  266
+                ],
+                "Q2": [
+                  242
+                ],
+                "Q3": [
+                  218
+                ],
+                "Q4": [
+                  194
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[0].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  172
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  403
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  353
+                ],
+                "Q2": [
+                  329
+                ],
+                "Q3": [
+                  305
+                ],
+                "Q4": [
+                  281
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[10].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  182
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  404
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  363
+                ],
+                "Q2": [
+                  339
+                ],
+                "Q3": [
+                  315
+                ],
+                "Q4": [
+                  291
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[11].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  183
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  405
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  364
+                ],
+                "Q2": [
+                  340
+                ],
+                "Q3": [
+                  316
+                ],
+                "Q4": [
+                  292
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[1].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  173
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  406
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  354
+                ],
+                "Q2": [
+                  330
+                ],
+                "Q3": [
+                  306
+                ],
+                "Q4": [
+                  282
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[2].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  174
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  407
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  355
+                ],
+                "Q2": [
+                  331
+                ],
+                "Q3": [
+                  307
+                ],
+                "Q4": [
+                  283
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[3].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  175
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  408
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  356
+                ],
+                "Q2": [
+                  332
+                ],
+                "Q3": [
+                  308
+                ],
+                "Q4": [
+                  284
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[4].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  176
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  409
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  357
+                ],
+                "Q2": [
+                  333
+                ],
+                "Q3": [
+                  309
+                ],
+                "Q4": [
+                  285
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[5].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  177
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  410
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  358
+                ],
+                "Q2": [
+                  334
+                ],
+                "Q3": [
+                  310
+                ],
+                "Q4": [
+                  286
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[6].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  178
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  411
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  359
+                ],
+                "Q2": [
+                  335
+                ],
+                "Q3": [
+                  311
+                ],
+                "Q4": [
+                  287
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[7].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  179
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  412
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  360
+                ],
+                "Q2": [
+                  336
+                ],
+                "Q3": [
+                  312
+                ],
+                "Q4": [
+                  288
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[8].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  180
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  413
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  361
+                ],
+                "Q2": [
+                  337
+                ],
+                "Q3": [
+                  313
+                ],
+                "Q4": [
+                  289
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            },
+            "ISERDES_NODELAY_inst_q_generate[9].ISERDES_NODELAY_inst_q": {
+              "type": "ISERDESE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "BITSLIP": [
+                  "0"
+                ],
+                "CE1": [
+                  "1"
+                ],
+                "CE2": [
+                  "0"
+                ],
+                "CLK": [
+                  159
+                ],
+                "CLKB": [
+                  181
+                ],
+                "CLKDIV": [
+                  184
+                ],
+                "D": [
+                  414
+                ],
+                "DDLY": [
+                  "0"
+                ],
+                "DYNCLKDIVSEL": [
+                  "0"
+                ],
+                "DYNCLKSEL": [
+                  "0"
+                ],
+                "O": [
+                  415
+                ],
+                "OCLK": [
+                  "0"
+                ],
+                "OFB": [
+                  416
+                ],
+                "Q1": [
+                  362
+                ],
+                "Q2": [
+                  338
+                ],
+                "Q3": [
+                  314
+                ],
+                "Q4": [
+                  290
+                ],
+                "Q5": [],
+                "Q6": [],
+                "RST": [
+                  "0"
+                ],
+                "SHIFTIN1": [
+                  "0"
+                ],
+                "SHIFTIN2": [
+                  "0"
+                ],
+                "SHIFTOUT1": [],
+                "SHIFTOUT2": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "modules": {
+    "hps_sdram_p0_generic_ddio": {
+      "modules": {
+        "hps_sdram_p0_generic_ddio": {
+          "ports": {
+            "datain": {
+              "direction": "input",
+              "bits": [
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            "halfratebypass": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "dataout": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "clk_hr": {
+              "direction": "input",
+              "bits": [
+                8
+              ]
+            },
+            "clk_fr": {
+              "direction": "input",
+              "bits": [
+                9
+              ]
+            }
+          },
+          "cells": {
+            "acblock[0].ddio_out": {
+              "type": "cyclonev_ddio_out",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clkhi": [
+                  9
+                ],
+                "clklo": [
+                  9
+                ],
+                "datainhi": [
+                  10
+                ],
+                "datainlo": [
+                  11
+                ],
+                "dataout": [
+                  7
+                ],
+                "muxsel": [
+                  9
+                ]
+              }
+            },
+            "acblock[0].hr_to_fr_hi": {
+              "type": "cyclonev_ddio_out",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clkhi": [
+                  8
+                ],
+                "clklo": [
+                  8
+                ],
+                "datainhi": [
+                  2
+                ],
+                "datainlo": [
+                  4
+                ],
+                "dataout": [
+                  10
+                ],
+                "hrbypass": [
+                  6
+                ],
+                "muxsel": [
+                  8
+                ]
+              }
+            },
+            "acblock[0].hr_to_fr_lo": {
+              "type": "cyclonev_ddio_out",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clkhi": [
+                  8
+                ],
+                "clklo": [
+                  8
+                ],
+                "datainhi": [
+                  3
+                ],
+                "datainlo": [
+                  5
+                ],
+                "dataout": [
+                  11
+                ],
+                "hrbypass": [
+                  6
+                ],
+                "muxsel": [
+                  8
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

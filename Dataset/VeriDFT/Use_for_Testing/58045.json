@@ -1,0 +1,174 @@
+{
+  "modules": {
+    "reginit": {
+      "modules": {
+        "reginit": {
+          "ports": {
+            "clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "data": {
+              "direction": "output",
+              "bits": [
+                3,
+                4,
+                5,
+                6
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_58045.v:11$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$not$./module_58045.v:11$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "Y": [
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  13
+                ],
+                "D": [
+                  "1"
+                ],
+                "Q": [
+                  7
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  13
+                ],
+                "D": [
+                  14,
+                  15,
+                  16,
+                  17
+                ],
+                "Q": [
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              }
+            },
+            "$ternary$./module_58045.v:11$4": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "1",
+                  "1"
+                ],
+                "S": [
+                  8
+                ],
+                "Y": [
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+              }
+            },
+            "PRES": {
+              "type": "prescaler",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk_in": [
+                  2
+                ],
+                "clk_out": [
+                  13
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

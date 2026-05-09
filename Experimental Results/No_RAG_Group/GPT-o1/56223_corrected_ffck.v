@@ -1,0 +1,163 @@
+module AUDIO_DAC_FIFO_corrected_ffc (	
+						iDATA,iWR,iWR_CLK,
+						oDATA,
+						oAUD_BCK,
+						oAUD_DATA,
+						oAUD_LRCK,
+						oAUD_XCK,
+					    iCLK_18_4,
+						iRST_N	);				
+parameter	REF_CLK			=	18432000;	
+parameter	SAMPLE_RATE		=	48000;		
+parameter	DATA_WIDTH		=	16;			
+parameter	CHANNEL_NUM		=	2;			
+input	[DATA_WIDTH-1:0]	iDATA;
+input						iWR;
+input						iWR_CLK;
+output	[DATA_WIDTH-1:0]	oDATA;
+wire	[DATA_WIDTH-1:0]	mDATA;
+reg							mDATA_RD;
+output	oAUD_DATA;
+output	oAUD_LRCK;
+output	oAUD_BCK;
+output	oAUD_XCK;
+reg		oAUD_BCK;
+input	iCLK_18_4;
+input	iRST_N;
+reg		[3:0]	BCK_DIV;
+reg		[8:0]	LRCK_1X_DIV;
+reg		[7:0]	LRCK_2X_DIV;
+reg		[3:0]	SEL_Cont;
+reg		[DATA_WIDTH-1:0]	DATA_Out;
+reg		[DATA_WIDTH-1:0]	DATA_Out_Tmp;
+reg							LRCK_1X;
+reg							LRCK_2X;
+
+// Additional register to detect edge of oAUD_BCK
+reg oAUD_BCK_d;
+
+// FIFO instantiation
+FIFO_16_256 	u0	(	.data(iDATA),
+						.wrreq(iWR),
+						.rdreq(mDATA_RD),
+						.rdclk(iCLK_18_4),
+						.wrclk(iWR_CLK),
+						.aclr(~iRST_N),
+						.q(mDATA),
+						.wrfull(oDATA[0]));
+
+// Generate XCK
+assign	oAUD_XCK	=	~iCLK_18_4;
+
+// BCK generation
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+	begin
+		BCK_DIV		<=	0;
+		oAUD_BCK	<=	0;
+	end
+	else
+	begin
+		if(BCK_DIV >= REF_CLK/(SAMPLE_RATE*DATA_WIDTH*CHANNEL_NUM*2)-1 )
+		begin
+			BCK_DIV		<=	0;
+			oAUD_BCK	<=	~oAUD_BCK;
+		end
+		else
+			BCK_DIV		<=	BCK_DIV+1;
+	end
+end
+
+// LRCK generation
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+	begin
+		LRCK_1X_DIV	<=	0;
+		LRCK_2X_DIV	<=	0;
+		LRCK_1X		<=	0;
+		LRCK_2X		<=	0;
+	end
+	else
+	begin
+		if(LRCK_1X_DIV >= REF_CLK/(SAMPLE_RATE*2)-1 )
+		begin
+			LRCK_1X_DIV	<=	0;
+			LRCK_1X	<=	~LRCK_1X;
+		end
+		else
+			LRCK_1X_DIV	<=	LRCK_1X_DIV+1;
+
+		if(LRCK_2X_DIV >= REF_CLK/(SAMPLE_RATE*4)-1 )
+		begin
+			LRCK_2X_DIV	<=	0;
+			LRCK_2X	<=	~LRCK_2X;
+		end
+		else
+			LRCK_2X_DIV	<=	LRCK_2X_DIV+1;		
+	end
+end
+
+assign	oAUD_LRCK	=	LRCK_1X;
+
+// FIFO read control
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+		mDATA_RD	<=	0;
+	else
+	begin
+		if(LRCK_1X_DIV == REF_CLK/(SAMPLE_RATE*2)-1 )
+			mDATA_RD	<=	1;
+		else
+			mDATA_RD	<=	0;
+	end
+end
+
+// Handle data output temporary register
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+		DATA_Out_Tmp	<=	0;
+	else
+	begin
+		if(LRCK_2X_DIV == REF_CLK/(SAMPLE_RATE*4)-1 )
+			DATA_Out_Tmp	<=	mDATA;
+	end
+end
+
+// Final data output register
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+		DATA_Out	<=	0;
+	else
+	begin
+		if(LRCK_2X_DIV == REF_CLK/(SAMPLE_RATE*4)-3 )
+			DATA_Out	<=	DATA_Out_Tmp;
+	end
+end
+
+// Detect oAUD_BCK edge and increment SEL_Cont using the primary clock
+always @(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+		oAUD_BCK_d <= 1'b0;
+	else
+		oAUD_BCK_d <= oAUD_BCK;
+end
+
+wire oAUD_BCK_negedge = (oAUD_BCK_d & ~oAUD_BCK);
+
+always@(posedge iCLK_18_4 or negedge iRST_N)
+begin
+	if(!iRST_N)
+		SEL_Cont	<= 0;
+	else if(oAUD_BCK_negedge)
+		SEL_Cont	<= SEL_Cont + 1;
+end
+
+assign	oAUD_DATA	=	DATA_Out[~SEL_Cont];
+
+endmodule

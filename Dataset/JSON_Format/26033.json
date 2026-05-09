@@ -1,0 +1,429 @@
+{
+  "modules": {
+    "jpeg_encoder": {
+      "modules": {
+        "jpeg_encoder": {
+          "ports": {
+            "clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "ena": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "dstrb": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "din": {
+              "direction": "input",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            "qnt_val": {
+              "direction": "input",
+              "bits": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ]
+            },
+            "qnt_cnt": {
+              "direction": "output",
+              "bits": [
+                21,
+                22,
+                23,
+                24,
+                25,
+                26
+              ]
+            },
+            "size": {
+              "direction": "output",
+              "bits": [
+                27,
+                28,
+                29,
+                30
+              ]
+            },
+            "rlen": {
+              "direction": "output",
+              "bits": [
+                31,
+                32,
+                33,
+                34
+              ]
+            },
+            "amp": {
+              "direction": "output",
+              "bits": [
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46
+              ]
+            },
+            "douten": {
+              "direction": "output",
+              "bits": [
+                47
+              ]
+            },
+            "SE": {
+              "direction": "input",
+              "bits": [
+                48
+              ]
+            },
+            "SI": {
+              "direction": "input",
+              "bits": [
+                49
+              ]
+            },
+            "SO": {
+              "direction": "output",
+              "bits": [
+                50
+              ]
+            }
+          },
+          "cells": {
+            "$procdff$7": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  51
+                ],
+                "Q": [
+                  52
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64
+                ],
+                "Q": [
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76
+                ]
+              }
+            },
+            "$procmux$3": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  52
+                ],
+                "B": [
+                  77
+                ],
+                "S": [
+                  3
+                ],
+                "Y": [
+                  51
+                ]
+              }
+            },
+            "$procmux$5": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76
+                ],
+                "B": [
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89
+                ],
+                "S": [
+                  3
+                ],
+                "Y": [
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64
+                ]
+              }
+            },
+            "fdct_zigzag": {
+              "type": "fdct",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "din": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "dout": [
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89
+                ],
+                "douten": [
+                  90
+                ],
+                "dstrb": [
+                  4
+                ],
+                "ena": [
+                  3
+                ],
+                "rst": [
+                  "1"
+                ]
+              }
+            },
+            "qnr": {
+              "type": "jpeg_qnr",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "din": [
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76
+                ],
+                "dout": [
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101
+                ],
+                "douten": [
+                  77
+                ],
+                "dstrb": [
+                  90
+                ],
+                "ena": [
+                  3
+                ],
+                "qnt_cnt": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "qnt_val": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20
+                ],
+                "rst": [
+                  "1"
+                ]
+              }
+            },
+            "rle": {
+              "type": "jpeg_rle",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "amp": [
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46
+                ],
+                "bstart": [],
+                "clk": [
+                  2
+                ],
+                "din": [
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  101
+                ],
+                "douten": [
+                  47
+                ],
+                "dstrb": [
+                  52
+                ],
+                "ena": [
+                  3
+                ],
+                "rlen": [
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "rst": [
+                  "1"
+                ],
+                "size": [
+                  27,
+                  28,
+                  29,
+                  30
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

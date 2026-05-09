@@ -1,0 +1,387 @@
+{
+  "modules": {
+    "spi_clock_divisor": {
+      "modules": {
+        "spi_clock_divisor": {
+          "ports": {
+            "clkin": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "reset": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "clkoutp": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "clkoutn": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {
+            "$add$/home/master/Desktop/dataset/code_delete_comments/module_9242.v:31$5": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ]
+              }
+            },
+            "$eq$/home/master/Desktop/dataset/code_delete_comments/module_9242.v:24$3": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "B": [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  20
+                ]
+              }
+            },
+            "$not$/home/master/Desktop/dataset/code_delete_comments/module_9242.v:13$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  21
+                ]
+              }
+            },
+            "$not$/home/master/Desktop/dataset/code_delete_comments/module_9242.v:27$4": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "Y": [
+                  23
+                ]
+              }
+            },
+            "$procdff$84": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  22
+                ],
+                "Q": [
+                  24
+                ]
+              }
+            },
+            "$procdff$85": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "Q": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              }
+            },
+            "$procdff$86": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  32
+                ],
+                "Q": [
+                  22
+                ]
+              }
+            },
+            "$procdff$87": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  33
+                ],
+                "Q": [
+                  4
+                ]
+              }
+            },
+            "$procdff$88": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  34
+                ],
+                "Q": [
+                  5
+                ]
+              }
+            },
+            "$procmux$68": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  22
+                ],
+                "Y": [
+                  35
+                ]
+              }
+            },
+            "$procmux$70": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  35
+                ],
+                "S": [
+                  20
+                ],
+                "Y": [
+                  34
+                ]
+              }
+            },
+            "$procmux$74": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "1"
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  22
+                ],
+                "Y": [
+                  36
+                ]
+              }
+            },
+            "$procmux$76": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  36
+                ],
+                "S": [
+                  20
+                ],
+                "Y": [
+                  33
+                ]
+              }
+            },
+            "$procmux$79": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "B": [
+                  23
+                ],
+                "S": [
+                  20
+                ],
+                "Y": [
+                  32
+                ]
+              }
+            },
+            "$procmux$82": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  20
+                ],
+                "Y": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

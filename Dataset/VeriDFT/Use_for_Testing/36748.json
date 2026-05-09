@@ -1,0 +1,1023 @@
+{
+  "modules": {
+    "uart6_kc705": {
+      "modules": {
+        "uart6_kc705": {
+          "ports": {
+            "uart_rx": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "uart_tx": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "clk200_p": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "clk200_n": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_36748.v:105$4": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              }
+            },
+            "$and$./module_36748.v:140$12": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "B": [
+                  23
+                ],
+                "Y": [
+                  24
+                ]
+              }
+            },
+            "$eq$./module_36748.v:100$3": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "B": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "Y": [
+                  33
+                ]
+              }
+            },
+            "$eq$./module_36748.v:123$6": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  34
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  35
+                ]
+              }
+            },
+            "$eq$./module_36748.v:123$7": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37
+                ],
+                "B": [
+                  "1",
+                  "0"
+                ],
+                "Y": [
+                  38
+                ]
+              }
+            },
+            "$eq$./module_36748.v:132$10": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  39
+                ]
+              }
+            },
+            "$eq$./module_36748.v:133$11": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  37
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  40
+                ]
+              }
+            },
+            "$eq$./module_36748.v:143$14": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  41
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  42
+                ]
+              }
+            },
+            "$eq$./module_36748.v:144$15": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  43
+                ]
+              }
+            },
+            "$logic_and$./module_36748.v:123$8": {
+              "type": "$logic_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  35
+                ],
+                "B": [
+                  38
+                ],
+                "Y": [
+                  44
+                ]
+              }
+            },
+            "$logic_and$./module_36748.v:66$1": {
+              "type": "$logic_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "B": [
+                  41
+                ],
+                "Y": [
+                  45
+                ]
+              }
+            },
+            "$procdff$42": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  47
+                ],
+                "Q": [
+                  48
+                ]
+              }
+            },
+            "$procdff$43": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  49
+                ],
+                "Q": [
+                  50
+                ]
+              }
+            },
+            "$procdff$44": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  36
+                ],
+                "Q": [
+                  23
+                ]
+              }
+            },
+            "$procdff$45": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58
+                ],
+                "Q": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ]
+              }
+            },
+            "$procdff$46": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66
+                ],
+                "Q": [
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74
+                ]
+              }
+            },
+            "$procdff$47": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  75
+                ],
+                "Q": [
+                  76
+                ]
+              }
+            },
+            "$procdff$48": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84
+                ],
+                "Q": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ]
+              }
+            },
+            "$procdff$49": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  46
+                ],
+                "D": [
+                  85
+                ],
+                "Q": [
+                  86
+                ]
+              }
+            },
+            "$procmux$16": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  50
+                ],
+                "B": [
+                  87
+                ],
+                "S": [
+                  43
+                ],
+                "Y": [
+                  88
+                ]
+              }
+            },
+            "$procmux$18": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  50
+                ],
+                "B": [
+                  88
+                ],
+                "S": [
+                  42
+                ],
+                "Y": [
+                  49
+                ]
+              }
+            },
+            "$procmux$20": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  48
+                ],
+                "B": [
+                  89
+                ],
+                "S": [
+                  43
+                ],
+                "Y": [
+                  90
+                ]
+              }
+            },
+            "$procmux$22": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  48
+                ],
+                "B": [
+                  90
+                ],
+                "S": [
+                  42
+                ],
+                "Y": [
+                  47
+                ]
+              }
+            },
+            "$procmux$24": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "B": [
+                  89,
+                  87,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96
+                ],
+                "S": [
+                  40
+                ],
+                "Y": [
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104
+                ]
+              }
+            },
+            "$procmux$26": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "B": [
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104
+                ],
+                "S": [
+                  39
+                ],
+                "Y": [
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58
+                ]
+              }
+            },
+            "$procmux$29": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  44
+                ],
+                "Y": [
+                  75
+                ]
+              }
+            },
+            "$procmux$32": {
+              "type": "$pmux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "x",
+                  "x",
+                  "x",
+                  "x",
+                  "x",
+                  "x",
+                  "x",
+                  "x"
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "1",
+                  "1",
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  119,
+                  120,
+                  121
+                ],
+                "Y": [
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66
+                ]
+              }
+            },
+            "$procmux$33_CMP0": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37
+                ],
+                "B": [
+                  "0",
+                  "1"
+                ],
+                "Y": [
+                  119
+                ]
+              }
+            },
+            "$procmux$34_CMP0": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37
+                ],
+                "B": [
+                  "1",
+                  "0"
+                ],
+                "Y": [
+                  120
+                ]
+              }
+            },
+            "$procmux$35_CMP0": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37
+                ],
+                "B": [
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  121
+                ]
+              }
+            },
+            "$procmux$37": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  33
+                ],
+                "Y": [
+                  85
+                ]
+              }
+            },
+            "$procmux$40": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  33
+                ],
+                "Y": [
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84
+                ]
+              }
+            },
+            "clock_divide": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  122
+                ],
+                "O": [
+                  46
+                ]
+              }
+            },
+            "diff_clk_buffer": {
+              "type": "IBUFGDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  4
+                ],
+                "IB": [
+                  5
+                ],
+                "O": [
+                  122
+                ]
+              }
+            },
+            "processor": {
+              "type": "kcpsm6",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "address": [
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134
+                ],
+                "bram_enable": [
+                  135
+                ],
+                "clk": [
+                  46
+                ],
+                "in_port": [
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74
+                ],
+                "instruction": [
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143,
+                  144,
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153
+                ],
+                "interrupt": [
+                  154
+                ],
+                "interrupt_ack": [
+                  154
+                ],
+                "k_write_strobe": [
+                  41
+                ],
+                "out_port": [
+                  89,
+                  87,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96
+                ],
+                "port_id": [
+                  36,
+                  37,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160
+                ],
+                "read_strobe": [
+                  34
+                ],
+                "reset": [
+                  161
+                ],
+                "sleep": [
+                  45
+                ],
+                "write_strobe": [
+                  22
+                ]
+              }
+            },
+            "program_rom": {
+              "type": "auto_baud_rate_control",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "address": [
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134
+                ],
+                "clk": [
+                  46
+                ],
+                "enable": [
+                  135
+                ],
+                "instruction": [
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143,
+                  144,
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153
+                ],
+                "rdl": [
+                  161
+                ]
+              }
+            },
+            "rx": {
+              "type": "uart_rx6",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "buffer_data_present": [
+                  116
+                ],
+                "buffer_full": [
+                  118
+                ],
+                "buffer_half_full": [
+                  117
+                ],
+                "buffer_read": [
+                  76
+                ],
+                "buffer_reset": [
+                  50
+                ],
+                "clk": [
+                  46
+                ],
+                "data_out": [
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110,
+                  111,
+                  112
+                ],
+                "en_16_x_baud": [
+                  86
+                ],
+                "serial_in": [
+                  2
+                ]
+              }
+            },
+            "tx": {
+              "type": "uart_tx6",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "buffer_data_present": [
+                  113
+                ],
+                "buffer_full": [
+                  115
+                ],
+                "buffer_half_full": [
+                  114
+                ],
+                "buffer_reset": [
+                  48
+                ],
+                "buffer_write": [
+                  24
+                ],
+                "clk": [
+                  46
+                ],
+                "data_in": [
+                  89,
+                  87,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96
+                ],
+                "en_16_x_baud": [
+                  86
+                ],
+                "serial_out": [
+                  3
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

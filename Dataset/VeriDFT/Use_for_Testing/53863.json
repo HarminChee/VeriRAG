@@ -1,0 +1,174 @@
+{
+  "modules": {
+    "_MAGMA_CELL_FF_": {
+      "modules": {
+        "_MAGMA_CELL_FF_": {
+          "ports": {
+            "DATA": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "CLOCK": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "CLEAR": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "PRESET": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "SLAVE_CLOCK": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "OUT": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            }
+          },
+          "cells": {
+            "$auto$proc_dff.cc:105:gen_dffsr_complex$908": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "1"
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$auto$proc_dff.cc:105:gen_dffsr_complex$914": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "Y": [
+                  9
+                ]
+              }
+            },
+            "$auto$proc_dff.cc:112:gen_dffsr_complex$910": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  5
+                ],
+                "Y": [
+                  10
+                ]
+              }
+            },
+            "$auto$proc_dff.cc:112:gen_dffsr_complex$916": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  10
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  4
+                ],
+                "Y": [
+                  11
+                ]
+              }
+            },
+            "$auto$proc_dff.cc:119:gen_dffsr_complex$912": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  8
+                ],
+                "S": [
+                  5
+                ],
+                "Y": [
+                  12
+                ]
+              }
+            },
+            "$auto$proc_dff.cc:119:gen_dffsr_complex$918": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  12
+                ],
+                "B": [
+                  9
+                ],
+                "S": [
+                  4
+                ],
+                "Y": [
+                  13
+                ]
+              }
+            },
+            "$procdff$920": {
+              "type": "$dffsr",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  3
+                ],
+                "CLR": [
+                  13
+                ],
+                "D": [
+                  2
+                ],
+                "Q": [
+                  7
+                ],
+                "SET": [
+                  11
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

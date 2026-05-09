@@ -1,0 +1,148 @@
+`timescale 1ns/1ns
+module sequencer_corrected_clk (
+  input reset, 
+  input rtcal_expired, 
+  input trext, 
+  input dr, 
+  input docrc, 
+  input databitsrc, 
+  input datadone, 
+  input oscclk,
+  input [9:0] trcal,
+  input [1:0] m,
+  output dataclk, 
+  output modout, 
+  output txsetupdone, 
+  output txdone
+);
+
+reg done;
+reg tx_stop;
+wire violation;
+wire crcdone, preambledone;
+wire crcinclk, crcbitin;
+wire txbitsrc, crcbitsrc, preamblebitsrc;
+wire crcoutclk, preambleclk, dataclk;
+wire txclk, txbitclk;
+
+txclkdivide U_DIV (
+  .reset(reset), 
+  .oscclk(oscclk), 
+  .trcal(trcal), 
+  .dr(dr), 
+  .txclk(txclk)
+);
+
+tx U_TX0 (
+  .reset(reset),
+  .rtcal_expired(rtcal_expired),
+  .tx_stop(tx_stop),
+  .txclk(txclk),
+  .txbitsrc(txbitsrc),
+  .violation(violation),
+  .m(m),
+  .modout(modout),
+  .txbitclk(txbitclk),
+  .txsetupdone(txsetupdone),
+  .txdone(txdone)
+);
+
+preamble U_PRE (
+  .reset(reset),
+  .preambleclk(preambleclk),
+  .m(m),
+  .trext(trext),
+  .preamblebitsrc(preamblebitsrc),
+  .violation(violation),
+  .preambledone(preambledone)
+);
+
+crc16 U_CRC (
+  .reset(reset),
+  .crcinclk(crcinclk),
+  .crcbitin(crcbitin),
+  .crcoutclk(crcoutclk),
+  .crcbitsrc(crcbitsrc),
+  .crcdone(crcdone)
+);
+
+reg [1:0] state;
+parameter STATE_PRE  = 2'd0;
+parameter STATE_DATA = 2'd1;
+parameter STATE_CRC  = 2'd2;
+parameter STATE_END  = 2'd3;
+
+wire [3:0] bitsrc;
+assign bitsrc[0] = preamblebitsrc;
+assign bitsrc[1] = databitsrc;
+assign bitsrc[2] = crcbitsrc;
+assign bitsrc[3] = 1'b1;
+assign txbitsrc  = bitsrc[state];
+
+reg bit_transition;
+assign crcbitin   = databitsrc;
+assign crcinclk   = txbitclk & (state == STATE_DATA) & docrc;
+assign preambleclk= txbitclk && (state == STATE_PRE) && (!done);
+assign dataclk    = txbitclk && (state == STATE_DATA || (state == STATE_PRE && bit_transition && !done));
+assign crcoutclk  = txbitclk && (state == STATE_CRC);
+
+reg txbitclk_d;
+
+always @(posedge oscclk or posedge reset) begin
+  if (reset) begin
+    state          <= STATE_PRE;
+    done           <= 1'b0;
+    bit_transition <= 1'b0;
+    tx_stop        <= 1'b0;
+    txbitclk_d     <= 1'b0;
+  end 
+  else begin
+    txbitclk_d <= txbitclk;
+    if (~txbitclk & txbitclk_d) begin
+      if (done) begin
+        // no action
+      end 
+      else if (state == STATE_PRE) begin
+        if (bit_transition) begin
+          state          <= STATE_DATA;
+          bit_transition <= 1'b0;
+        end 
+        else if (preambledone) begin
+          bit_transition <= 1'b1;
+        end
+      end 
+      else if (state == STATE_DATA) begin
+        if (bit_transition) begin
+          if (datadone && docrc)
+            state <= STATE_CRC;
+          else if (datadone)
+            state <= STATE_END;
+          bit_transition <= 1'b0;
+        end 
+        else if (datadone) begin
+          bit_transition <= 1'b1;
+        end
+      end 
+      else if (state == STATE_CRC) begin
+        if (bit_transition) begin
+          state          <= STATE_END;
+          bit_transition <= 1'b0;
+        end 
+        else if (crcdone) begin
+          bit_transition <= 1'b1;
+        end
+      end 
+      else if (state == STATE_END) begin
+        if (txdone) begin
+          state <= STATE_PRE;
+          done  <= 1'b1;
+        end 
+        else begin
+          tx_stop <= 1'b1;
+        end
+      end
+    end
+  end
+end
+
+endmodule

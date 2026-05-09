@@ -1,0 +1,58 @@
+`timescale 1ns / 1ps
+module video_counters_corrected_ffc(
+    input clk,
+    output reg video_vsync = 1,
+    output reg video_hsync = 1,
+    output video_on,
+    output reg [10:1] hpos = 0,
+    output reg [9:1] vpos = 0
+);
+    integer hcnt = 0, vcnt = 0;
+    reg video_von = 0, video_hon = 0;
+    reg video_hsync_d = 0;
+
+    assign video_on = video_von & video_hon;
+
+    always @(posedge clk) begin
+        video_hsync_d <= video_hsync;
+        if (!video_hsync_d & video_hsync) begin
+            vcnt <= vcnt + 1;
+            vpos <= video_von ? vpos + 1 : 0;
+            case (vcnt)
+                2: video_vsync <= 1;
+                31: video_von <= 1;
+                511: video_von <= 0;
+                521: begin
+                    vcnt <= 0;
+                    video_vsync <= 0;
+                end
+            endcase
+        end
+
+        if (!video_hon) begin
+            hcnt <= hcnt - 1;
+        end else begin
+            hpos <= hpos + 1;
+        end
+
+        if (hpos == 639) begin
+            video_hon <= 0;
+        end
+
+        if (hpos == 640) begin
+            if (!hcnt) begin
+                hcnt <= 96;
+                video_hsync <= 0;
+                hpos <= 0;
+            end
+        end else if (!hcnt) begin
+            if (!video_hsync) begin
+                video_hsync <= 1;
+                hcnt <= 48;
+            end else if (!video_hon) begin
+                video_hon <= 1;
+                hcnt <= 16;
+            end
+        end
+    end
+endmodule

@@ -1,0 +1,3471 @@
+{
+  "modules": {
+    "PCIEBus_pipe_wrapper": {
+      "modules": {
+        "PCIEBus_pipe_wrapper": {
+          "ports": {
+            "PIPE_CLK": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "PIPE_RESET_N": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "PIPE_PCLK": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "PIPE_TXDATA": {
+              "direction": "input",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36
+              ]
+            },
+            "PIPE_TXDATAK": {
+              "direction": "input",
+              "bits": [
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "PIPE_TXP": {
+              "direction": "output",
+              "bits": [
+                41
+              ]
+            },
+            "PIPE_TXN": {
+              "direction": "output",
+              "bits": [
+                42
+              ]
+            },
+            "PIPE_RXP": {
+              "direction": "input",
+              "bits": [
+                43
+              ]
+            },
+            "PIPE_RXN": {
+              "direction": "input",
+              "bits": [
+                44
+              ]
+            },
+            "PIPE_RXDATA": {
+              "direction": "output",
+              "bits": [
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76
+              ]
+            },
+            "PIPE_RXDATAK": {
+              "direction": "output",
+              "bits": [
+                77,
+                78,
+                79,
+                80
+              ]
+            },
+            "PIPE_TXDETECTRX": {
+              "direction": "input",
+              "bits": [
+                81
+              ]
+            },
+            "PIPE_TXELECIDLE": {
+              "direction": "input",
+              "bits": [
+                82
+              ]
+            },
+            "PIPE_TXCOMPLIANCE": {
+              "direction": "input",
+              "bits": [
+                83
+              ]
+            },
+            "PIPE_RXPOLARITY": {
+              "direction": "input",
+              "bits": [
+                84
+              ]
+            },
+            "PIPE_POWERDOWN": {
+              "direction": "input",
+              "bits": [
+                85,
+                86
+              ]
+            },
+            "PIPE_RATE": {
+              "direction": "input",
+              "bits": [
+                87,
+                88
+              ]
+            },
+            "PIPE_TXMARGIN": {
+              "direction": "input",
+              "bits": [
+                89,
+                90,
+                91
+              ]
+            },
+            "PIPE_TXSWING": {
+              "direction": "input",
+              "bits": [
+                92
+              ]
+            },
+            "PIPE_TXDEEMPH": {
+              "direction": "input",
+              "bits": [
+                93
+              ]
+            },
+            "PIPE_TXEQ_CONTROL": {
+              "direction": "input",
+              "bits": [
+                94,
+                95
+              ]
+            },
+            "PIPE_TXEQ_PRESET": {
+              "direction": "input",
+              "bits": [
+                96,
+                97,
+                98,
+                99
+              ]
+            },
+            "PIPE_TXEQ_PRESET_DEFAULT": {
+              "direction": "input",
+              "bits": [
+                100,
+                101,
+                102,
+                103
+              ]
+            },
+            "PIPE_TXEQ_DEEMPH": {
+              "direction": "input",
+              "bits": [
+                104,
+                105,
+                106,
+                107,
+                108,
+                109
+              ]
+            },
+            "PIPE_RXEQ_CONTROL": {
+              "direction": "input",
+              "bits": [
+                110,
+                111
+              ]
+            },
+            "PIPE_RXEQ_PRESET": {
+              "direction": "input",
+              "bits": [
+                112,
+                113,
+                114
+              ]
+            },
+            "PIPE_RXEQ_LFFS": {
+              "direction": "input",
+              "bits": [
+                115,
+                116,
+                117,
+                118,
+                119,
+                120
+              ]
+            },
+            "PIPE_RXEQ_TXPRESET": {
+              "direction": "input",
+              "bits": [
+                121,
+                122,
+                123,
+                124
+              ]
+            },
+            "PIPE_RXEQ_USER_EN": {
+              "direction": "input",
+              "bits": [
+                125
+              ]
+            },
+            "PIPE_RXEQ_USER_TXCOEFF": {
+              "direction": "input",
+              "bits": [
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143
+              ]
+            },
+            "PIPE_RXEQ_USER_MODE": {
+              "direction": "input",
+              "bits": [
+                144
+              ]
+            },
+            "PIPE_TXEQ_FS": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_TXEQ_LF": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_TXEQ_COEFF": {
+              "direction": "output",
+              "bits": [
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162
+              ]
+            },
+            "PIPE_TXEQ_DONE": {
+              "direction": "output",
+              "bits": [
+                163
+              ]
+            },
+            "PIPE_RXEQ_NEW_TXCOEFF": {
+              "direction": "output",
+              "bits": [
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181
+              ]
+            },
+            "PIPE_RXEQ_LFFS_SEL": {
+              "direction": "output",
+              "bits": [
+                182
+              ]
+            },
+            "PIPE_RXEQ_ADAPT_DONE": {
+              "direction": "output",
+              "bits": [
+                183
+              ]
+            },
+            "PIPE_RXEQ_DONE": {
+              "direction": "output",
+              "bits": [
+                184
+              ]
+            },
+            "PIPE_RXVALID": {
+              "direction": "output",
+              "bits": [
+                185
+              ]
+            },
+            "PIPE_PHYSTATUS": {
+              "direction": "output",
+              "bits": [
+                186
+              ]
+            },
+            "PIPE_PHYSTATUS_RST": {
+              "direction": "output",
+              "bits": [
+                187
+              ]
+            },
+            "PIPE_RXELECIDLE": {
+              "direction": "output",
+              "bits": [
+                188
+              ]
+            },
+            "PIPE_RXSTATUS": {
+              "direction": "output",
+              "bits": [
+                189,
+                190,
+                191
+              ]
+            },
+            "PIPE_RXBUFSTATUS": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_MMCM_RST_N": {
+              "direction": "input",
+              "bits": [
+                192
+              ]
+            },
+            "PIPE_RXSLIDE": {
+              "direction": "input",
+              "bits": [
+                193
+              ]
+            },
+            "PIPE_CPLL_LOCK": {
+              "direction": "output",
+              "bits": [
+                194
+              ]
+            },
+            "PIPE_QPLL_LOCK": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_PCLK_LOCK": {
+              "direction": "output",
+              "bits": [
+                195
+              ]
+            },
+            "PIPE_RXCDRLOCK": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_USERCLK1": {
+              "direction": "output",
+              "bits": [
+                196
+              ]
+            },
+            "PIPE_USERCLK2": {
+              "direction": "output",
+              "bits": [
+                197
+              ]
+            },
+            "PIPE_RXUSRCLK": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_RXOUTCLK": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_TXSYNC_DONE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_RXSYNC_DONE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_GEN3_RDY": {
+              "direction": "output",
+              "bits": [
+                198
+              ]
+            },
+            "PIPE_RXCHANISALIGNED": {
+              "direction": "output",
+              "bits": [
+                199
+              ]
+            },
+            "PIPE_ACTIVE_LANE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_PCLK_IN": {
+              "direction": "input",
+              "bits": [
+                200
+              ]
+            },
+            "PIPE_RXUSRCLK_IN": {
+              "direction": "input",
+              "bits": [
+                201
+              ]
+            },
+            "PIPE_RXOUTCLK_IN": {
+              "direction": "input",
+              "bits": [
+                202
+              ]
+            },
+            "PIPE_DCLK_IN": {
+              "direction": "input",
+              "bits": [
+                203
+              ]
+            },
+            "PIPE_USERCLK1_IN": {
+              "direction": "input",
+              "bits": [
+                204
+              ]
+            },
+            "PIPE_USERCLK2_IN": {
+              "direction": "input",
+              "bits": [
+                205
+              ]
+            },
+            "PIPE_OOBCLK_IN": {
+              "direction": "input",
+              "bits": [
+                206
+              ]
+            },
+            "PIPE_MMCM_LOCK_IN": {
+              "direction": "input",
+              "bits": [
+                207
+              ]
+            },
+            "PIPE_TXOUTCLK_OUT": {
+              "direction": "output",
+              "bits": [
+                208
+              ]
+            },
+            "PIPE_RXOUTCLK_OUT": {
+              "direction": "output",
+              "bits": [
+                209
+              ]
+            },
+            "PIPE_PCLK_SEL_OUT": {
+              "direction": "output",
+              "bits": [
+                210
+              ]
+            },
+            "PIPE_GEN3_OUT": {
+              "direction": "output",
+              "bits": [
+                211
+              ]
+            },
+            "PIPE_TXPRBSSEL": {
+              "direction": "input",
+              "bits": [
+                212,
+                213,
+                214
+              ]
+            },
+            "PIPE_RXPRBSSEL": {
+              "direction": "input",
+              "bits": [
+                215,
+                216,
+                217
+              ]
+            },
+            "PIPE_TXPRBSFORCEERR": {
+              "direction": "input",
+              "bits": [
+                218
+              ]
+            },
+            "PIPE_RXPRBSCNTRESET": {
+              "direction": "input",
+              "bits": [
+                219
+              ]
+            },
+            "PIPE_LOOPBACK": {
+              "direction": "input",
+              "bits": [
+                220,
+                221,
+                222
+              ]
+            },
+            "PIPE_RXPRBSERR": {
+              "direction": "output",
+              "bits": [
+                223
+              ]
+            },
+            "PIPE_RST_FSM": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_QRST_FSM": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_RATE_FSM": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_SYNC_FSM_TX": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_SYNC_FSM_RX": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_DRP_FSM": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_TXEQ_FSM": {
+              "direction": "output",
+              "bits": [
+                224,
+                225,
+                226,
+                227,
+                228,
+                229
+              ]
+            },
+            "PIPE_RXEQ_FSM": {
+              "direction": "output",
+              "bits": [
+                230,
+                231,
+                232,
+                233,
+                234,
+                235
+              ]
+            },
+            "PIPE_QDRP_FSM": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_RST_IDLE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_QRST_IDLE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_RATE_IDLE": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_JTAG_EN": {
+              "direction": "input",
+              "bits": [
+                236
+              ]
+            },
+            "PIPE_JTAG_RDY": {
+              "direction": "output",
+              "bits": [
+                237
+              ]
+            },
+            "PIPE_DEBUG_0": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_1": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_2": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_3": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_4": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_5": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_6": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_7": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_8": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG_9": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "PIPE_DEBUG": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "PIPE_DMONITOROUT": {
+              "direction": "output",
+              "bits": [
+                238,
+                239,
+                240,
+                241,
+                242,
+                243,
+                244,
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251,
+                252
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_17799.v:785$31": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  253
+                ]
+              }
+            },
+            "$extend$./module_17799.v:308$4": {
+              "type": "$pos",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254
+                ],
+                "Y": [
+                  255,
+                  256
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:311$9": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  257
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:518$11": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  258
+                ],
+                "Y": [
+                  259
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:519$12": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  260
+                ],
+                "Y": [
+                  261
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:611$13": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  258
+                ],
+                "Y": [
+                  262
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:663$14": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  258
+                ],
+                "Y": [
+                  263
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:741$27": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  264
+                ],
+                "Y": [
+                  265
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:801$37": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  258
+                ],
+                "Y": [
+                  266
+                ]
+              }
+            },
+            "$logic_not$./module_17799.v:858$38": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  264
+                ],
+                "Y": [
+                  267
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:671$15": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  268
+                ],
+                "B": [
+                  269
+                ],
+                "Y": [
+                  270
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:744$28": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  271
+                ],
+                "B": [
+                  272
+                ],
+                "Y": [
+                  273
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:745$29": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  274
+                ],
+                "B": [
+                  275
+                ],
+                "Y": [
+                  276
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:746$30": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  277
+                ],
+                "B": [
+                  278
+                ],
+                "Y": [
+                  279
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:917$41": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  280
+                ],
+                "B": [
+                  281
+                ],
+                "Y": [
+                  282
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:960$44": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  283
+                ],
+                "B": [
+                  284
+                ],
+                "Y": [
+                  285
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:961$45": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  258
+                ],
+                "B": [
+                  286
+                ],
+                "Y": [
+                  287
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:967$46": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  288
+                ],
+                "B": [
+                  289
+                ],
+                "Y": [
+                  290
+                ]
+              }
+            },
+            "$logic_or$./module_17799.v:968$47": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  291
+                ],
+                "B": [
+                  292
+                ],
+                "Y": [
+                  293
+                ]
+              }
+            },
+            "$not$./module_17799.v:307$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254
+                ],
+                "Y": [
+                  294
+                ]
+              }
+            },
+            "$not$./module_17799.v:308$5": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  255,
+                  256
+                ],
+                "Y": [
+                  295,
+                  296
+                ]
+              }
+            },
+            "$not$./module_17799.v:672$16": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254
+                ],
+                "Y": [
+                  297
+                ]
+              }
+            },
+            "$not$./module_17799.v:702$21": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254
+                ],
+                "Y": [
+                  298
+                ]
+              }
+            },
+            "$or$./module_17799.v:307$2": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  299
+                ],
+                "B": [
+                  294
+                ],
+                "Y": [
+                  300
+                ]
+              }
+            },
+            "$or$./module_17799.v:308$6": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  301,
+                  "1"
+                ],
+                "B": [
+                  295,
+                  296
+                ],
+                "Y": [
+                  302,
+                  303
+                ]
+              }
+            },
+            "$or$./module_17799.v:672$17": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  304
+                ],
+                "B": [
+                  297
+                ],
+                "Y": [
+                  305
+                ]
+              }
+            },
+            "$or$./module_17799.v:702$22": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  299
+                ],
+                "B": [
+                  298
+                ],
+                "Y": [
+                  306
+                ]
+              }
+            },
+            "$procdff$54": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  "1"
+                ],
+                "Q": [
+                  307
+                ]
+              }
+            },
+            "$procdff$55": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  307
+                ],
+                "Q": [
+                  308
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:307$3": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  300
+                ],
+                "Y": [
+                  309
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:308$7": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  302,
+                  303
+                ],
+                "Y": [
+                  310
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:672$18": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  305
+                ],
+                "Y": [
+                  311
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:701$19": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  312
+                ],
+                "Y": [
+                  313
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:702$23": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  306
+                ],
+                "Y": [
+                  314
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:703$25": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  315
+                ],
+                "Y": [
+                  316
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:860$39": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  211
+                ],
+                "Y": [
+                  317
+                ]
+              }
+            },
+            "$reduce_and$./module_17799.v:945$43": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  318
+                ],
+                "Y": [
+                  319
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1063$48": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  320
+                ],
+                "B": [
+                  321
+                ],
+                "S": [
+                  "1"
+                ],
+                "Y": [
+                  322
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1073$49": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "1"
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  211
+                ],
+                "Y": [
+                  323
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1074$50": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  211
+                ],
+                "Y": [
+                  324
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1144$52": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  325,
+                  326,
+                  327,
+                  328,
+                  329
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  "1"
+                ],
+                "Y": [
+                  330,
+                  331,
+                  332,
+                  333,
+                  334
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1144$53": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  330,
+                  331,
+                  332,
+                  333,
+                  334
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  "1"
+                ],
+                "Y": [
+                  335,
+                  336,
+                  337,
+                  338,
+                  339
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:1170$10": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  340
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  183
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:701$20": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  313
+                ],
+                "B": [
+                  312
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  341
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:702$24": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  314
+                ],
+                "B": [
+                  299
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  342
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:703$26": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  316
+                ],
+                "B": [
+                  315
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  343
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:785$32": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  253
+                ],
+                "Y": [
+                  344
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:786$33": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352,
+                  353
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  236
+                ],
+                "Y": [
+                  354,
+                  355,
+                  356,
+                  357,
+                  358,
+                  359,
+                  360,
+                  361,
+                  362
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:787$34": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  363
+                ],
+                "B": [
+                  344
+                ],
+                "S": [
+                  236
+                ],
+                "Y": [
+                  364
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:788$35": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372,
+                  373,
+                  374,
+                  375,
+                  376,
+                  377,
+                  378,
+                  379,
+                  380
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  236
+                ],
+                "Y": [
+                  381,
+                  382,
+                  383,
+                  384,
+                  385,
+                  386,
+                  387,
+                  388,
+                  389,
+                  390,
+                  391,
+                  392,
+                  393,
+                  394,
+                  395,
+                  396
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:789$36": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  397
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  236
+                ],
+                "Y": [
+                  398
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:916$40": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  399
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  400
+                ]
+              }
+            },
+            "$ternary$./module_17799.v:917$42": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  282
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ],
+                "Y": [
+                  401
+                ]
+              }
+            },
+            "pipe_clock_int.pipe_clock_i": {
+              "type": "PCIEBus_pipe_clock",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK_CLK": [
+                  2
+                ],
+                "CLK_DCLK": [
+                  402
+                ],
+                "CLK_GEN3": [
+                  211
+                ],
+                "CLK_MMCM_LOCK": [
+                  195
+                ],
+                "CLK_OOBCLK": [
+                  320
+                ],
+                "CLK_PCLK": [
+                  4
+                ],
+                "CLK_PCLK_SEL": [
+                  210
+                ],
+                "CLK_RST_N": [
+                  192
+                ],
+                "CLK_RXOUTCLK_IN": [
+                  209
+                ],
+                "CLK_RXOUTCLK_OUT": [
+                  403
+                ],
+                "CLK_RXUSRCLK": [
+                  404
+                ],
+                "CLK_TXOUTCLK": [
+                  208
+                ],
+                "CLK_USERCLK1": [
+                  196
+                ],
+                "CLK_USERCLK2": [
+                  197
+                ]
+              }
+            },
+            "pipe_lane[0].gt_wrapper_i": {
+              "type": "PCIEBus_gt_wrapper",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "GT_CPLLLOCK": [
+                  194
+                ],
+                "GT_CPLLPD": [
+                  285
+                ],
+                "GT_CPLLRESET": [
+                  287
+                ],
+                "GT_DMONITOROUT": [
+                  238,
+                  239,
+                  240,
+                  241,
+                  242,
+                  243,
+                  244,
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252
+                ],
+                "GT_DRPADDR": [
+                  354,
+                  355,
+                  356,
+                  357,
+                  358,
+                  359,
+                  360,
+                  361,
+                  362
+                ],
+                "GT_DRPCLK": [
+                  402
+                ],
+                "GT_DRPDI": [
+                  381,
+                  382,
+                  383,
+                  384,
+                  385,
+                  386,
+                  387,
+                  388,
+                  389,
+                  390,
+                  391,
+                  392,
+                  393,
+                  394,
+                  395,
+                  396
+                ],
+                "GT_DRPDO": [
+                  405,
+                  406,
+                  407,
+                  408,
+                  409,
+                  410,
+                  411,
+                  412,
+                  413,
+                  414,
+                  415,
+                  416,
+                  417,
+                  418,
+                  419,
+                  420
+                ],
+                "GT_DRPEN": [
+                  364
+                ],
+                "GT_DRPRDY": [
+                  421
+                ],
+                "GT_DRPWE": [
+                  398
+                ],
+                "GT_EYESCANRESET": [
+                  422
+                ],
+                "GT_GEN3": [
+                  211
+                ],
+                "GT_GTREFCLK0": [
+                  2
+                ],
+                "GT_GTRXRESET": [
+                  423
+                ],
+                "GT_GTTXRESET": [
+                  423
+                ],
+                "GT_LOOPBACK": [
+                  220,
+                  221,
+                  222
+                ],
+                "GT_MASTER": [
+                  "1"
+                ],
+                "GT_OOBCLK": [
+                  322
+                ],
+                "GT_PHYSTATUS": [
+                  424
+                ],
+                "GT_QPLLCLK": [
+                  425
+                ],
+                "GT_QPLLREFCLK": [
+                  426
+                ],
+                "GT_RESETOVRD": [
+                  427
+                ],
+                "GT_RXBUFRESET": [
+                  428
+                ],
+                "GT_RXBUFSTATUS": [
+                  429,
+                  430,
+                  431
+                ],
+                "GT_RXBYTEISALIGNED": [
+                  432
+                ],
+                "GT_RXBYTEREALIGN": [
+                  433
+                ],
+                "GT_RXCDRFREQRESET": [
+                  434
+                ],
+                "GT_RXCDRLOCK": [
+                  435
+                ],
+                "GT_RXCDRRESET": [
+                  436
+                ],
+                "GT_RXCHANISALIGNED": [
+                  199
+                ],
+                "GT_RXCHARISCOMMA": [
+                  437,
+                  438,
+                  439,
+                  440
+                ],
+                "GT_RXCHBONDEN": [
+                  "0"
+                ],
+                "GT_RXCHBONDI": [
+                  335,
+                  336,
+                  337,
+                  338,
+                  339
+                ],
+                "GT_RXCHBONDLEVEL": [
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "GT_RXCHBONDMASTER": [
+                  323
+                ],
+                "GT_RXCHBONDO": [
+                  325,
+                  326,
+                  327,
+                  328,
+                  329
+                ],
+                "GT_RXCHBONDSLAVE": [
+                  324
+                ],
+                "GT_RXCOMMADET": [
+                  441
+                ],
+                "GT_RXDATA": [
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76
+                ],
+                "GT_RXDATAK": [
+                  77,
+                  78,
+                  79,
+                  80
+                ],
+                "GT_RXDDIEN": [
+                  442
+                ],
+                "GT_RXDFELPMRESET": [
+                  443
+                ],
+                "GT_RXDLYBYPASS": [
+                  444
+                ],
+                "GT_RXDLYEN": [
+                  445
+                ],
+                "GT_RXDLYSRESET": [
+                  446
+                ],
+                "GT_RXDLYSRESETDONE": [
+                  315
+                ],
+                "GT_RXELECIDLE": [
+                  188
+                ],
+                "GT_RXN": [
+                  44
+                ],
+                "GT_RXOUTCLK": [
+                  209
+                ],
+                "GT_RXP": [
+                  43
+                ],
+                "GT_RXPCSRESET": [
+                  447
+                ],
+                "GT_RXPHALIGN": [
+                  448
+                ],
+                "GT_RXPHALIGNDONE": [
+                  301
+                ],
+                "GT_RXPHALIGNEN": [
+                  449
+                ],
+                "GT_RXPMARESET": [
+                  293
+                ],
+                "GT_RXPMARESETDONE": [
+                  450
+                ],
+                "GT_RXPOLARITY": [
+                  84
+                ],
+                "GT_RXPOWERDOWN": [
+                  85,
+                  86
+                ],
+                "GT_RXPRBSCNTRESET": [
+                  219
+                ],
+                "GT_RXPRBSERR": [
+                  223
+                ],
+                "GT_RXPRBSSEL": [
+                  215,
+                  216,
+                  217
+                ],
+                "GT_RXRATE": [
+                  451,
+                  452,
+                  453
+                ],
+                "GT_RXRATEDONE": [
+                  454
+                ],
+                "GT_RXRESETDONE": [
+                  455
+                ],
+                "GT_RXSLIDE": [
+                  193
+                ],
+                "GT_RXSTATUS": [
+                  189,
+                  190,
+                  191
+                ],
+                "GT_RXSYNCALLIN": [
+                  310
+                ],
+                "GT_RXSYNCDONE": [
+                  456
+                ],
+                "GT_RXSYNCIN": [
+                  457
+                ],
+                "GT_RXSYNCMODE": [
+                  "1"
+                ],
+                "GT_RXSYNCOUT": [
+                  457
+                ],
+                "GT_RXSYSCLKSEL": [
+                  458,
+                  459
+                ],
+                "GT_RXUSERRDY": [
+                  460
+                ],
+                "GT_RXUSRCLK": [
+                  404
+                ],
+                "GT_RXUSRCLK2": [
+                  404
+                ],
+                "GT_RXVALID": [
+                  461
+                ],
+                "GT_RX_CONVERGE": [
+                  319
+                ],
+                "GT_TXCOMPLIANCE": [
+                  83
+                ],
+                "GT_TXDATA": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36
+                ],
+                "GT_TXDATAK": [
+                  37,
+                  38,
+                  39,
+                  40
+                ],
+                "GT_TXDEEMPH": [
+                  93
+                ],
+                "GT_TXDETECTRX": [
+                  81
+                ],
+                "GT_TXDLYBYPASS": [
+                  462
+                ],
+                "GT_TXDLYEN": [
+                  463
+                ],
+                "GT_TXDLYSRESET": [
+                  464
+                ],
+                "GT_TXDLYSRESETDONE": [
+                  312
+                ],
+                "GT_TXELECIDLE": [
+                  82
+                ],
+                "GT_TXMAINCURSOR": [
+                  465,
+                  466,
+                  467,
+                  468,
+                  469,
+                  470,
+                  471
+                ],
+                "GT_TXMARGIN": [
+                  89,
+                  90,
+                  91
+                ],
+                "GT_TXN": [
+                  42
+                ],
+                "GT_TXOUTCLK": [
+                  208
+                ],
+                "GT_TXP": [
+                  41
+                ],
+                "GT_TXPCSRESET": [
+                  472
+                ],
+                "GT_TXPHALIGN": [
+                  473
+                ],
+                "GT_TXPHALIGNDONE": [
+                  299
+                ],
+                "GT_TXPHALIGNEN": [
+                  474
+                ],
+                "GT_TXPHDLYRESET": [
+                  475
+                ],
+                "GT_TXPHINIT": [
+                  476
+                ],
+                "GT_TXPHINITDONE": [
+                  304
+                ],
+                "GT_TXPMARESET": [
+                  290
+                ],
+                "GT_TXPOSTCURSOR": [
+                  477,
+                  478,
+                  479,
+                  480,
+                  481
+                ],
+                "GT_TXPOWERDOWN": [
+                  85,
+                  86
+                ],
+                "GT_TXPRBSFORCEERR": [
+                  218
+                ],
+                "GT_TXPRBSSEL": [
+                  212,
+                  213,
+                  214
+                ],
+                "GT_TXPRECURSOR": [
+                  482,
+                  483,
+                  484,
+                  485,
+                  486
+                ],
+                "GT_TXRATE": [
+                  451,
+                  452,
+                  453
+                ],
+                "GT_TXRATEDONE": [
+                  487
+                ],
+                "GT_TXRESETDONE": [
+                  488
+                ],
+                "GT_TXSWING": [
+                  92
+                ],
+                "GT_TXSYNCALLIN": [
+                  309
+                ],
+                "GT_TXSYNCDONE": [
+                  489
+                ],
+                "GT_TXSYNCIN": [
+                  490
+                ],
+                "GT_TXSYNCMODE": [
+                  "1"
+                ],
+                "GT_TXSYNCOUT": [
+                  490
+                ],
+                "GT_TXSYSCLKSEL": [
+                  458,
+                  459
+                ],
+                "GT_TXUSERRDY": [
+                  460
+                ],
+                "GT_TXUSRCLK": [
+                  4
+                ],
+                "GT_TXUSRCLK2": [
+                  4
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_drp.pipe_drp_i": {
+              "type": "PCIEBus_pipe_drp",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "DRP_ADDR": [
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352,
+                  353
+                ],
+                "DRP_CLK": [
+                  402
+                ],
+                "DRP_DI": [
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372,
+                  373,
+                  374,
+                  375,
+                  376,
+                  377,
+                  378,
+                  379,
+                  380
+                ],
+                "DRP_DO": [
+                  405,
+                  406,
+                  407,
+                  408,
+                  409,
+                  410,
+                  411,
+                  412,
+                  413,
+                  414,
+                  415,
+                  416,
+                  417,
+                  418,
+                  419,
+                  420
+                ],
+                "DRP_DONE": [
+                  491
+                ],
+                "DRP_EN": [
+                  363
+                ],
+                "DRP_FSM": [
+                  237,
+                  492,
+                  493
+                ],
+                "DRP_GTXRESET": [
+                  423
+                ],
+                "DRP_RATE": [
+                  87,
+                  88
+                ],
+                "DRP_RDY": [
+                  421
+                ],
+                "DRP_RST_N": [
+                  265
+                ],
+                "DRP_START": [
+                  279
+                ],
+                "DRP_WE": [
+                  397
+                ],
+                "DRP_X16": [
+                  276
+                ],
+                "DRP_X16X20_MODE": [
+                  273
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_eq.pipe_eq_i": {
+              "type": "PCIEBus_pipe_eq",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "EQ_CLK": [
+                  4
+                ],
+                "EQ_GEN3": [
+                  211
+                ],
+                "EQ_RST_N": [
+                  266
+                ],
+                "EQ_RXEQ_ADAPT_DONE": [
+                  340
+                ],
+                "EQ_RXEQ_CONTROL": [
+                  110,
+                  111
+                ],
+                "EQ_RXEQ_DONE": [
+                  184
+                ],
+                "EQ_RXEQ_FSM": [
+                  230,
+                  231,
+                  232,
+                  233,
+                  234,
+                  235
+                ],
+                "EQ_RXEQ_LFFS": [
+                  115,
+                  116,
+                  117,
+                  118,
+                  119,
+                  120
+                ],
+                "EQ_RXEQ_LFFS_SEL": [
+                  182
+                ],
+                "EQ_RXEQ_NEW_TXCOEFF": [
+                  164,
+                  165,
+                  166,
+                  167,
+                  168,
+                  169,
+                  170,
+                  171,
+                  172,
+                  173,
+                  174,
+                  175,
+                  176,
+                  177,
+                  178,
+                  179,
+                  180,
+                  181
+                ],
+                "EQ_RXEQ_PRESET": [
+                  112,
+                  113,
+                  114
+                ],
+                "EQ_RXEQ_TXPRESET": [
+                  121,
+                  122,
+                  123,
+                  124
+                ],
+                "EQ_RXEQ_USER_EN": [
+                  125
+                ],
+                "EQ_RXEQ_USER_MODE": [
+                  144
+                ],
+                "EQ_RXEQ_USER_TXCOEFF": [
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143
+                ],
+                "EQ_TXEQ_CONTROL": [
+                  94,
+                  95
+                ],
+                "EQ_TXEQ_DEEMPH": [
+                  494
+                ],
+                "EQ_TXEQ_DEEMPH_IN": [
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109
+                ],
+                "EQ_TXEQ_DEEMPH_OUT": [
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162
+                ],
+                "EQ_TXEQ_DONE": [
+                  163
+                ],
+                "EQ_TXEQ_FSM": [
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229
+                ],
+                "EQ_TXEQ_MAINCURSOR": [
+                  465,
+                  466,
+                  467,
+                  468,
+                  469,
+                  470,
+                  471
+                ],
+                "EQ_TXEQ_POSTCURSOR": [
+                  477,
+                  478,
+                  479,
+                  480,
+                  481
+                ],
+                "EQ_TXEQ_PRECURSOR": [
+                  482,
+                  483,
+                  484,
+                  485,
+                  486
+                ],
+                "EQ_TXEQ_PRESET": [
+                  96,
+                  97,
+                  98,
+                  99
+                ],
+                "EQ_TXEQ_PRESET_DEFAULT": [
+                  100,
+                  101,
+                  102,
+                  103
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_quad.pipe_common.qpll_drp_i": {
+              "type": "PCIEBus_qpll_drp",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "DRP_ADDR": [
+                  495,
+                  496,
+                  497,
+                  498,
+                  499,
+                  500,
+                  501,
+                  502
+                ],
+                "DRP_CLK": [
+                  402
+                ],
+                "DRP_CRSCODE": [
+                  503,
+                  504,
+                  505,
+                  506,
+                  507,
+                  508
+                ],
+                "DRP_DI": [
+                  509,
+                  510,
+                  511,
+                  512,
+                  513,
+                  514,
+                  515,
+                  516,
+                  517,
+                  518,
+                  519,
+                  520,
+                  521,
+                  522,
+                  523,
+                  524
+                ],
+                "DRP_DO": [
+                  525,
+                  526,
+                  527,
+                  528,
+                  529,
+                  530,
+                  531,
+                  532,
+                  533,
+                  534,
+                  535,
+                  536,
+                  537,
+                  538,
+                  539,
+                  540
+                ],
+                "DRP_DONE": [
+                  541
+                ],
+                "DRP_EN": [
+                  542
+                ],
+                "DRP_FSM": [
+                  543,
+                  544,
+                  545,
+                  546,
+                  547,
+                  548,
+                  549,
+                  550,
+                  551
+                ],
+                "DRP_GEN3": [
+                  317
+                ],
+                "DRP_OVRD": [
+                  552
+                ],
+                "DRP_QPLLLOCK": [
+                  553
+                ],
+                "DRP_QPLLRESET": [
+                  281
+                ],
+                "DRP_RDY": [
+                  554
+                ],
+                "DRP_RST_N": [
+                  267
+                ],
+                "DRP_START": [
+                  555
+                ],
+                "DRP_WE": [
+                  556
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_quad.pipe_common.qpll_wrapper_i": {
+              "type": "PCIEBus_qpll_wrapper",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "QPLL_DRPADDR": [
+                  495,
+                  496,
+                  497,
+                  498,
+                  499,
+                  500,
+                  501,
+                  502
+                ],
+                "QPLL_DRPCLK": [
+                  402
+                ],
+                "QPLL_DRPDI": [
+                  509,
+                  510,
+                  511,
+                  512,
+                  513,
+                  514,
+                  515,
+                  516,
+                  517,
+                  518,
+                  519,
+                  520,
+                  521,
+                  522,
+                  523,
+                  524
+                ],
+                "QPLL_DRPDO": [
+                  525,
+                  526,
+                  527,
+                  528,
+                  529,
+                  530,
+                  531,
+                  532,
+                  533,
+                  534,
+                  535,
+                  536,
+                  537,
+                  538,
+                  539,
+                  540
+                ],
+                "QPLL_DRPEN": [
+                  542
+                ],
+                "QPLL_DRPRDY": [
+                  554
+                ],
+                "QPLL_DRPWE": [
+                  556
+                ],
+                "QPLL_GTGREFCLK": [
+                  2
+                ],
+                "QPLL_QPLLLOCK": [
+                  553
+                ],
+                "QPLL_QPLLLOCKDETCLK": [
+                  "0"
+                ],
+                "QPLL_QPLLOUTCLK": [
+                  425
+                ],
+                "QPLL_QPLLOUTREFCLK": [
+                  426
+                ],
+                "QPLL_QPLLPD": [
+                  400
+                ],
+                "QPLL_QPLLRESET": [
+                  401
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_rate.pipe_rate_i": {
+              "type": "PCIEBus_pipe_rate",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RATE_ACTIVE_LANE": [
+                  254
+                ],
+                "RATE_CLK": [
+                  4
+                ],
+                "RATE_CPLLLOCK": [
+                  194
+                ],
+                "RATE_CPLLPD": [
+                  284
+                ],
+                "RATE_CPLLRESET": [
+                  286
+                ],
+                "RATE_DONE": [
+                  557
+                ],
+                "RATE_DRP_DONE": [
+                  491
+                ],
+                "RATE_DRP_START": [
+                  278
+                ],
+                "RATE_DRP_X16": [
+                  275
+                ],
+                "RATE_DRP_X16X20_MODE": [
+                  272
+                ],
+                "RATE_FSM": [
+                  558,
+                  559,
+                  560,
+                  561,
+                  562
+                ],
+                "RATE_GEN3": [
+                  211
+                ],
+                "RATE_IDLE": [
+                  563
+                ],
+                "RATE_MMCM_LOCK": [
+                  195
+                ],
+                "RATE_PCLK_SEL": [
+                  210
+                ],
+                "RATE_PHYSTATUS": [
+                  424
+                ],
+                "RATE_QPLLLOCK": [
+                  553
+                ],
+                "RATE_QPLLPD": [
+                  564
+                ],
+                "RATE_QPLLRESET": [
+                  565
+                ],
+                "RATE_RATE_IN": [
+                  87,
+                  88
+                ],
+                "RATE_RATE_OUT": [
+                  451,
+                  452,
+                  453
+                ],
+                "RATE_RESETOVRD_DONE": [
+                  566
+                ],
+                "RATE_RESETOVRD_START": [
+                  567
+                ],
+                "RATE_RST_IDLE": [
+                  568
+                ],
+                "RATE_RST_N": [
+                  262
+                ],
+                "RATE_RXPMARESET": [
+                  292
+                ],
+                "RATE_RXPMARESETDONE": [
+                  450
+                ],
+                "RATE_RXRATEDONE": [
+                  454
+                ],
+                "RATE_RXRESETDONE": [
+                  455
+                ],
+                "RATE_RXSYNC": [
+                  569
+                ],
+                "RATE_RXSYNC_DONE": [
+                  570
+                ],
+                "RATE_RXSYNC_START": [
+                  571
+                ],
+                "RATE_SYSCLKSEL": [
+                  458,
+                  459
+                ],
+                "RATE_TXPMARESET": [
+                  289
+                ],
+                "RATE_TXRATEDONE": [
+                  487
+                ],
+                "RATE_TXRESETDONE": [
+                  488
+                ],
+                "RATE_TXSYNC_DONE": [
+                  572
+                ],
+                "RATE_TXSYNC_START": [
+                  268
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_sync_i": {
+              "type": "PCIEBus_pipe_sync",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "SYNC_ACTIVE_LANE": [
+                  254
+                ],
+                "SYNC_CLK": [
+                  4
+                ],
+                "SYNC_FSM_RX": [
+                  573,
+                  574,
+                  575,
+                  576,
+                  577,
+                  578,
+                  579
+                ],
+                "SYNC_FSM_TX": [
+                  580,
+                  581,
+                  582,
+                  583,
+                  584,
+                  585
+                ],
+                "SYNC_GEN3": [
+                  211
+                ],
+                "SYNC_MMCM_LOCK": [
+                  195
+                ],
+                "SYNC_RATE_IDLE": [
+                  563
+                ],
+                "SYNC_RST_N": [
+                  263
+                ],
+                "SYNC_RXCDRLOCK": [
+                  586
+                ],
+                "SYNC_RXDDIEN": [
+                  442
+                ],
+                "SYNC_RXDLYBYPASS": [
+                  444
+                ],
+                "SYNC_RXDLYEN": [
+                  445
+                ],
+                "SYNC_RXDLYSRESET": [
+                  446
+                ],
+                "SYNC_RXDLYSRESETDONE": [
+                  343
+                ],
+                "SYNC_RXELECIDLE": [
+                  188
+                ],
+                "SYNC_RXPHALIGN": [
+                  448
+                ],
+                "SYNC_RXPHALIGNDONE_M": [
+                  301
+                ],
+                "SYNC_RXPHALIGNDONE_S": [
+                  "0"
+                ],
+                "SYNC_RXPHALIGNEN": [
+                  449
+                ],
+                "SYNC_RXSYNCDONE": [
+                  456
+                ],
+                "SYNC_RXSYNC_DONE": [
+                  570
+                ],
+                "SYNC_RXSYNC_DONEM_IN": [
+                  587
+                ],
+                "SYNC_RXSYNC_DONEM_OUT": [
+                  587
+                ],
+                "SYNC_RXSYNC_START": [
+                  571
+                ],
+                "SYNC_SLAVE": [
+                  "0"
+                ],
+                "SYNC_TXDLYBYPASS": [
+                  462
+                ],
+                "SYNC_TXDLYEN": [
+                  463
+                ],
+                "SYNC_TXDLYSRESET": [
+                  464
+                ],
+                "SYNC_TXDLYSRESETDONE": [
+                  341
+                ],
+                "SYNC_TXPHALIGN": [
+                  473
+                ],
+                "SYNC_TXPHALIGNDONE": [
+                  342
+                ],
+                "SYNC_TXPHALIGNEN": [
+                  474
+                ],
+                "SYNC_TXPHDLYRESET": [
+                  475
+                ],
+                "SYNC_TXPHINIT": [
+                  476
+                ],
+                "SYNC_TXPHINITDONE": [
+                  311
+                ],
+                "SYNC_TXSYNCDONE": [
+                  489
+                ],
+                "SYNC_TXSYNC_DONE": [
+                  572
+                ],
+                "SYNC_TXSYNC_START": [
+                  270
+                ]
+              }
+            },
+            "pipe_lane[0].pipe_user_i": {
+              "type": "PCIEBus_pipe_user",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "USER_ACTIVE_LANE": [
+                  254
+                ],
+                "USER_EYESCANRESET": [
+                  422
+                ],
+                "USER_GEN3_RDY": [
+                  198
+                ],
+                "USER_OOBCLK": [
+                  321
+                ],
+                "USER_OOBCLK_IN": [
+                  320
+                ],
+                "USER_PCLK_SEL": [
+                  210
+                ],
+                "USER_PHYSTATUS_IN": [
+                  424
+                ],
+                "USER_PHYSTATUS_OUT": [
+                  186
+                ],
+                "USER_PHYSTATUS_RST": [
+                  187
+                ],
+                "USER_RATE_DONE": [
+                  557
+                ],
+                "USER_RATE_GEN3": [
+                  211
+                ],
+                "USER_RATE_IDLE": [
+                  563
+                ],
+                "USER_RATE_RXSYNC": [
+                  569
+                ],
+                "USER_RESETDONE": [
+                  588
+                ],
+                "USER_RESETOVRD": [
+                  427
+                ],
+                "USER_RESETOVRD_DONE": [
+                  566
+                ],
+                "USER_RESETOVRD_START": [
+                  567
+                ],
+                "USER_RST_IDLE": [
+                  568
+                ],
+                "USER_RST_N": [
+                  259
+                ],
+                "USER_RXBUFRESET": [
+                  428
+                ],
+                "USER_RXCDRFREQRESET": [
+                  434
+                ],
+                "USER_RXCDRLOCK_IN": [
+                  435
+                ],
+                "USER_RXCDRLOCK_OUT": [
+                  586
+                ],
+                "USER_RXCDRRESET": [
+                  436
+                ],
+                "USER_RXDFELPMRESET": [
+                  443
+                ],
+                "USER_RXEQ_ADAPT_DONE": [
+                  340
+                ],
+                "USER_RXPCSRESET": [
+                  447
+                ],
+                "USER_RXPMARESET": [
+                  291
+                ],
+                "USER_RXRESETDONE": [
+                  455
+                ],
+                "USER_RXSTATUS_IN": [
+                  191
+                ],
+                "USER_RXUSRCLK": [
+                  404
+                ],
+                "USER_RXUSRCLK_RST_N": [
+                  261
+                ],
+                "USER_RXVALID_IN": [
+                  461
+                ],
+                "USER_RXVALID_OUT": [
+                  185
+                ],
+                "USER_RX_CONVERGE": [
+                  318
+                ],
+                "USER_TXCOMPLIANCE": [
+                  83
+                ],
+                "USER_TXELECIDLE": [
+                  82
+                ],
+                "USER_TXPCSRESET": [
+                  472
+                ],
+                "USER_TXPMARESET": [
+                  288
+                ],
+                "USER_TXRESETDONE": [
+                  488
+                ],
+                "USER_TXUSRCLK": [
+                  4
+                ]
+              }
+            },
+            "pipe_reset.pipe_reset_i": {
+              "type": "PCIEBus_pipe_reset",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RST_CLK": [
+                  4
+                ],
+                "RST_CPLLLOCK": [
+                  194
+                ],
+                "RST_CPLLPD": [
+                  283
+                ],
+                "RST_CPLLRESET": [
+                  258
+                ],
+                "RST_DCLK": [
+                  402
+                ],
+                "RST_DCLK_RESET": [
+                  264
+                ],
+                "RST_DRP_DONE": [
+                  491
+                ],
+                "RST_DRP_START": [
+                  277
+                ],
+                "RST_DRP_X16": [
+                  274
+                ],
+                "RST_DRP_X16X20_MODE": [
+                  271
+                ],
+                "RST_FSM": [
+                  589,
+                  590,
+                  591,
+                  592,
+                  593
+                ],
+                "RST_GTRESET": [
+                  423
+                ],
+                "RST_IDLE": [
+                  568
+                ],
+                "RST_MMCM_LOCK": [
+                  195
+                ],
+                "RST_PHYSTATUS": [
+                  424
+                ],
+                "RST_QPLL_IDLE": [
+                  594
+                ],
+                "RST_RATE_IDLE": [
+                  563
+                ],
+                "RST_RESETDONE": [
+                  588
+                ],
+                "RST_RST_N": [
+                  308
+                ],
+                "RST_RXCDRLOCK": [
+                  586
+                ],
+                "RST_RXPMARESETDONE": [
+                  450
+                ],
+                "RST_RXUSRCLK": [
+                  404
+                ],
+                "RST_RXUSRCLK_RESET": [
+                  260
+                ],
+                "RST_TXSYNC_DONE": [
+                  572
+                ],
+                "RST_TXSYNC_START": [
+                  269
+                ],
+                "RST_USERRDY": [
+                  460
+                ]
+              }
+            },
+            "qpll_reset.qpll_reset_i": {
+              "type": "PCIEBus_qpll_reset",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "QRST_CLK": [
+                  4
+                ],
+                "QRST_CPLLLOCK": [
+                  194
+                ],
+                "QRST_DRP_DONE": [
+                  541
+                ],
+                "QRST_DRP_START": [
+                  555
+                ],
+                "QRST_FSM": [
+                  595,
+                  596,
+                  597,
+                  598
+                ],
+                "QRST_IDLE": [
+                  594
+                ],
+                "QRST_MMCM_LOCK": [
+                  195
+                ],
+                "QRST_OVRD": [
+                  552
+                ],
+                "QRST_QPLLLOCK": [
+                  553
+                ],
+                "QRST_QPLLPD_IN": [
+                  564
+                ],
+                "QRST_QPLLPD_OUT": [
+                  399
+                ],
+                "QRST_QPLLRESET_IN": [
+                  565
+                ],
+                "QRST_QPLLRESET_OUT": [
+                  280
+                ],
+                "QRST_RATE": [
+                  87,
+                  88
+                ],
+                "QRST_RST_N": [
+                  308
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

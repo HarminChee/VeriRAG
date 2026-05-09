@@ -1,0 +1,541 @@
+{
+  "modules": {
+    "hi_read_tx": {
+      "modules": {
+        "hi_read_tx": {
+          "ports": {
+            "pck0": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "ck_1356meg": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "ck_1356megb": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "pwr_lo": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_hi": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "pwr_oe1": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_oe2": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_oe3": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "pwr_oe4": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "adc_d": {
+              "direction": "input",
+              "bits": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            },
+            "adc_clk": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "ssp_frame": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "ssp_din": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "ssp_dout": {
+              "direction": "input",
+              "bits": [
+                17
+              ]
+            },
+            "ssp_clk": {
+              "direction": "output",
+              "bits": [
+                18
+              ]
+            },
+            "cross_hi": {
+              "direction": "input",
+              "bits": [
+                19
+              ]
+            },
+            "cross_lo": {
+              "direction": "input",
+              "bits": [
+                20
+              ]
+            },
+            "dbg": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "shallow_modulation": {
+              "direction": "input",
+              "bits": [
+                21
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_56393.v:44$5": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  18
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59
+                ]
+              }
+            },
+            "$add$./module_56393.v:48$7": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  60,
+                  61,
+                  62
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94
+                ]
+              }
+            },
+            "$and$./module_56393.v:36$3": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4
+                ],
+                "B": [
+                  17
+                ],
+                "Y": [
+                  95
+                ]
+              }
+            },
+            "$eq$./module_56393.v:49$8": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  60,
+                  61,
+                  62
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  15
+                ]
+              }
+            },
+            "$not$./module_56393.v:32$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  17
+                ],
+                "Y": [
+                  96
+                ]
+              }
+            },
+            "$not$./module_56393.v:55$12": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  97
+                ],
+                "Y": [
+                  98
+                ]
+              }
+            },
+            "$procdff$28": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  3
+                ],
+                "D": [
+                  99
+                ],
+                "Q": [
+                  16
+                ]
+              }
+            },
+            "$procdff$29": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  18
+                ],
+                "D": [
+                  63,
+                  64,
+                  65
+                ],
+                "Q": [
+                  60,
+                  61,
+                  62
+                ]
+              }
+            },
+            "$procdff$30": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  3
+                ],
+                "D": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "Q": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  18
+                ]
+              }
+            },
+            "$procmux$13": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  16
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  98
+                ],
+                "Y": [
+                  100
+                ]
+              }
+            },
+            "$procmux$16": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  100
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  101
+                ],
+                "Y": [
+                  99
+                ]
+              }
+            },
+            "$procmux$21": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  95
+                ],
+                "B": [
+                  4
+                ],
+                "S": [
+                  21
+                ],
+                "Y": [
+                  5
+                ]
+              }
+            },
+            "$procmux$24": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  96
+                ],
+                "S": [
+                  21
+                ],
+                "Y": [
+                  6
+                ]
+              }
+            },
+            "$reduce_and$./module_56393.v:54$10": {
+              "type": "$reduce_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "Y": [
+                  101
+                ]
+              }
+            },
+            "$reduce_or$./module_56393.v:55$11": {
+              "type": "$reduce_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "Y": [
+                  97
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

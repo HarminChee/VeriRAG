@@ -1,0 +1,201 @@
+{
+  "modules": {
+    "Location": {
+      "modules": {
+        "Location": {
+          "ports": {
+            "a": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "b": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "c": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "d": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "e": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "f": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            }
+          },
+          "cells": {
+            "$and$./module_47313.v:44$3": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "B": [
+                  3
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$and$./module_47313.v:44$4": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8
+                ],
+                "B": [
+                  6
+                ],
+                "Y": [
+                  5
+                ]
+              }
+            },
+            "$not$./module_47313.v:41$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4
+                ],
+                "Y": [
+                  9
+                ]
+              }
+            },
+            "$not$./module_47313.v:46$5": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  5
+                ],
+                "Y": [
+                  7
+                ]
+              }
+            },
+            "$procdff$11": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  10
+                ],
+                "D": [
+                  11
+                ],
+                "Q": [
+                  4
+                ]
+              }
+            },
+            "$procmux$7": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4
+                ],
+                "B": [
+                  9
+                ],
+                "S": [
+                  12
+                ],
+                "Y": [
+                  13
+                ]
+              }
+            },
+            "$procmux$9": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4
+                ],
+                "B": [
+                  13
+                ],
+                "S": [
+                  14
+                ],
+                "Y": [
+                  11
+                ]
+              }
+            },
+            "lfosc": {
+              "type": "GP_LFOSC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKOUT": [
+                  10
+                ],
+                "PWRDN": [
+                  "0"
+                ]
+              }
+            },
+            "lfosc_cnt": {
+              "type": "GP_COUNT8",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  10
+                ],
+                "OUT": [
+                  12
+                ],
+                "RST": [
+                  "0"
+                ]
+              }
+            },
+            "por": {
+              "type": "GP_POR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RST_DONE": [
+                  14
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

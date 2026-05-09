@@ -1,0 +1,147 @@
+{
+  "modules": {
+    "ctrl_clk_xilinx": {
+      "modules": {
+        "ctrl_clk_xilinx": {
+          "ports": {
+            "inclk0": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "c0": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "c1": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "c2": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "locked": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            }
+          },
+          "cells": {
+            "$not$./module_54263.v:54$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$procdff$4": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  3
+                ],
+                "D": [
+                  8
+                ],
+                "Q": [
+                  7
+                ]
+              }
+            },
+            "BUFG_100": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  9
+                ],
+                "O": [
+                  3
+                ]
+              }
+            },
+            "BUFG_25": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  7
+                ],
+                "O": [
+                  5
+                ]
+              }
+            },
+            "BUFG_50": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  10
+                ],
+                "O": [
+                  4
+                ]
+              }
+            },
+            "dll": {
+              "type": "DCM",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK0": [
+                  10
+                ],
+                "CLK2X": [
+                  9
+                ],
+                "CLKFB": [
+                  4
+                ],
+                "CLKIN": [
+                  11
+                ],
+                "LOCKED": [
+                  6
+                ]
+              }
+            },
+            "pll": {
+              "type": "DCM",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFX": [
+                  11
+                ],
+                "CLKIN": [
+                  2
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

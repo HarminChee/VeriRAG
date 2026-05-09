@@ -1,0 +1,428 @@
+{
+  "modules": {
+    "system_controller_xilinx": {
+      "modules": {
+        "system_controller_xilinx": {
+          "ports": {
+            "clk_i": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "rst_i": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "nrst_i": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "clk_sys_i": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "rst_sys_i": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            }
+          },
+          "cells": {
+            "$not$./module_33155.v:70$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  4
+                ]
+              }
+            },
+            "$not$./module_33155.v:72$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$or$./module_33155.v:72$4": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6
+                ],
+                "B": [
+                  8
+                ],
+                "Y": [
+                  9
+                ]
+              }
+            },
+            "$procdff$23": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  10
+                ],
+                "D": [
+                  11,
+                  12,
+                  13,
+                  14
+                ],
+                "Q": [
+                  15,
+                  16,
+                  17,
+                  18
+                ]
+              }
+            },
+            "$procdff$24": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  10
+                ],
+                "D": [
+                  19
+                ],
+                "Q": [
+                  3
+                ]
+              }
+            },
+            "$procmux$10": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  20
+                ],
+                "S": [
+                  7
+                ],
+                "Y": [
+                  21
+                ]
+              }
+            },
+            "$procmux$13": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  21
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  9
+                ],
+                "Y": [
+                  19
+                ]
+              }
+            },
+            "$procmux$16": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  15,
+                  16,
+                  17,
+                  18
+                ],
+                "B": [
+                  22,
+                  23,
+                  24,
+                  25
+                ],
+                "S": [
+                  26
+                ],
+                "Y": [
+                  27,
+                  28,
+                  29,
+                  30
+                ]
+              }
+            },
+            "$procmux$18": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  15,
+                  16,
+                  17,
+                  18
+                ],
+                "B": [
+                  27,
+                  28,
+                  29,
+                  30
+                ],
+                "S": [
+                  7
+                ],
+                "Y": [
+                  31,
+                  32,
+                  33,
+                  34
+                ]
+              }
+            },
+            "$procmux$21": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "S": [
+                  9
+                ],
+                "Y": [
+                  11,
+                  12,
+                  13,
+                  14
+                ]
+              }
+            },
+            "$procmux$8": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  3
+                ],
+                "S": [
+                  26
+                ],
+                "Y": [
+                  20
+                ]
+              }
+            },
+            "$reduce_bool$./module_33155.v:77$5": {
+              "type": "$reduce_bool",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  15,
+                  16,
+                  17,
+                  18
+                ],
+                "Y": [
+                  26
+                ]
+              }
+            },
+            "$sub$./module_33155.v:78$6": {
+              "type": "$sub",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  15,
+                  16,
+                  17,
+                  18
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62
+                ]
+              }
+            },
+            "MMCME2_BASE_inst": {
+              "type": "MMCME2_BASE",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFBIN": [
+                  2
+                ],
+                "CLKFBOUT": [
+                  63
+                ],
+                "CLKFBOUTB": [],
+                "CLKIN1": [
+                  10
+                ],
+                "CLKOUT0": [],
+                "CLKOUT0B": [],
+                "CLKOUT1": [],
+                "CLKOUT1B": [],
+                "CLKOUT2": [],
+                "CLKOUT2B": [],
+                "CLKOUT3": [],
+                "CLKOUT3B": [],
+                "CLKOUT4": [],
+                "CLKOUT5": [],
+                "CLKOUT6": [],
+                "LOCKED": [
+                  7
+                ],
+                "PWRDWN": [
+                  "0"
+                ],
+                "RST": [
+                  6
+                ]
+              }
+            },
+            "clk_bug": {
+              "type": "BUFGCE",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CE": [
+                  "1"
+                ],
+                "I": [
+                  63
+                ],
+                "O": [
+                  2
+                ]
+              }
+            },
+            "clk_ibuf": {
+              "type": "IBUF",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  5
+                ],
+                "O": [
+                  10
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "modules": {
+    "c1_regs": {
+      "modules": {
+        "c1_regs": {
+          "ports": {
+            "nICOM_ZONE": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "RW": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "M68K_DATA": {
+              "direction": "inout",
+              "offset": 8,
+              "bits": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
+            },
+            "SDD": {
+              "direction": "inout",
+              "bits": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ]
+            },
+            "nSDZ80R": {
+              "direction": "input",
+              "bits": [
+                20
+              ]
+            },
+            "nSDZ80W": {
+              "direction": "input",
+              "bits": [
+                21
+              ]
+            },
+            "nSDZ80CLR": {
+              "direction": "input",
+              "bits": [
+                22
+              ]
+            },
+            "nSDW": {
+              "direction": "output",
+              "bits": [
+                23
+              ]
+            }
+          },
+          "cells": {
+            "$and$./module_39922.v:19$4": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  24
+                ],
+                "Y": [
+                  25
+                ]
+              }
+            },
+            "$logic_not$./module_39922.v:25$9": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22
+                ],
+                "Y": [
+                  26
+                ]
+              }
+            },
+            "$logic_not$./module_39922.v:31$10": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  27
+                ]
+              }
+            },
+            "$not$./module_39922.v:19$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "Y": [
+                  24
+                ]
+              }
+            },
+            "$or$./module_39922.v:20$6": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  2
+                ],
+                "Y": [
+                  23
+                ]
+              }
+            },
+            "$procdff$13": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  22
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35
+                ],
+                "Q": [
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43
+                ]
+              }
+            },
+            "$procdff$14": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  21
+                ],
+                "D": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ],
+                "Q": [
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51
+                ]
+              }
+            },
+            "$procmux$11": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43
+                ],
+                "B": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "S": [
+                  27
+                ],
+                "Y": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35
+                ]
+              }
+            },
+            "$ternary$./module_39922.v:13$1": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43
+                ],
+                "B": [
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z"
+                ],
+                "S": [
+                  20
+                ],
+                "Y": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ]
+              }
+            },
+            "$ternary$./module_39922.v:19$5": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z",
+                  "z"
+                ],
+                "B": [
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51
+                ],
+                "S": [
+                  25
+                ],
+                "Y": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

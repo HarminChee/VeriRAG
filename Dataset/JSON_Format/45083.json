@@ -1,0 +1,351 @@
+{
+  "modules": {
+    "Dac": {
+      "modules": {
+        "Dac": {
+          "ports": {
+            "bg_ok": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "vout": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "vout2": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "wave_sync": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_45083.v:41$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  14
+                ]
+              }
+            },
+            "$eq$./module_45083.v:46$4": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  5
+                ]
+              }
+            },
+            "$procdff$9": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  15
+                ],
+                "D": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ],
+                "Q": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ]
+              }
+            },
+            "$procmux$7": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "S": [
+                  14
+                ],
+                "Y": [
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ]
+              }
+            },
+            "$sub$./module_45083.v:44$3": {
+              "type": "$sub",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ]
+              }
+            },
+            "bandgap": {
+              "type": "GP_BANDGAP",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "OK": [
+                  2
+                ]
+              }
+            },
+            "dac": {
+              "type": "GP_DAC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "DIN": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "VOUT": [
+                  3
+                ],
+                "VREF": [
+                  32
+                ]
+              }
+            },
+            "dac2": {
+              "type": "GP_DAC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "DIN": [
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "VOUT": [
+                  33
+                ],
+                "VREF": [
+                  32
+                ]
+              }
+            },
+            "lfosc": {
+              "type": "GP_LFOSC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKOUT": [
+                  15
+                ],
+                "PWRDN": [
+                  "0"
+                ]
+              }
+            },
+            "por": {
+              "type": "GP_POR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RST_DONE": [
+                  34
+                ]
+              }
+            },
+            "vr1000": {
+              "type": "GP_VREF",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "VIN": [
+                  "0"
+                ],
+                "VOUT": [
+                  32
+                ]
+              }
+            },
+            "vrdac": {
+              "type": "GP_VREF",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "VIN": [
+                  33
+                ],
+                "VOUT": [
+                  4
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

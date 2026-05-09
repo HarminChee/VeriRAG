@@ -1,0 +1,204 @@
+`timescale 1ns/1ps
+`timescale 1ns/1ps
+module ddr2_usr_rd #
+  (
+   parameter DQ_PER_DQS    = 8,
+   parameter DQS_WIDTH     = 9,
+   parameter APPDATA_WIDTH = 144,
+   parameter ECC_WIDTH     = 72,
+   parameter ECC_ENABLE    = 0
+   )
+  (
+   input                                    clk0,
+   input                                    rst0,
+   input [(DQS_WIDTH*DQ_PER_DQS)-1:0]       rd_data_in_rise,
+   input [(DQS_WIDTH*DQ_PER_DQS)-1:0]       rd_data_in_fall,
+   input [DQS_WIDTH-1:0]                    ctrl_rden,
+   input [DQS_WIDTH-1:0]                    ctrl_rden_sel,
+   output reg [1:0]                         rd_ecc_error,
+   output                                   rd_data_valid,
+   output reg [(APPDATA_WIDTH/2)-1:0]       rd_data_out_rise,
+   output reg [(APPDATA_WIDTH/2)-1:0]       rd_data_out_fall
+   );
+  localparam RDF_FIFO_NUM = ((APPDATA_WIDTH/2)+63)/64;
+  reg [DQS_WIDTH-1:0]               ctrl_rden_r;
+  wire [(DQS_WIDTH*DQ_PER_DQS)-1:0] fall_data;
+  reg [(DQS_WIDTH*DQ_PER_DQS)-1:0]  rd_data_in_fall_r;
+  reg [(DQS_WIDTH*DQ_PER_DQS)-1:0]  rd_data_in_rise_r;
+  wire                              rden;
+  reg [DQS_WIDTH-1:0]               rden_sel_r
+                                    ;
+  wire [DQS_WIDTH-1:0]              rden_sel_mux;
+  wire [(DQS_WIDTH*DQ_PER_DQS)-1:0] rise_data;
+  wire [((RDF_FIFO_NUM -1) *2)+1:0] db_ecc_error;
+  reg [(DQS_WIDTH*DQ_PER_DQS)-1:0]  fall_data_r;
+  reg                               fifo_rden_r0;
+  reg                               fifo_rden_r1;
+  reg                               fifo_rden_r2;
+  reg                               fifo_rden_r3;
+  reg                               fifo_rden_r4;
+  reg                               fifo_rden_r5;
+  reg                               fifo_rden_r6;
+  wire [(APPDATA_WIDTH/2)-1:0]      rd_data_out_fall_temp;
+  wire [(APPDATA_WIDTH/2)-1:0]      rd_data_out_rise_temp;
+  reg                               rst_r;
+  reg [(DQS_WIDTH*DQ_PER_DQS)-1:0]  rise_data_r;
+  wire [((RDF_FIFO_NUM -1) *2)+1:0] sb_ecc_error;
+  always @(posedge clk0) begin
+    rden_sel_r        <= ctrl_rden_sel;
+    ctrl_rden_r       <= ctrl_rden;
+    rd_data_in_rise_r <= rd_data_in_rise;
+    rd_data_in_fall_r <= rd_data_in_fall;
+  end
+  genvar rd_i;
+  generate
+    for (rd_i = 0; rd_i < DQS_WIDTH; rd_i = rd_i+1) begin: gen_rden_sel_mux
+      FDRSE u_ff_rden_sel_mux
+        (
+         .Q   (rden_sel_mux[rd_i]),
+         .C   (clk0),
+         .CE  (1'b1),
+         .D   (ctrl_rden_sel[rd_i]),
+         .R   (1'b0),
+         .S   (1'b0)
+         ) ;
+    end
+  endgenerate
+  assign rden = (rden_sel_r[0]) ? ctrl_rden[0] : ctrl_rden_r[0];
+  genvar data_i;
+  generate
+    for(data_i = 0; data_i < DQS_WIDTH; data_i = data_i+1) begin: gen_data
+      assign rise_data[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1):
+                       (data_i*DQ_PER_DQS)]
+               = (rden_sel_mux[data_i]) ?
+                 rd_data_in_rise[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1) :
+                                 (data_i*DQ_PER_DQS)] :
+                 rd_data_in_rise_r[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1):
+                                   (data_i*DQ_PER_DQS)];
+       assign fall_data[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1):
+                        (data_i*DQ_PER_DQS)]
+                = (rden_sel_mux[data_i]) ?
+                  rd_data_in_fall[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1):
+                                  (data_i*DQ_PER_DQS)] :
+                  rd_data_in_fall_r[(data_i*DQ_PER_DQS)+(DQ_PER_DQS-1):
+                                    (data_i*DQ_PER_DQS)];
+    end
+  endgenerate
+  always @(posedge clk0)
+    rst_r <= rst0;
+  genvar rdf_i;
+  generate
+    if (ECC_ENABLE) begin
+      always @(posedge clk0) begin
+        rd_ecc_error[0]   <= (|sb_ecc_error) & fifo_rden_r5;
+        rd_ecc_error[1]   <= (|db_ecc_error) & fifo_rden_r5;
+        rd_data_out_rise  <= rd_data_out_rise_temp;
+        rd_data_out_fall  <= rd_data_out_fall_temp;
+        rise_data_r       <= rise_data;
+        fall_data_r       <= fall_data;
+      end
+      assign rd_data_valid = fifo_rden_r6;
+      always @(posedge clk0) begin
+        if (rst0) begin
+          fifo_rden_r0 <= 1'b0;
+          fifo_rden_r1 <= 1'b0;
+          fifo_rden_r2 <= 1'b0;
+          fifo_rden_r3 <= 1'b0;
+          fifo_rden_r4 <= 1'b0;
+          fifo_rden_r5 <= 1'b0;
+          fifo_rden_r6 <= 1'b0;
+        end else begin
+          fifo_rden_r0 <= rden;
+          fifo_rden_r1 <= fifo_rden_r0;
+          fifo_rden_r2 <= fifo_rden_r1;
+          fifo_rden_r3 <= fifo_rden_r2;
+          fifo_rden_r4 <= fifo_rden_r3;
+          fifo_rden_r5 <= fifo_rden_r4;
+          fifo_rden_r6 <= fifo_rden_r5;
+        end
+      end
+      for (rdf_i = 0; rdf_i < RDF_FIFO_NUM; rdf_i = rdf_i + 1) begin: gen_rdf
+        FIFO36_72  # 
+          (
+           .ALMOST_EMPTY_OFFSET     (9'h007),
+           .ALMOST_FULL_OFFSET      (9'h00F),
+           .DO_REG                  (1),          
+           .EN_ECC_WRITE            ("FALSE"),
+           .EN_ECC_READ             ("TRUE"),
+           .EN_SYN                  ("FALSE"),
+           .FIRST_WORD_FALL_THROUGH ("FALSE")
+           )
+          u_rdf
+            (
+             .ALMOSTEMPTY (),
+             .ALMOSTFULL  (),
+             .DBITERR     (db_ecc_error[rdf_i + rdf_i]),
+             .DO          (rd_data_out_rise_temp[(64*(rdf_i+1))-1:
+                                                 (64 *rdf_i)]),
+             .DOP         (),
+             .ECCPARITY   (),
+             .EMPTY       (),
+             .FULL        (),
+             .RDCOUNT     (),
+             .RDERR       (),
+             .SBITERR     (sb_ecc_error[rdf_i + rdf_i]),
+             .WRCOUNT     (),
+             .WRERR       (),
+             .DI          (rise_data_r[((64*(rdf_i+1)) + (rdf_i*8))-1:
+                                       (64 *rdf_i)+(rdf_i*8)]),
+             .DIP         (rise_data_r[(72*(rdf_i+1))-1:
+                                       (64*(rdf_i+1))+ (8*rdf_i)]),
+             .RDCLK       (clk0),
+             .RDEN        (~rst_r),
+             .RST         (rst_r),
+             .WRCLK       (clk0),
+             .WREN        (~rst_r)
+             );
+        FIFO36_72  # 
+          (
+           .ALMOST_EMPTY_OFFSET     (9'h007),
+           .ALMOST_FULL_OFFSET      (9'h00F),
+           .DO_REG                  (1),          
+           .EN_ECC_WRITE            ("FALSE"),
+           .EN_ECC_READ             ("TRUE"),
+           .EN_SYN                  ("FALSE"),
+           .FIRST_WORD_FALL_THROUGH ("FALSE")
+           )
+          u_rdf1
+            (
+             .ALMOSTEMPTY (),
+             .ALMOSTFULL  (),
+             .DBITERR     (db_ecc_error[(rdf_i+1) + rdf_i]),
+             .DO          (rd_data_out_fall_temp[(64*(rdf_i+1))-1:
+                                                 (64 *rdf_i)]),
+             .DOP         (),
+             .ECCPARITY   (),
+             .EMPTY       (),
+             .FULL        (),
+             .RDCOUNT     (),
+             .RDERR       (),
+             .SBITERR     (sb_ecc_error[(rdf_i+1) + rdf_i]),
+             .WRCOUNT     (),
+             .WRERR       (),
+             .DI          (fall_data_r[((64*(rdf_i+1)) + (rdf_i*8))-1:
+                                       (64*rdf_i)+(rdf_i*8)]),
+             .DIP         (fall_data_r[(72*(rdf_i+1))-1:
+                                       (64*(rdf_i+1))+ (8*rdf_i)]),
+             .RDCLK       (clk0),
+             .RDEN        (~rst_r),
+             .RST         (rst_r),          
+             .WRCLK       (clk0),
+             .WREN        (~rst_r)
+             );
+      end
+    end 
+    else begin
+       assign rd_data_valid = fifo_rden_r0;
+       always @(posedge clk0) begin
+          rd_data_out_rise <= rise_data;
+          rd_data_out_fall <= fall_data;
+          fifo_rden_r0 <= rden;
+       end
+    end
+  endgenerate
+endmodule

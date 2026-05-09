@@ -1,0 +1,300 @@
+{
+  "modules": {
+    "clkgen": {
+      "modules": {
+        "clkgen": {
+          "ports": {
+            "sys_clk_i": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "sys_rst_i": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "wb_clk_o": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "wb_clk2x_o": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "wb_rst_o": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            }
+          },
+          "cells": {
+            "$not$./module_77012.v:103$2": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "Y": [
+                  8
+                ]
+              }
+            },
+            "$procdff$3": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23
+                ],
+                "Q": [
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  6
+                ]
+              }
+            },
+            "clkf_buf": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  24
+                ],
+                "O": [
+                  25
+                ]
+              }
+            },
+            "mmcm_adv_inst": {
+              "type": "MMCME2_ADV",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFBIN": [
+                  25
+                ],
+                "CLKFBOUT": [
+                  24
+                ],
+                "CLKFBOUTB": [
+                  26
+                ],
+                "CLKFBSTOPPED": [
+                  27
+                ],
+                "CLKIN1": [
+                  28
+                ],
+                "CLKIN2": [
+                  "0"
+                ],
+                "CLKINSEL": [
+                  "1"
+                ],
+                "CLKINSTOPPED": [
+                  29
+                ],
+                "CLKOUT0": [
+                  30
+                ],
+                "CLKOUT0B": [
+                  31
+                ],
+                "CLKOUT1": [
+                  32
+                ],
+                "CLKOUT1B": [
+                  33
+                ],
+                "CLKOUT2": [
+                  34
+                ],
+                "CLKOUT2B": [
+                  35
+                ],
+                "CLKOUT3": [
+                  36
+                ],
+                "CLKOUT3B": [
+                  37
+                ],
+                "CLKOUT4": [
+                  38
+                ],
+                "CLKOUT5": [
+                  39
+                ],
+                "CLKOUT6": [
+                  40
+                ],
+                "DADDR": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DCLK": [
+                  "0"
+                ],
+                "DEN": [
+                  "0"
+                ],
+                "DI": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DO": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56
+                ],
+                "DRDY": [
+                  57
+                ],
+                "DWE": [
+                  "0"
+                ],
+                "LOCKED": [
+                  7
+                ],
+                "PSCLK": [
+                  "0"
+                ],
+                "PSDONE": [
+                  58
+                ],
+                "PSEN": [
+                  "0"
+                ],
+                "PSINCDEC": [
+                  "0"
+                ],
+                "PWRDWN": [
+                  "0"
+                ],
+                "RST": [
+                  3
+                ]
+              }
+            },
+            "sys_clk_in_ibufg": {
+              "type": "IBUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  2
+                ],
+                "O": [
+                  28
+                ]
+              }
+            },
+            "wb_clk2x_buf": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  32
+                ],
+                "O": [
+                  5
+                ]
+              }
+            },
+            "wb_clk_buf": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  30
+                ],
+                "O": [
+                  4
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

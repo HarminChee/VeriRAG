@@ -1,0 +1,305 @@
+{
+  "modules": {
+    "SystemClockUnit_exdes": {
+      "modules": {
+        "SystemClockUnit_exdes": {
+          "ports": {
+            "CLK_IN1": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "COUNTER_RESET": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "CLK_OUT": {
+              "direction": "output",
+              "offset": 1,
+              "bits": [
+                4
+              ]
+            },
+            "COUNT": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "LOCKED": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_37555.v:58$6": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  5
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ]
+              }
+            },
+            "$logic_not$./module_37555.v:15$1": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6
+                ],
+                "Y": [
+                  38
+                ]
+              }
+            },
+            "$logic_or$./module_37555.v:15$2": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  38
+                ],
+                "B": [
+                  3
+                ],
+                "Y": [
+                  39
+                ]
+              }
+            },
+            "$not$./module_37555.v:29$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  40
+                ],
+                "Y": [
+                  41
+                ]
+              }
+            },
+            "$procdff$10": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  39
+                ],
+                "CLK": [
+                  40
+                ],
+                "D": [
+                  42
+                ],
+                "Q": [
+                  43
+                ]
+              }
+            },
+            "$procdff$11": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  39
+                ],
+                "CLK": [
+                  40
+                ],
+                "D": [
+                  43
+                ],
+                "Q": [
+                  44
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  44
+                ],
+                "CLK": [
+                  40
+                ],
+                "D": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "Q": [
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  5
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  39
+                ],
+                "CLK": [
+                  40
+                ],
+                "D": [
+                  "0"
+                ],
+                "Q": [
+                  45
+                ]
+              }
+            },
+            "$procdff$9": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  39
+                ],
+                "CLK": [
+                  40
+                ],
+                "D": [
+                  45
+                ],
+                "Q": [
+                  42
+                ]
+              }
+            },
+            "clknetwork": {
+              "type": "SystemClockUnit",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK_IN1": [
+                  2
+                ],
+                "CLK_OUT1": [
+                  40
+                ],
+                "LOCKED": [
+                  6
+                ]
+              }
+            },
+            "clkout_oddr": {
+              "type": "ODDR2",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C0": [
+                  40
+                ],
+                "C1": [
+                  41
+                ],
+                "CE": [
+                  "1"
+                ],
+                "D0": [
+                  "1"
+                ],
+                "D1": [
+                  "0"
+                ],
+                "Q": [
+                  4
+                ],
+                "R": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

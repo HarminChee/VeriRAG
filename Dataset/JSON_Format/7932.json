@@ -1,0 +1,267 @@
+{
+  "modules": {
+    "sdram_clk_gen_exdes": {
+      "modules": {
+        "sdram_clk_gen_exdes": {
+          "ports": {
+            "CLK_IN1": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "COUNTER_RESET": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "CLK_OUT": {
+              "direction": "output",
+              "offset": 1,
+              "bits": [
+                4
+              ]
+            },
+            "COUNT": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_7932.v:56$4": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  5
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36
+                ]
+              }
+            },
+            "$not$./module_7932.v:27$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  37
+                ],
+                "Y": [
+                  38
+                ]
+              }
+            },
+            "$procdff$5": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  39
+                ],
+                "CLK": [
+                  37
+                ],
+                "D": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36
+                ],
+                "Q": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  5
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  37
+                ],
+                "D": [
+                  "0"
+                ],
+                "Q": [
+                  40
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  37
+                ],
+                "D": [
+                  40
+                ],
+                "Q": [
+                  41
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  37
+                ],
+                "D": [
+                  41
+                ],
+                "Q": [
+                  42
+                ]
+              }
+            },
+            "$procdff$9": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  37
+                ],
+                "D": [
+                  42
+                ],
+                "Q": [
+                  39
+                ]
+              }
+            },
+            "clknetwork": {
+              "type": "sdram_clk_gen",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk_in": [
+                  2
+                ],
+                "clk_out": [
+                  37
+                ]
+              }
+            },
+            "clkout_oddr": {
+              "type": "ODDR2",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C0": [
+                  37
+                ],
+                "C1": [
+                  38
+                ],
+                "CE": [
+                  "1"
+                ],
+                "D0": [
+                  "1"
+                ],
+                "D1": [
+                  "0"
+                ],
+                "Q": [
+                  4
+                ],
+                "R": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

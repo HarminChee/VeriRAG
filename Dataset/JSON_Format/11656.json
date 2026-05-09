@@ -1,0 +1,686 @@
+{
+  "modules": {
+    "v6_emac_v1_5_example_design": {
+      "modules": {
+        "v6_emac_v1_5_example_design": {
+          "ports": {
+            "EMACCLIENTRXDVLD": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "EMACCLIENTRXFRAMEDROP": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "EMACCLIENTRXSTATS": {
+              "direction": "output",
+              "bits": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            "EMACCLIENTRXSTATSVLD": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            },
+            "EMACCLIENTRXSTATSBYTEVLD": {
+              "direction": "output",
+              "bits": [
+                12
+              ]
+            },
+            "CLIENTEMACTXIFGDELAY": {
+              "direction": "input",
+              "bits": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ]
+            },
+            "EMACCLIENTTXSTATS": {
+              "direction": "output",
+              "bits": [
+                21
+              ]
+            },
+            "EMACCLIENTTXSTATSVLD": {
+              "direction": "output",
+              "bits": [
+                22
+              ]
+            },
+            "EMACCLIENTTXSTATSBYTEVLD": {
+              "direction": "output",
+              "bits": [
+                23
+              ]
+            },
+            "CLIENTEMACPAUSEREQ": {
+              "direction": "input",
+              "bits": [
+                24
+              ]
+            },
+            "CLIENTEMACPAUSEVAL": {
+              "direction": "input",
+              "bits": [
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40
+              ]
+            },
+            "GTX_CLK": {
+              "direction": "input",
+              "bits": [
+                41
+              ]
+            },
+            "GMII_TXD": {
+              "direction": "output",
+              "bits": [
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49
+              ]
+            },
+            "GMII_TX_EN": {
+              "direction": "output",
+              "bits": [
+                50
+              ]
+            },
+            "GMII_TX_ER": {
+              "direction": "output",
+              "bits": [
+                51
+              ]
+            },
+            "GMII_TX_CLK": {
+              "direction": "output",
+              "bits": [
+                52
+              ]
+            },
+            "GMII_RXD": {
+              "direction": "input",
+              "bits": [
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60
+              ]
+            },
+            "GMII_RX_DV": {
+              "direction": "input",
+              "bits": [
+                61
+              ]
+            },
+            "GMII_RX_ER": {
+              "direction": "input",
+              "bits": [
+                62
+              ]
+            },
+            "GMII_RX_CLK": {
+              "direction": "input",
+              "bits": [
+                63
+              ]
+            },
+            "REFCLK": {
+              "direction": "input",
+              "bits": [
+                64
+              ]
+            },
+            "RESET": {
+              "direction": "input",
+              "bits": [
+                65
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_11656.v:87$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  66
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  67
+                ]
+              }
+            },
+            "$eqx$./module_11656.v:190$4": {
+              "type": "$eqx",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  66
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  68
+                ]
+              }
+            },
+            "$procdff$5": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  66
+                ],
+                "CLK": [
+                  69
+                ],
+                "D": [
+                  "0",
+                  70,
+                  71,
+                  72,
+                  73,
+                  74
+                ],
+                "Q": [
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  66
+                ],
+                "CLK": [
+                  69
+                ],
+                "D": [
+                  75
+                ],
+                "Q": [
+                  76
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  66
+                ],
+                "CLK": [
+                  77
+                ],
+                "D": [
+                  "0",
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89
+                ],
+                "Q": [
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89,
+                  90
+                ]
+              }
+            },
+            "bufg_tx": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  91
+                ],
+                "O": [
+                  69
+                ]
+              }
+            },
+            "bufio_rx": {
+              "type": "BUFIO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  92
+                ],
+                "O": [
+                  93
+                ]
+              }
+            },
+            "bufr_rx": {
+              "type": "BUFR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CE": [
+                  "1"
+                ],
+                "CLR": [
+                  "0"
+                ],
+                "I": [
+                  92
+                ],
+                "O": [
+                  94
+                ]
+              }
+            },
+            "client_side_asm": {
+              "type": "address_swap_module_8",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "rx_ll_clock": [
+                  69
+                ],
+                "rx_ll_data_in": [
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102
+                ],
+                "rx_ll_data_out": [
+                  103,
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110
+                ],
+                "rx_ll_dst_rdy_in_n": [
+                  111
+                ],
+                "rx_ll_eof_in_n": [
+                  112
+                ],
+                "rx_ll_eof_out_n": [
+                  113
+                ],
+                "rx_ll_reset": [
+                  76
+                ],
+                "rx_ll_sof_in_n": [
+                  114
+                ],
+                "rx_ll_sof_out_n": [
+                  115
+                ],
+                "rx_ll_src_rdy_in_n": [
+                  116
+                ],
+                "rx_ll_src_rdy_out_n": [
+                  117
+                ]
+              }
+            },
+            "dlyctrl": {
+              "type": "IDELAYCTRL",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RDY": [],
+                "REFCLK": [
+                  77
+                ],
+                "RST": [
+                  90
+                ]
+              }
+            },
+            "gmii_rxc_delay": {
+              "type": "IODELAY",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  92
+                ],
+                "IDATAIN": [
+                  63
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "0"
+                ]
+              }
+            },
+            "gtx_clk_ibufg": {
+              "type": "IBUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  41
+                ],
+                "O": [
+                  91
+                ]
+              }
+            },
+            "refclk_bufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  118
+                ],
+                "O": [
+                  77
+                ]
+              }
+            },
+            "refclk_ibufg": {
+              "type": "IBUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  64
+                ],
+                "O": [
+                  118
+                ]
+              }
+            },
+            "reset_ibuf": {
+              "type": "IBUF",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  65
+                ],
+                "O": [
+                  66
+                ]
+              }
+            },
+            "v6_emac_v1_5_locallink_inst": {
+              "type": "v6_emac_v1_5_locallink",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLIENTEMACPAUSEREQ": [
+                  24
+                ],
+                "CLIENTEMACPAUSEVAL": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ],
+                "CLIENTEMACTXIFGDELAY": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20
+                ],
+                "EMACCLIENTRXDVLD": [
+                  2
+                ],
+                "EMACCLIENTRXFRAMEDROP": [
+                  3
+                ],
+                "EMACCLIENTRXSTATS": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "EMACCLIENTRXSTATSBYTEVLD": [
+                  12
+                ],
+                "EMACCLIENTRXSTATSVLD": [
+                  11
+                ],
+                "EMACCLIENTTXSTATS": [
+                  21
+                ],
+                "EMACCLIENTTXSTATSBYTEVLD": [
+                  23
+                ],
+                "EMACCLIENTTXSTATSVLD": [
+                  22
+                ],
+                "GMII_RXD": [
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60
+                ],
+                "GMII_RX_CLK": [
+                  93
+                ],
+                "GMII_RX_DV": [
+                  61
+                ],
+                "GMII_RX_ER": [
+                  62
+                ],
+                "GMII_TXD": [
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49
+                ],
+                "GMII_TX_CLK": [
+                  52
+                ],
+                "GMII_TX_EN": [
+                  50
+                ],
+                "GMII_TX_ER": [
+                  51
+                ],
+                "GTX_CLK": [
+                  "0"
+                ],
+                "PHY_RX_CLK": [
+                  94
+                ],
+                "RESET": [
+                  66
+                ],
+                "RX_LL_CLOCK": [
+                  69
+                ],
+                "RX_LL_DATA": [
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102
+                ],
+                "RX_LL_DST_RDY_N": [
+                  111
+                ],
+                "RX_LL_EOF_N": [
+                  112
+                ],
+                "RX_LL_FIFO_STATUS": [],
+                "RX_LL_RESET": [
+                  76
+                ],
+                "RX_LL_SOF_N": [
+                  114
+                ],
+                "RX_LL_SRC_RDY_N": [
+                  116
+                ],
+                "TX_CLK": [
+                  69
+                ],
+                "TX_CLK_OUT": [],
+                "TX_LL_CLOCK": [
+                  69
+                ],
+                "TX_LL_DATA": [
+                  103,
+                  104,
+                  105,
+                  106,
+                  107,
+                  108,
+                  109,
+                  110
+                ],
+                "TX_LL_DST_RDY_N": [
+                  111
+                ],
+                "TX_LL_EOF_N": [
+                  113
+                ],
+                "TX_LL_RESET": [
+                  76
+                ],
+                "TX_LL_SOF_N": [
+                  115
+                ],
+                "TX_LL_SRC_RDY_N": [
+                  117
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

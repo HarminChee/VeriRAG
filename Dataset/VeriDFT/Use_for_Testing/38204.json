@@ -1,0 +1,843 @@
+{
+  "modules": {
+    "Blinky": {
+      "modules": {
+        "Blinky": {
+          "ports": {
+            "led_lfosc_ff": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "led_lfosc_count": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "led_lfosc_shreg1": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "led_lfosc_shreg1a": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "led_lfosc_shreg2": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "led_lfosc_shreg2a": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "led_rosc_ff": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            },
+            "led_rcosc_ff": {
+              "direction": "output",
+              "bits": [
+                9
+              ]
+            },
+            "sys_rst": {
+              "direction": "input",
+              "bits": [
+                10
+              ]
+            },
+            "count_rst": {
+              "direction": "input",
+              "bits": [
+                11
+              ]
+            },
+            "osc_pwrdn": {
+              "direction": "input",
+              "bits": [
+                12
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_52197.v:117$9": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  17,
+                  18,
+                  19,
+                  20
+                ]
+              }
+            },
+            "$eq$./module_52197.v:118$10": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  21
+                ]
+              }
+            },
+            "$eq$./module_52197.v:69$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  30
+                ]
+              }
+            },
+            "$eq$./module_52197.v:75$4": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  31
+                ]
+              }
+            },
+            "$not$./module_52197.v:109$6": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "Y": [
+                  32
+                ]
+              }
+            },
+            "$not$./module_52197.v:111$7": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  33
+                ]
+              }
+            },
+            "$not$./module_52197.v:119$11": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8
+                ],
+                "Y": [
+                  34
+                ]
+              }
+            },
+            "$not$./module_52197.v:124$13": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  9
+                ],
+                "Y": [
+                  35
+                ]
+              }
+            },
+            "$procdff$41": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  36
+                ],
+                "D": [
+                  2,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  5,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50
+                ],
+                "Q": [
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  5,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  7
+                ]
+              }
+            },
+            "$procdff$42": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  51
+                ],
+                "D": [
+                  52
+                ],
+                "Q": [
+                  9
+                ]
+              }
+            },
+            "$procdff$43": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  53
+                ],
+                "D": [
+                  54
+                ],
+                "Q": [
+                  8
+                ]
+              }
+            },
+            "$procdff$44": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  53
+                ],
+                "D": [
+                  55,
+                  56,
+                  57,
+                  58
+                ],
+                "Q": [
+                  13,
+                  14,
+                  15,
+                  16
+                ]
+              }
+            },
+            "$procdff$45": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  36
+                ],
+                "D": [
+                  59
+                ],
+                "Q": [
+                  2
+                ]
+              }
+            },
+            "$procdff$46": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  36
+                ],
+                "D": [
+                  60
+                ],
+                "Q": [
+                  3
+                ]
+              }
+            },
+            "$procdff$47": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  11
+                ],
+                "CLK": [
+                  36
+                ],
+                "D": [
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68
+                ],
+                "Q": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29
+                ]
+              }
+            },
+            "$procmux$22": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  9
+                ],
+                "B": [
+                  35
+                ],
+                "S": [
+                  69
+                ],
+                "Y": [
+                  52
+                ]
+              }
+            },
+            "$procmux$24": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "B": [
+                  17,
+                  18,
+                  19,
+                  20
+                ],
+                "S": [
+                  70
+                ],
+                "Y": [
+                  55,
+                  56,
+                  57,
+                  58
+                ]
+              }
+            },
+            "$procmux$26": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8
+                ],
+                "B": [
+                  34
+                ],
+                "S": [
+                  21
+                ],
+                "Y": [
+                  71
+                ]
+              }
+            },
+            "$procmux$28": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8
+                ],
+                "B": [
+                  71
+                ],
+                "S": [
+                  70
+                ],
+                "Y": [
+                  54
+                ]
+              }
+            },
+            "$procmux$30": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  33
+                ],
+                "S": [
+                  72
+                ],
+                "Y": [
+                  73
+                ]
+              }
+            },
+            "$procmux$32": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  73
+                ],
+                "S": [
+                  74
+                ],
+                "Y": [
+                  60
+                ]
+              }
+            },
+            "$procmux$34": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "B": [
+                  32
+                ],
+                "S": [
+                  31
+                ],
+                "Y": [
+                  75
+                ]
+              }
+            },
+            "$procmux$36": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "B": [
+                  75
+                ],
+                "S": [
+                  74
+                ],
+                "Y": [
+                  59
+                ]
+              }
+            },
+            "$procmux$39": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "S": [
+                  30
+                ],
+                "Y": [
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68
+                ]
+              }
+            },
+            "$sub$./module_52197.v:72$3": {
+              "type": "$sub",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83
+                ]
+              }
+            },
+            "lfosc": {
+              "type": "GP_LFOSC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKOUT": [
+                  36
+                ],
+                "PWRDN": [
+                  12
+                ]
+              }
+            },
+            "lfosc_cnt": {
+              "type": "GP_COUNT8",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  36
+                ],
+                "OUT": [
+                  72
+                ],
+                "RST": [
+                  11
+                ]
+              }
+            },
+            "por": {
+              "type": "GP_POR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RST_DONE": [
+                  74
+                ]
+              }
+            },
+            "rcosc": {
+              "type": "GP_RCOSC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKOUT_FABRIC": [
+                  51
+                ],
+                "CLKOUT_HARDIP": [
+                  84
+                ],
+                "PWRDN": [
+                  12
+                ]
+              }
+            },
+            "rcosc_cnt": {
+              "type": "GP_COUNT14",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  84
+                ],
+                "OUT": [
+                  69
+                ],
+                "RST": [
+                  11
+                ]
+              }
+            },
+            "reset_ctrl": {
+              "type": "GP_SYSRESET",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "RST": [
+                  10
+                ]
+              }
+            },
+            "ringosc": {
+              "type": "GP_RINGOSC",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKOUT_FABRIC": [
+                  53
+                ],
+                "CLKOUT_HARDIP": [
+                  85
+                ],
+                "PWRDN": [
+                  12
+                ]
+              }
+            },
+            "ringosc_cnt": {
+              "type": "GP_COUNT14",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  85
+                ],
+                "OUT": [
+                  70
+                ],
+                "RST": [
+                  11
+                ]
+              }
+            },
+            "shreg": {
+              "type": "GP_SHREG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  36
+                ],
+                "IN": [
+                  2
+                ],
+                "OUTA": [
+                  4
+                ],
+                "OUTB": [
+                  6
+                ],
+                "nRST": [
+                  "1"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

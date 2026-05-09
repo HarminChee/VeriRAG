@@ -1,0 +1,239 @@
+{
+  "modules": {
+    "jtag_cores": {
+      "modules": {
+        "jtag_cores": {
+          "ports": {
+            "reg_d": {
+              "direction": "input",
+              "bits": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            "reg_addr_d": {
+              "direction": "input",
+              "bits": [
+                10,
+                11,
+                12
+              ]
+            },
+            "reg_update": {
+              "direction": "output",
+              "bits": [
+                13
+              ]
+            },
+            "reg_q": {
+              "direction": "output",
+              "bits": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+              ]
+            },
+            "reg_addr_q": {
+              "direction": "output",
+              "bits": [
+                22,
+                23,
+                24
+              ]
+            },
+            "jtck": {
+              "direction": "output",
+              "bits": [
+                25
+              ]
+            },
+            "jrstn": {
+              "direction": "output",
+              "bits": [
+                26
+              ]
+            }
+          },
+          "cells": {
+            "$not$./module_48607.v:49$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  27
+                ],
+                "Y": [
+                  26
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  27
+                ],
+                "CLK": [
+                  13
+                ],
+                "D": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ],
+                "Q": [
+                  22,
+                  23,
+                  24,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  27
+                ],
+                "CLK": [
+                  25
+                ],
+                "D": [
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49
+                ],
+                "Q": [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ]
+              }
+            },
+            "$procmux$5": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  10,
+                  11,
+                  12,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "B": [
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  50
+                ],
+                "S": [
+                  51
+                ],
+                "Y": [
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49
+                ]
+              }
+            },
+            "jtag_tap": {
+              "type": "jtag_tap",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "reset": [
+                  27
+                ],
+                "shift": [
+                  51
+                ],
+                "tck": [
+                  25
+                ],
+                "tdi": [
+                  50
+                ],
+                "tdo": [
+                  28
+                ],
+                "update": [
+                  13
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

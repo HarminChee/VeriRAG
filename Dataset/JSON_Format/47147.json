@@ -1,0 +1,952 @@
+{
+  "modules": {
+    "gmii_if": {
+      "modules": {
+        "gmii_if": {
+          "ports": {
+            "tx_reset": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "rx_reset": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "speed_is_10_100": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "gmii_txd": {
+              "direction": "output",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            "gmii_tx_en": {
+              "direction": "output",
+              "bits": [
+                13
+              ]
+            },
+            "gmii_tx_er": {
+              "direction": "output",
+              "bits": [
+                14
+              ]
+            },
+            "gmii_tx_clk": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "gmii_crs": {
+              "direction": "input",
+              "bits": [
+                16
+              ]
+            },
+            "gmii_col": {
+              "direction": "input",
+              "bits": [
+                17
+              ]
+            },
+            "gmii_rxd": {
+              "direction": "input",
+              "bits": [
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+              ]
+            },
+            "gmii_rx_dv": {
+              "direction": "input",
+              "bits": [
+                26
+              ]
+            },
+            "gmii_rx_er": {
+              "direction": "input",
+              "bits": [
+                27
+              ]
+            },
+            "gmii_rx_clk": {
+              "direction": "input",
+              "bits": [
+                28
+              ]
+            },
+            "txd_from_mac": {
+              "direction": "input",
+              "bits": [
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36
+              ]
+            },
+            "tx_en_from_mac": {
+              "direction": "input",
+              "bits": [
+                37
+              ]
+            },
+            "tx_er_from_mac": {
+              "direction": "input",
+              "bits": [
+                38
+              ]
+            },
+            "tx_clk": {
+              "direction": "input",
+              "bits": [
+                39
+              ]
+            },
+            "crs_to_mac": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "col_to_mac": {
+              "direction": "output",
+              "bits": [
+                40
+              ]
+            },
+            "rxd_to_mac": {
+              "direction": "output",
+              "bits": [
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+              ]
+            },
+            "rx_dv_to_mac": {
+              "direction": "output",
+              "bits": [
+                49
+              ]
+            },
+            "rx_er_to_mac": {
+              "direction": "output",
+              "bits": [
+                50
+              ]
+            },
+            "rx_clk": {
+              "direction": "output",
+              "bits": [
+                51
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_47147.v:53$3": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  52
+                ]
+              }
+            },
+            "$or$./module_47147.v:62$4": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  53
+                ],
+                "B": [
+                  54
+                ],
+                "Y": [
+                  55
+                ]
+              }
+            },
+            "$or$./module_47147.v:62$5": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  55
+                ],
+                "B": [
+                  17
+                ],
+                "Y": [
+                  40
+                ]
+              }
+            },
+            "$procdff$13": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  56
+                ],
+                "D": [
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64
+                ],
+                "Q": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48
+                ]
+              }
+            },
+            "$procdff$14": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  56
+                ],
+                "D": [
+                  65
+                ],
+                "Q": [
+                  49
+                ]
+              }
+            },
+            "$procdff$15": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  56
+                ],
+                "D": [
+                  66
+                ],
+                "Q": [
+                  50
+                ]
+              }
+            },
+            "$procdff$16": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  39
+                ],
+                "D": [
+                  67
+                ],
+                "Q": [
+                  54
+                ]
+              }
+            },
+            "$procdff$17": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  39
+                ],
+                "D": [
+                  68
+                ],
+                "Q": [
+                  53
+                ]
+              }
+            },
+            "$procdff$18": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  39
+                ],
+                "D": [
+                  37
+                ],
+                "Q": [
+                  13
+                ]
+              }
+            },
+            "$procdff$19": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  39
+                ],
+                "D": [
+                  38
+                ],
+                "Q": [
+                  14
+                ]
+              }
+            },
+            "$procdff$20": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  39
+                ],
+                "D": [
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36
+                ],
+                "Q": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              }
+            },
+            "$procmux$11": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  17
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  52
+                ],
+                "Y": [
+                  67
+                ]
+              }
+            },
+            "$procmux$8": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  54
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  52
+                ],
+                "Y": [
+                  68
+                ]
+              }
+            },
+            "bufio_gmii_rx_clk": {
+              "type": "BUFIO",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  28
+                ],
+                "O": [
+                  56
+                ]
+              }
+            },
+            "bufr_gmii_rx_clk": {
+              "type": "BUFR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CE": [
+                  "1"
+                ],
+                "CLR": [
+                  "0"
+                ],
+                "I": [
+                  28
+                ],
+                "O": [
+                  51
+                ]
+              }
+            },
+            "delay_gmii_rx_dv": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  65
+                ],
+                "IDATAIN": [
+                  26
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "delay_gmii_rx_er": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  66
+                ],
+                "IDATAIN": [
+                  27
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[0].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  57
+                ],
+                "IDATAIN": [
+                  18
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[1].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  58
+                ],
+                "IDATAIN": [
+                  19
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[2].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  59
+                ],
+                "IDATAIN": [
+                  20
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[3].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  60
+                ],
+                "IDATAIN": [
+                  21
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[4].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  61
+                ],
+                "IDATAIN": [
+                  22
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[5].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  62
+                ],
+                "IDATAIN": [
+                  23
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[6].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  63
+                ],
+                "IDATAIN": [
+                  24
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_data_bus0[7].delay_gmii_rxd": {
+              "type": "IODELAYE1",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  "0"
+                ],
+                "CE": [
+                  "0"
+                ],
+                "CINVCTRL": [
+                  "0"
+                ],
+                "CLKIN": [
+                  "0"
+                ],
+                "CNTVALUEIN": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "DATAIN": [
+                  "0"
+                ],
+                "DATAOUT": [
+                  64
+                ],
+                "IDATAIN": [
+                  25
+                ],
+                "INC": [
+                  "0"
+                ],
+                "ODATAIN": [
+                  "0"
+                ],
+                "RST": [
+                  "0"
+                ],
+                "T": [
+                  "1"
+                ]
+              }
+            },
+            "gmii_tx_clk_ddr_iob": {
+              "type": "ODDR",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "C": [
+                  39
+                ],
+                "CE": [
+                  "1"
+                ],
+                "D1": [
+                  "0"
+                ],
+                "D2": [
+                  "1"
+                ],
+                "Q": [
+                  15
+                ],
+                "R": [
+                  "0"
+                ],
+                "S": [
+                  "0"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

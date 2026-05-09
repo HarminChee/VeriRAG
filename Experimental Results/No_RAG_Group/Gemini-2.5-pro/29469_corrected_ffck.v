@@ -1,0 +1,78 @@
+module SevenSegment_corrected_ffc( // Module name corrected as requested format placeholder
+	output reg [6:0] display,
+	output reg [3:0] digit,
+	input wire [15:0] nums,
+	input wire rst,
+	input wire clk
+    );
+
+    reg [15:0] clk_divider;
+    reg [3:0] display_num;
+    wire clk_enable;
+
+    // Clock divider logic - clocked by primary clock 'clk'
+    always @ (posedge clk, posedge rst) begin
+        if (rst) begin
+            clk_divider <= 16'b0; // Use full 16 bits for counter
+        end else begin
+            clk_divider <= clk_divider + 16'b1;
+        end
+    end
+
+    // Generate clock enable signal based on divider state
+    // This signal enables the update once every 2^15 clk cycles,
+    // mimicking the frequency of the original posedge clk_divider[15]
+    // We trigger the enable when the counter is about to cause the 15th bit transition (e.g., at 16'h7FFF)
+    assign clk_enable = (clk_divider == 16'h7FFF);
+
+    // Digit selection and display number update logic - Now clocked by primary 'clk'
+    // Gated by the 'clk_enable' signal
+    always @ (posedge clk, posedge rst) begin
+        if (rst) begin
+            display_num <= 4'b0000;
+            digit <= 4'b1111; // Reset state as per original logic
+        end else if (clk_enable) begin // Only update when enabled
+            case (digit)
+                4'b1110 : begin
+                        display_num <= nums[7:4];
+                        digit <= 4'b1101;
+                    end
+                4'b1101 : begin
+                        display_num <= nums[11:8];
+                        digit <= 4'b1011;
+                    end
+                4'b1011 : begin
+                        display_num <= nums[15:12];
+                        digit <= 4'b0111;
+                    end
+                4'b0111 : begin
+                        display_num <= nums[3:0];
+                        digit <= 4'b1110;
+                    end
+                default : begin // Handles reset state 4'b1111 and any unexpected state
+                        display_num <= nums[3:0]; // Default behavior matches original
+                        digit <= 4'b1110;         // Transition to the first valid state
+                    end
+            endcase
+        end
+        // If clk_enable is low, registers 'display_num' and 'digit' hold their previous values.
+    end
+
+    // Combinational logic for 7-segment display decoding (unchanged)
+    always @ (*) begin
+        case (display_num)
+            0 : display = 7'b1000000;
+            1 : display = 7'b1111001;
+            2 : display = 7'b0100100;
+            3 : display = 7'b0110000;
+            4 : display = 7'b0011001;
+            5 : display = 7'b0010010;
+            6 : display = 7'b0000010;
+            7 : display = 7'b1111000;
+            8 : display = 7'b0000000;
+            9 : display = 7'b0010000;
+            default : display = 7'b1111111; // Display off or error indication
+        endcase
+    end
+
+endmodule

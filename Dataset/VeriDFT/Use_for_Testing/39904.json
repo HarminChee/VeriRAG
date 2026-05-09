@@ -1,0 +1,324 @@
+{
+  "modules": {
+    "top_nto1_pll_diff_tx": {
+      "modules": {
+        "top_nto1_pll_diff_tx": {
+          "ports": {
+            "reset": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "refclkin_p": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "refclkin_n": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "dataout_p": {
+              "direction": "output",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
+            },
+            "dataout_n": {
+              "direction": "output",
+              "bits": [
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            },
+            "clkout_p": {
+              "direction": "output",
+              "bits": [
+                17
+              ]
+            },
+            "clkout_n": {
+              "direction": "output",
+              "bits": [
+                18
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_39904.v:30$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  2
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  19
+                ]
+              }
+            },
+            "$procdff$3": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  2
+                ],
+                "CLK": [
+                  20
+                ],
+                "D": [
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62
+                ],
+                "Q": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  21
+                ]
+              }
+            },
+            "inst_clkgen": {
+              "type": "clock_generator_pll_s8_diff",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "bufpll_lckd": [
+                  63
+                ],
+                "clkin_n": [
+                  4
+                ],
+                "clkin_p": [
+                  3
+                ],
+                "gclk": [
+                  20
+                ],
+                "ioclk": [
+                  64
+                ],
+                "reset": [
+                  2
+                ],
+                "serdesstrobe": [
+                  65
+                ]
+              }
+            },
+            "inst_clkout": {
+              "type": "serdes_n_to_1_s8_diff",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "datain": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "1"
+                ],
+                "dataout_n": [
+                  18
+                ],
+                "dataout_p": [
+                  17
+                ],
+                "gclk": [
+                  20
+                ],
+                "reset": [
+                  2
+                ],
+                "txioclk": [
+                  64
+                ],
+                "txserdesstrobe": [
+                  65
+                ]
+              }
+            },
+            "inst_dataout": {
+              "type": "serdes_n_to_1_s8_diff",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "datain": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  21
+                ],
+                "dataout_n": [
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16
+                ],
+                "dataout_p": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "gclk": [
+                  20
+                ],
+                "reset": [
+                  2
+                ],
+                "txioclk": [
+                  64
+                ],
+                "txserdesstrobe": [
+                  65
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

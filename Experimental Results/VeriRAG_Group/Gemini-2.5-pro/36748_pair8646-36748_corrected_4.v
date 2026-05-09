@@ -1,0 +1,237 @@
+module uart6_kc705 (
+    input   uart_rx,
+    output  uart_tx,
+    input   clk200_p,
+    input   clk200_n,
+    input   test_i,          // Added test mode input
+    input   test_reset_i     // Added test reset input
+);
+
+    wire        clk200;
+    wire        clk;
+    wire        dft_clk;         // Added DFT clock wire
+    localparam  clock_frequency_in_MHz = 8'd200;
+    wire [11:0] address;
+    wire [17:0] instruction;
+    wire        bram_enable;
+    reg  [7:0]  in_port;
+    wire [7:0]  out_port;
+    wire [7:0]  port_id;
+    wire        write_strobe;
+    wire        k_write_strobe;
+    wire        read_strobe;
+    wire        interrupt;
+    wire        interrupt_ack;
+    wire        kcpsm6_sleep;
+    wire        kcpsm6_reset;
+    wire        dft_kcpsm6_reset; // Added DFT reset wire
+    wire        rdl;
+    wire [7:0]  uart_tx_data_in;
+    wire        write_to_uart_tx;
+    reg         pipe_port_id0;
+    wire        uart_tx_data_present;
+    wire        uart_tx_half_full;
+    wire        uart_tx_full;
+    wire        uart_tx_reset;      // Changed to wire for mux output
+    wire        uart_rx_data_present;
+    wire        uart_rx_half_full;
+    wire        uart_rx_full;
+    wire        uart_rx_reset;      // Changed to wire for mux output
+    wire [7:0]  uart_rx_data_out;   // Output wire from rx module
+    reg         read_from_uart_rx;
+    reg         uart_tx_reset_func; // Functional reset signal (reg)
+    reg         uart_rx_reset_func; // Functional reset signal (reg)
+    reg [7:0]   set_baud_rate;
+    reg [7:0]   baud_rate_counter;
+    reg         en_16_x_baud;
+
+    IBUFGDS diff_clk_buffer (
+        .I(clk200_p),
+        .IB(clk200_n),
+        .O(clk200)
+    );
+
+    BUFG clock_divide (
+        .I(clk200),
+        .O(clk)
+    );
+
+    // DFT Clock Mux: Select primary clock source (clk200_p) in test mode
+    assign dft_clk = test_i ? clk200_p : clk;
+
+    // DFT Reset Mux: Select primary reset source in test mode
+    // Functional reset 'rdl' comes from program_rom, test reset is primary input 'test_reset_i'
+    assign dft_kcpsm6_reset = test_i ? test_reset_i : rdl;
+    assign kcpsm6_reset = dft_kcpsm6_reset; // Use the muxed reset
+
+    kcpsm6 #(
+        .interrupt_vector       (12'h7FF),
+        .scratch_pad_memory_size(64),
+        .hwbuild                (8'h41)
+    ) processor (
+        .address        (address),
+        .instruction    (instruction),
+        .bram_enable    (bram_enable),
+        .port_id        (port_id),
+        .write_strobe   (write_strobe),
+        .k_write_strobe (k_write_strobe),
+        .out_port       (out_port),
+        .read_strobe    (read_strobe),
+        .in_port        (in_port),
+        .interrupt      (interrupt),
+        .interrupt_ack  (interrupt_ack),
+        .reset          (kcpsm6_reset), // Use DFT-controlled reset
+        .sleep          (kcpsm6_sleep),
+        .clk            (dft_clk) // Use DFT clock
+    );
+
+
+    assign kcpsm6_sleep = write_strobe && k_write_strobe;
+
+    // Interrupt logic: Triggered by RX data present
+    assign interrupt = uart_rx_data_present;
+
+    // Assuming 'auto_baud_rate_control' is a valid module providing program ROM/reset logic
+    // This module provides the functional reset 'rdl'
+    auto_baud_rate_control #(
+        .C_FAMILY           ("7S"),
+        .C_RAM_SIZE_KWORDS  (2),
+        .C_JTAG_LOADER_ENABLE(1)
+    ) program_rom (
+        .rdl            (rdl),          // Provides functional reset 'rdl'
+        .enable         (bram_enable),
+        .address        (address),
+        .instruction    (instruction),
+        .clk            (dft_clk) // Use DFT clock
+    );
+
+    // DFT Reset Muxes for UART TX/RX
+    // Functional resets 'uart_tx_reset_func'/'uart_rx_reset_func' are generated internally
+    assign uart_tx_reset = test_i ? test_reset_i : uart_tx_reset_func;
+    assign uart_rx_reset = test_i ? test_reset_i : uart_rx_reset_func;
+
+    uart_tx6 tx (
+        .data_in(uart_tx_data_in),
+        .en_16_x_baud(en_16_x_baud),
+        .serial_out(uart_tx),
+        .buffer_write(write_to_uart_tx),
+        .buffer_data_present(uart_tx_data_present),
+        .buffer_half_full(uart_tx_half_full),
+        .buffer_full(uart_tx_full),
+        .buffer_reset(uart_tx_reset), // Connect muxed reset wire
+        .clk(dft_clk) // Use DFT clock
+    );
+
+    uart_rx6 rx (
+        .serial_in(uart_rx),
+        .en_16_x_baud(en_16_x_baud),
+        .data_out(uart_rx_data_out), // Connect to wire from module
+        .buffer_read(read_from_uart_rx),
+        .buffer_data_present(uart_rx_data_present),
+        .buffer_half_full(uart_rx_half_full),
+        .buffer_full(uart_rx_full),
+        .buffer_reset(uart_rx_reset), // Connect muxed reset wire
+        .clk(dft_clk) // Use DFT clock
+    );
+
+    // Baud rate generation logic with asynchronous reset
+    // Sensitivity list corrected to standard asynchronous reset model
+    always @ (posedge dft_clk or posedge dft_kcpsm6_reset)
+    begin
+        if (dft_kcpsm6_reset) begin // Use DFT-controlled reset
+           baud_rate_counter <= 8'b0;
+           en_16_x_baud <= 1'b0;
+        end else begin
+            if (baud_rate_counter == set_baud_rate) begin
+                baud_rate_counter <= 8'b0;
+                en_16_x_baud <= 1'b1;
+            end else begin
+                baud_rate_counter <= baud_rate_counter + 8'b1;
+                en_16_x_baud <= 1'b0;
+            end
+        end
+    end
+
+    // Input port logic with asynchronous reset
+    // Sensitivity list corrected to standard asynchronous reset model
+    always @ (posedge dft_clk or posedge dft_kcpsm6_reset)
+    begin
+        if (dft_kcpsm6_reset) begin // Use DFT-controlled reset
+           in_port <= 8'b0;
+           read_from_uart_rx <= 1'b0;
+        end else begin
+            case (port_id[1:0])
+                2'b00 : in_port <= { 2'b00,
+                                     uart_rx_full,
+                                     uart_rx_half_full,
+                                     uart_rx_data_present,
+                                     uart_tx_full,
+                                     uart_tx_half_full,
+                                     uart_tx_data_present };
+                2'b01 : in_port <= uart_rx_data_out; // Read directly from rx module output
+                2'b10 : in_port <= clock_frequency_in_MHz;
+                default : in_port <= 8'b0;
+            endcase
+
+            // Generate read strobe for UART RX buffer
+            if ((read_strobe == 1'b1) && (port_id[1:0] == 2'b01)) begin
+                read_from_uart_rx <= 1'b1;
+            end else begin
+                read_from_uart_rx <= 1'b0;
+            end
+        end
+    end
+
+    // Output port logic and baud rate setting with asynchronous reset
+    // Sensitivity list corrected to standard asynchronous reset model
+    always @ (posedge dft_clk or posedge dft_kcpsm6_reset)
+    begin
+        if (dft_kcpsm6_reset) begin // Use DFT-controlled reset
+           set_baud_rate <= 8'b0; // Default baud rate setting on reset
+           pipe_port_id0 <= 1'b0;
+        end else begin
+            // Set baud rate based on processor output
+            if (write_strobe == 1'b1) begin
+                if (port_id[1] == 1'b1) begin // Check port ID bit 1 for baud rate setting
+                    set_baud_rate <= out_port;
+                end
+            end
+            // Pipe port_id[0] to align with write strobe for UART TX
+            pipe_port_id0 <= port_id[0]; // Register port ID bit 0
+        end
+    end
+
+    assign uart_tx_data_in = out_port;
+    // Generate write strobe for UART TX buffer using piped port ID bit
+    assign write_to_uart_tx = write_strobe & pipe_port_id0;
+
+
+    // UART functional reset logic generation with asynchronous reset
+    // Sensitivity list corrected to standard asynchronous reset model
+    // Generates functional reset signals based on processor commands
+    always @ (posedge dft_clk or posedge dft_kcpsm6_reset)
+    begin
+        if (dft_kcpsm6_reset) begin // Use DFT-controlled reset
+           uart_tx_reset_func <= 1'b1; // Assert functional reset during main reset
+           uart_rx_reset_func <= 1'b1; // Assert functional reset during main reset
+        end else begin
+            // Use k_write_strobe for special commands like reset
+            if (k_write_strobe == 1'b1) begin
+                if (port_id[0] == 1'b1) begin // Check port ID bit 0 for reset command
+                    // Processor controls individual UART resets via out_port
+                    uart_tx_reset_func <= out_port[0];
+                    uart_rx_reset_func <= out_port[1];
+                end else begin
+                    // If k_write_strobe=1 but port_id[0]=0, deassert functional resets
+                    uart_tx_reset_func <= 1'b0;
+                    uart_rx_reset_func <= 1'b0;
+                end
+            end else begin
+                 // If k_write_strobe=0, deassert functional resets
+                 uart_tx_reset_func <= 1'b0;
+                 uart_rx_reset_func <= 1'b0;
+            end
+        end
+    end
+
+endmodule

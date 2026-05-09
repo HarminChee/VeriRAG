@@ -1,0 +1,3786 @@
+{
+  "modules": {
+    "parallella_7020_top": {
+      "modules": {
+        "parallella_7020_top": {
+          "ports": {
+            "processing_system7_0_DDR_WEB_pin": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "GPIO12_P": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "GPIO12_N": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "GPIO13_P": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "GPIO13_N": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "GPIO14_P": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "GPIO14_N": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            },
+            "GPIO15_P": {
+              "direction": "output",
+              "bits": [
+                9
+              ]
+            },
+            "GPIO15_N": {
+              "direction": "output",
+              "bits": [
+                10
+              ]
+            },
+            "GPIO16_P": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            },
+            "GPIO16_N": {
+              "direction": "output",
+              "bits": [
+                12
+              ]
+            },
+            "GPIO17_P": {
+              "direction": "output",
+              "bits": [
+                13
+              ]
+            },
+            "GPIO17_N": {
+              "direction": "output",
+              "bits": [
+                14
+              ]
+            },
+            "GPIO18_P": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "GPIO18_N": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "GPIO19_P": {
+              "direction": "output",
+              "bits": [
+                17
+              ]
+            },
+            "GPIO19_N": {
+              "direction": "output",
+              "bits": [
+                18
+              ]
+            },
+            "GPIO20_P": {
+              "direction": "output",
+              "bits": [
+                19
+              ]
+            },
+            "GPIO20_N": {
+              "direction": "output",
+              "bits": [
+                20
+              ]
+            },
+            "GPIO21_P": {
+              "direction": "output",
+              "bits": [
+                21
+              ]
+            },
+            "GPIO21_N": {
+              "direction": "output",
+              "bits": [
+                22
+              ]
+            },
+            "GPIO22_P": {
+              "direction": "output",
+              "bits": [
+                23
+              ]
+            },
+            "GPIO22_N": {
+              "direction": "output",
+              "bits": [
+                24
+              ]
+            },
+            "GPIO23_P": {
+              "direction": "output",
+              "bits": [
+                25
+              ]
+            },
+            "GPIO23_N": {
+              "direction": "output",
+              "bits": [
+                26
+              ]
+            },
+            "RXI_DATA0_P": {
+              "direction": "output",
+              "bits": [
+                27
+              ]
+            },
+            "RXI_DATA1_P": {
+              "direction": "output",
+              "bits": [
+                28
+              ]
+            },
+            "RXI_DATA2_P": {
+              "direction": "output",
+              "bits": [
+                29
+              ]
+            },
+            "RXI_DATA3_P": {
+              "direction": "output",
+              "bits": [
+                30
+              ]
+            },
+            "RXI_DATA4_P": {
+              "direction": "output",
+              "bits": [
+                31
+              ]
+            },
+            "RXI_DATA5_P": {
+              "direction": "output",
+              "bits": [
+                32
+              ]
+            },
+            "RXI_DATA6_P": {
+              "direction": "output",
+              "bits": [
+                33
+              ]
+            },
+            "RXI_DATA7_P": {
+              "direction": "output",
+              "bits": [
+                34
+              ]
+            },
+            "RXI_DATA0_N": {
+              "direction": "output",
+              "bits": [
+                35
+              ]
+            },
+            "RXI_DATA1_N": {
+              "direction": "output",
+              "bits": [
+                36
+              ]
+            },
+            "RXI_DATA2_N": {
+              "direction": "output",
+              "bits": [
+                37
+              ]
+            },
+            "RXI_DATA3_N": {
+              "direction": "output",
+              "bits": [
+                38
+              ]
+            },
+            "RXI_DATA4_N": {
+              "direction": "output",
+              "bits": [
+                39
+              ]
+            },
+            "RXI_DATA5_N": {
+              "direction": "output",
+              "bits": [
+                40
+              ]
+            },
+            "RXI_DATA6_N": {
+              "direction": "output",
+              "bits": [
+                41
+              ]
+            },
+            "RXI_DATA7_N": {
+              "direction": "output",
+              "bits": [
+                42
+              ]
+            },
+            "RXI_FRAME_P": {
+              "direction": "output",
+              "bits": [
+                43
+              ]
+            },
+            "RXI_FRAME_N": {
+              "direction": "output",
+              "bits": [
+                44
+              ]
+            },
+            "RXI_LCLK_P": {
+              "direction": "output",
+              "bits": [
+                45
+              ]
+            },
+            "RXI_LCLK_N": {
+              "direction": "output",
+              "bits": [
+                46
+              ]
+            },
+            "TXI_WR_WAIT_P": {
+              "direction": "output",
+              "bits": [
+                47
+              ]
+            },
+            "TXI_WR_WAIT_N": {
+              "direction": "output",
+              "bits": [
+                48
+              ]
+            },
+            "TXI_RD_WAIT_P": {
+              "direction": "output",
+              "bits": [
+                49
+              ]
+            },
+            "TXI_RD_WAIT_N": {
+              "direction": "output",
+              "bits": [
+                50
+              ]
+            },
+            "RXI_CCLK_P": {
+              "direction": "output",
+              "bits": [
+                51
+              ]
+            },
+            "RXI_CCLK_N": {
+              "direction": "output",
+              "bits": [
+                52
+              ]
+            },
+            "DSP_RESET_N": {
+              "direction": "output",
+              "bits": [
+                53
+              ]
+            },
+            "processing_system7_0_MIO": {
+              "direction": "inout",
+              "bits": [
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106,
+                107
+              ]
+            },
+            "processing_system7_0_DDR_Clk": {
+              "direction": "inout",
+              "bits": [
+                108
+              ]
+            },
+            "processing_system7_0_DDR_Clk_n": {
+              "direction": "inout",
+              "bits": [
+                109
+              ]
+            },
+            "processing_system7_0_DDR_CKE": {
+              "direction": "inout",
+              "bits": [
+                110
+              ]
+            },
+            "processing_system7_0_DDR_CS_n": {
+              "direction": "inout",
+              "bits": [
+                111
+              ]
+            },
+            "processing_system7_0_DDR_RAS_n": {
+              "direction": "inout",
+              "bits": [
+                112
+              ]
+            },
+            "processing_system7_0_DDR_CAS_n": {
+              "direction": "inout",
+              "bits": [
+                113
+              ]
+            },
+            "processing_system7_0_DDR_BankAddr": {
+              "direction": "inout",
+              "bits": [
+                114,
+                115,
+                116
+              ]
+            },
+            "processing_system7_0_DDR_Addr": {
+              "direction": "inout",
+              "bits": [
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131
+              ]
+            },
+            "processing_system7_0_DDR_ODT": {
+              "direction": "inout",
+              "bits": [
+                132
+              ]
+            },
+            "processing_system7_0_DDR_DRSTB": {
+              "direction": "inout",
+              "bits": [
+                133
+              ]
+            },
+            "processing_system7_0_DDR_DQ": {
+              "direction": "inout",
+              "bits": [
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                144,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165
+              ]
+            },
+            "processing_system7_0_DDR_DM": {
+              "direction": "inout",
+              "bits": [
+                166,
+                167,
+                168,
+                169
+              ]
+            },
+            "processing_system7_0_DDR_DQS": {
+              "direction": "inout",
+              "bits": [
+                170,
+                171,
+                172,
+                173
+              ]
+            },
+            "processing_system7_0_DDR_DQS_n": {
+              "direction": "inout",
+              "bits": [
+                174,
+                175,
+                176,
+                177
+              ]
+            },
+            "processing_system7_0_DDR_VRN": {
+              "direction": "inout",
+              "bits": [
+                178
+              ]
+            },
+            "processing_system7_0_DDR_VRP": {
+              "direction": "inout",
+              "bits": [
+                179
+              ]
+            },
+            "processing_system7_0_PS_SRSTB_pin": {
+              "direction": "input",
+              "bits": [
+                180
+              ]
+            },
+            "processing_system7_0_PS_CLK_pin": {
+              "direction": "input",
+              "bits": [
+                181
+              ]
+            },
+            "processing_system7_0_PS_PORB_pin": {
+              "direction": "input",
+              "bits": [
+                182
+              ]
+            },
+            "GPIO0_P": {
+              "direction": "input",
+              "bits": [
+                183
+              ]
+            },
+            "GPIO0_N": {
+              "direction": "input",
+              "bits": [
+                184
+              ]
+            },
+            "GPIO1_P": {
+              "direction": "input",
+              "bits": [
+                185
+              ]
+            },
+            "GPIO1_N": {
+              "direction": "input",
+              "bits": [
+                186
+              ]
+            },
+            "GPIO2_P": {
+              "direction": "input",
+              "bits": [
+                187
+              ]
+            },
+            "GPIO2_N": {
+              "direction": "input",
+              "bits": [
+                188
+              ]
+            },
+            "GPIO3_P": {
+              "direction": "input",
+              "bits": [
+                189
+              ]
+            },
+            "GPIO3_N": {
+              "direction": "input",
+              "bits": [
+                190
+              ]
+            },
+            "GPIO4_P": {
+              "direction": "input",
+              "bits": [
+                191
+              ]
+            },
+            "GPIO4_N": {
+              "direction": "input",
+              "bits": [
+                192
+              ]
+            },
+            "GPIO5_P": {
+              "direction": "input",
+              "bits": [
+                193
+              ]
+            },
+            "GPIO5_N": {
+              "direction": "input",
+              "bits": [
+                194
+              ]
+            },
+            "GPIO6_P": {
+              "direction": "input",
+              "bits": [
+                195
+              ]
+            },
+            "GPIO6_N": {
+              "direction": "input",
+              "bits": [
+                196
+              ]
+            },
+            "GPIO7_P": {
+              "direction": "input",
+              "bits": [
+                197
+              ]
+            },
+            "GPIO7_N": {
+              "direction": "input",
+              "bits": [
+                198
+              ]
+            },
+            "GPIO8_P": {
+              "direction": "input",
+              "bits": [
+                199
+              ]
+            },
+            "GPIO8_N": {
+              "direction": "input",
+              "bits": [
+                200
+              ]
+            },
+            "GPIO9_P": {
+              "direction": "input",
+              "bits": [
+                201
+              ]
+            },
+            "GPIO9_N": {
+              "direction": "input",
+              "bits": [
+                202
+              ]
+            },
+            "GPIO10_P": {
+              "direction": "input",
+              "bits": [
+                203
+              ]
+            },
+            "GPIO10_N": {
+              "direction": "input",
+              "bits": [
+                204
+              ]
+            },
+            "GPIO11_P": {
+              "direction": "input",
+              "bits": [
+                205
+              ]
+            },
+            "GPIO11_N": {
+              "direction": "input",
+              "bits": [
+                206
+              ]
+            },
+            "TXO_DATA0_P": {
+              "direction": "input",
+              "bits": [
+                207
+              ]
+            },
+            "TXO_DATA1_P": {
+              "direction": "input",
+              "bits": [
+                208
+              ]
+            },
+            "TXO_DATA2_P": {
+              "direction": "input",
+              "bits": [
+                209
+              ]
+            },
+            "TXO_DATA3_P": {
+              "direction": "input",
+              "bits": [
+                210
+              ]
+            },
+            "TXO_DATA4_P": {
+              "direction": "input",
+              "bits": [
+                211
+              ]
+            },
+            "TXO_DATA5_P": {
+              "direction": "input",
+              "bits": [
+                212
+              ]
+            },
+            "TXO_DATA6_P": {
+              "direction": "input",
+              "bits": [
+                213
+              ]
+            },
+            "TXO_DATA7_P": {
+              "direction": "input",
+              "bits": [
+                214
+              ]
+            },
+            "TXO_DATA0_N": {
+              "direction": "input",
+              "bits": [
+                215
+              ]
+            },
+            "TXO_DATA1_N": {
+              "direction": "input",
+              "bits": [
+                216
+              ]
+            },
+            "TXO_DATA2_N": {
+              "direction": "input",
+              "bits": [
+                217
+              ]
+            },
+            "TXO_DATA3_N": {
+              "direction": "input",
+              "bits": [
+                218
+              ]
+            },
+            "TXO_DATA4_N": {
+              "direction": "input",
+              "bits": [
+                219
+              ]
+            },
+            "TXO_DATA5_N": {
+              "direction": "input",
+              "bits": [
+                220
+              ]
+            },
+            "TXO_DATA6_N": {
+              "direction": "input",
+              "bits": [
+                221
+              ]
+            },
+            "TXO_DATA7_N": {
+              "direction": "input",
+              "bits": [
+                222
+              ]
+            },
+            "TXO_FRAME_P": {
+              "direction": "input",
+              "bits": [
+                223
+              ]
+            },
+            "TXO_FRAME_N": {
+              "direction": "input",
+              "bits": [
+                224
+              ]
+            },
+            "TXO_LCLK_P": {
+              "direction": "input",
+              "bits": [
+                225
+              ]
+            },
+            "TXO_LCLK_N": {
+              "direction": "input",
+              "bits": [
+                226
+              ]
+            },
+            "RXO_WR_WAIT_P": {
+              "direction": "input",
+              "bits": [
+                227
+              ]
+            },
+            "RXO_WR_WAIT_N": {
+              "direction": "input",
+              "bits": [
+                228
+              ]
+            },
+            "RXO_RD_WAIT_P": {
+              "direction": "input",
+              "bits": [
+                229
+              ]
+            },
+            "RXO_RD_WAIT_N": {
+              "direction": "input",
+              "bits": [
+                230
+              ]
+            },
+            "DSP_FLAG": {
+              "direction": "input",
+              "bits": [
+                231
+              ]
+            },
+            "HDMI_D23": {
+              "direction": "output",
+              "bits": [
+                232
+              ]
+            },
+            "HDMI_D22": {
+              "direction": "output",
+              "bits": [
+                233
+              ]
+            },
+            "HDMI_D21": {
+              "direction": "output",
+              "bits": [
+                234
+              ]
+            },
+            "HDMI_D20": {
+              "direction": "output",
+              "bits": [
+                235
+              ]
+            },
+            "HDMI_D19": {
+              "direction": "output",
+              "bits": [
+                236
+              ]
+            },
+            "HDMI_D18": {
+              "direction": "output",
+              "bits": [
+                237
+              ]
+            },
+            "HDMI_D17": {
+              "direction": "output",
+              "bits": [
+                238
+              ]
+            },
+            "HDMI_D16": {
+              "direction": "output",
+              "bits": [
+                239
+              ]
+            },
+            "HDMI_D15": {
+              "direction": "output",
+              "bits": [
+                240
+              ]
+            },
+            "HDMI_D14": {
+              "direction": "output",
+              "bits": [
+                241
+              ]
+            },
+            "HDMI_D13": {
+              "direction": "output",
+              "bits": [
+                242
+              ]
+            },
+            "HDMI_D12": {
+              "direction": "output",
+              "bits": [
+                243
+              ]
+            },
+            "HDMI_D11": {
+              "direction": "output",
+              "bits": [
+                244
+              ]
+            },
+            "HDMI_D10": {
+              "direction": "output",
+              "bits": [
+                245
+              ]
+            },
+            "HDMI_D9": {
+              "direction": "output",
+              "bits": [
+                246
+              ]
+            },
+            "HDMI_D8": {
+              "direction": "output",
+              "bits": [
+                247
+              ]
+            },
+            "HDMI_CLK": {
+              "direction": "output",
+              "bits": [
+                248
+              ]
+            },
+            "HDMI_HSYNC": {
+              "direction": "output",
+              "bits": [
+                249
+              ]
+            },
+            "HDMI_VSYNC": {
+              "direction": "output",
+              "bits": [
+                250
+              ]
+            },
+            "HDMI_DE": {
+              "direction": "output",
+              "bits": [
+                251
+              ]
+            },
+            "PS_I2C_SCL": {
+              "direction": "inout",
+              "bits": [
+                252
+              ]
+            },
+            "PS_I2C_SDA": {
+              "direction": "inout",
+              "bits": [
+                253
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_45225.v:482$7": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  274,
+                  275,
+                  276,
+                  277,
+                  278,
+                  279,
+                  280,
+                  281,
+                  282,
+                  283,
+                  284,
+                  285,
+                  286,
+                  287,
+                  288,
+                  289,
+                  290,
+                  291,
+                  292,
+                  293
+                ]
+              }
+            },
+            "$add$./module_45225.v:491$10": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  294,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  302,
+                  303,
+                  304,
+                  305,
+                  306,
+                  307,
+                  308,
+                  309,
+                  310,
+                  311,
+                  312,
+                  313,
+                  314,
+                  315,
+                  316,
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  326,
+                  327,
+                  328,
+                  329,
+                  330,
+                  331,
+                  332,
+                  333,
+                  334,
+                  335,
+                  336,
+                  337,
+                  338,
+                  339,
+                  340,
+                  341,
+                  342,
+                  343,
+                  344,
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352,
+                  353,
+                  354,
+                  355,
+                  356,
+                  357
+                ]
+              }
+            },
+            "$and$./module_45225.v:471$4": {
+              "type": "$and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  358
+                ],
+                "B": [
+                  359
+                ],
+                "Y": [
+                  360
+                ]
+              }
+            },
+            "$eq$./module_45225.v:474$6": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "Y": [
+                  361
+                ]
+              }
+            },
+            "$not$./module_45225.v:410$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  362
+                ],
+                "Y": [
+                  363
+                ]
+              }
+            },
+            "$not$./module_45225.v:471$3": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  364
+                ],
+                "Y": [
+                  359
+                ]
+              }
+            },
+            "$not$./module_45225.v:486$8": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324
+                ],
+                "Y": [
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372
+                ]
+              }
+            },
+            "$not$./module_45225.v:493$16": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  373
+                ],
+                "Y": [
+                  53
+                ]
+              }
+            },
+            "$or$./module_45225.v:492$11": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  374
+                ],
+                "B": [
+                  375
+                ],
+                "Y": [
+                  376
+                ]
+              }
+            },
+            "$or$./module_45225.v:492$12": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  376
+                ],
+                "B": [
+                  363
+                ],
+                "Y": [
+                  377
+                ]
+              }
+            },
+            "$or$./module_45225.v:492$13": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  377
+                ],
+                "B": [
+                  378
+                ],
+                "Y": [
+                  379
+                ]
+              }
+            },
+            "$or$./module_45225.v:493$14": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  374
+                ],
+                "B": [
+                  375
+                ],
+                "Y": [
+                  380
+                ]
+              }
+            },
+            "$or$./module_45225.v:493$15": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  380
+                ],
+                "B": [
+                  381
+                ],
+                "Y": [
+                  373
+                ]
+              }
+            },
+            "$procdff$23": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  379
+                ],
+                "CLK": [
+                  382
+                ],
+                "D": [
+                  326,
+                  327,
+                  328,
+                  329,
+                  330,
+                  331,
+                  332,
+                  333,
+                  334,
+                  335,
+                  336,
+                  337,
+                  338,
+                  339,
+                  340,
+                  341,
+                  342,
+                  343,
+                  344,
+                  345,
+                  346,
+                  347,
+                  348,
+                  349,
+                  350,
+                  351,
+                  352,
+                  353,
+                  354,
+                  355,
+                  356,
+                  357
+                ],
+                "Q": [
+                  294,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  302,
+                  303,
+                  304,
+                  305,
+                  306,
+                  307,
+                  308,
+                  309,
+                  310,
+                  311,
+                  312,
+                  313,
+                  314,
+                  315,
+                  316,
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325
+                ]
+              }
+            },
+            "$procdff$24": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  382
+                ],
+                "D": [
+                  383,
+                  384,
+                  385,
+                  386,
+                  387,
+                  388,
+                  389,
+                  390,
+                  391,
+                  392,
+                  393,
+                  394,
+                  395,
+                  396,
+                  397,
+                  398,
+                  399,
+                  400,
+                  401,
+                  402
+                ],
+                "Q": [
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273
+                ]
+              }
+            },
+            "$procdff$25": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  382
+                ],
+                "D": [
+                  403
+                ],
+                "Q": [
+                  374
+                ]
+              }
+            },
+            "$procdff$26": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  382
+                ],
+                "D": [
+                  375,
+                  358
+                ],
+                "Q": [
+                  404,
+                  364
+                ]
+              }
+            },
+            "$procmux$18": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "1"
+                ],
+                "B": [
+                  "0"
+                ],
+                "S": [
+                  361
+                ],
+                "Y": [
+                  403
+                ]
+              }
+            },
+            "$procmux$21": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  274,
+                  275,
+                  276,
+                  277,
+                  278,
+                  279,
+                  280,
+                  281,
+                  282,
+                  283,
+                  284,
+                  285,
+                  286,
+                  287,
+                  288,
+                  289,
+                  290,
+                  291,
+                  292,
+                  293
+                ],
+                "B": [
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264,
+                  265,
+                  266,
+                  267,
+                  268,
+                  269,
+                  270,
+                  271,
+                  272,
+                  273
+                ],
+                "S": [
+                  361
+                ],
+                "Y": [
+                  383,
+                  384,
+                  385,
+                  386,
+                  387,
+                  388,
+                  389,
+                  390,
+                  391,
+                  392,
+                  393,
+                  394,
+                  395,
+                  396,
+                  397,
+                  398,
+                  399,
+                  400,
+                  401,
+                  402
+                ]
+              }
+            },
+            "gen_debounce[0].debouncer": {
+              "type": "debouncer",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clean_out": [
+                  375
+                ],
+                "clk": [
+                  382
+                ],
+                "noisy_in": [
+                  "0"
+                ]
+              }
+            },
+            "gen_debounce[1].debouncer": {
+              "type": "debouncer",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clean_out": [
+                  358
+                ],
+                "clk": [
+                  382
+                ],
+                "noisy_in": [
+                  "0"
+                ]
+              }
+            },
+            "gpins[0].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  183
+                ],
+                "IB": [
+                  184
+                ],
+                "O": [
+                  405
+                ]
+              }
+            },
+            "gpins[10].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  203
+                ],
+                "IB": [
+                  204
+                ],
+                "O": [
+                  406
+                ]
+              }
+            },
+            "gpins[11].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  205
+                ],
+                "IB": [
+                  206
+                ],
+                "O": [
+                  407
+                ]
+              }
+            },
+            "gpins[1].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  185
+                ],
+                "IB": [
+                  186
+                ],
+                "O": [
+                  408
+                ]
+              }
+            },
+            "gpins[2].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  187
+                ],
+                "IB": [
+                  188
+                ],
+                "O": [
+                  409
+                ]
+              }
+            },
+            "gpins[3].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  189
+                ],
+                "IB": [
+                  190
+                ],
+                "O": [
+                  410
+                ]
+              }
+            },
+            "gpins[4].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  191
+                ],
+                "IB": [
+                  192
+                ],
+                "O": [
+                  411
+                ]
+              }
+            },
+            "gpins[5].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  193
+                ],
+                "IB": [
+                  194
+                ],
+                "O": [
+                  412
+                ]
+              }
+            },
+            "gpins[6].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  195
+                ],
+                "IB": [
+                  196
+                ],
+                "O": [
+                  413
+                ]
+              }
+            },
+            "gpins[7].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  197
+                ],
+                "IB": [
+                  198
+                ],
+                "O": [
+                  414
+                ]
+              }
+            },
+            "gpins[8].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  199
+                ],
+                "IB": [
+                  200
+                ],
+                "O": [
+                  415
+                ]
+              }
+            },
+            "gpins[9].gpin_inst": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  201
+                ],
+                "IB": [
+                  202
+                ],
+                "O": [
+                  416
+                ]
+              }
+            },
+            "gps[12].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  3
+                ],
+                "OB": [
+                  4
+                ]
+              }
+            },
+            "gps[13].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  5
+                ],
+                "OB": [
+                  6
+                ]
+              }
+            },
+            "gps[14].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  7
+                ],
+                "OB": [
+                  8
+                ]
+              }
+            },
+            "gps[15].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  9
+                ],
+                "OB": [
+                  10
+                ]
+              }
+            },
+            "gps[16].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  11
+                ],
+                "OB": [
+                  12
+                ]
+              }
+            },
+            "gps[17].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  13
+                ],
+                "OB": [
+                  14
+                ]
+              }
+            },
+            "gps[18].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  15
+                ],
+                "OB": [
+                  16
+                ]
+              }
+            },
+            "gps[19].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  17
+                ],
+                "OB": [
+                  18
+                ]
+              }
+            },
+            "gps[20].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  19
+                ],
+                "OB": [
+                  20
+                ]
+              }
+            },
+            "gps[21].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  21
+                ],
+                "OB": [
+                  22
+                ]
+              }
+            },
+            "gps[22].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  23
+                ],
+                "OB": [
+                  24
+                ]
+              }
+            },
+            "gps[23].gpout_inst": {
+              "type": "OBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  "1"
+                ],
+                "O": [
+                  25
+                ],
+                "OB": [
+                  26
+                ]
+              }
+            },
+            "parallella": {
+              "type": "parallella",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "cactive": [
+                  417
+                ],
+                "clkin_100": [
+                  418
+                ],
+                "csysack": [
+                  419
+                ],
+                "csysreq": [
+                  "0"
+                ],
+                "emaxi_aclk": [
+                  382
+                ],
+                "emaxi_araddr": [
+                  420,
+                  421,
+                  422,
+                  423,
+                  424,
+                  425,
+                  426,
+                  427,
+                  428,
+                  429,
+                  430,
+                  431,
+                  432,
+                  433,
+                  434,
+                  435,
+                  436,
+                  437,
+                  438,
+                  439,
+                  440,
+                  441,
+                  442,
+                  443,
+                  444,
+                  445,
+                  446,
+                  447,
+                  448,
+                  449,
+                  450,
+                  451
+                ],
+                "emaxi_arburst": [
+                  452,
+                  453
+                ],
+                "emaxi_arcache": [
+                  454,
+                  455,
+                  456,
+                  457
+                ],
+                "emaxi_aresetn": [
+                  458
+                ],
+                "emaxi_arid": [
+                  459,
+                  460,
+                  461,
+                  462,
+                  463,
+                  464
+                ],
+                "emaxi_arlen": [
+                  465,
+                  466,
+                  467,
+                  468
+                ],
+                "emaxi_arlock": [
+                  469,
+                  470
+                ],
+                "emaxi_arprot": [
+                  471,
+                  472,
+                  473
+                ],
+                "emaxi_arqos": [
+                  474,
+                  475,
+                  476,
+                  477
+                ],
+                "emaxi_arready": [
+                  478
+                ],
+                "emaxi_arsize": [
+                  479,
+                  480,
+                  481
+                ],
+                "emaxi_arvalid": [
+                  482
+                ],
+                "emaxi_awaddr": [
+                  483,
+                  484,
+                  485,
+                  486,
+                  487,
+                  488,
+                  489,
+                  490,
+                  491,
+                  492,
+                  493,
+                  494,
+                  495,
+                  496,
+                  497,
+                  498,
+                  499,
+                  500,
+                  501,
+                  502,
+                  503,
+                  504,
+                  505,
+                  506,
+                  507,
+                  508,
+                  509,
+                  510,
+                  511,
+                  512,
+                  513,
+                  514
+                ],
+                "emaxi_awburst": [
+                  515,
+                  516
+                ],
+                "emaxi_awcache": [
+                  517,
+                  518,
+                  519,
+                  520
+                ],
+                "emaxi_awid": [
+                  521,
+                  522,
+                  523,
+                  524,
+                  525,
+                  526
+                ],
+                "emaxi_awlen": [
+                  527,
+                  528,
+                  529,
+                  530
+                ],
+                "emaxi_awlock": [
+                  531,
+                  532
+                ],
+                "emaxi_awprot": [
+                  533,
+                  534,
+                  535
+                ],
+                "emaxi_awqos": [
+                  536,
+                  537,
+                  538,
+                  539
+                ],
+                "emaxi_awready": [
+                  540
+                ],
+                "emaxi_awsize": [
+                  541,
+                  542,
+                  543
+                ],
+                "emaxi_awvalid": [
+                  544
+                ],
+                "emaxi_bid": [
+                  545,
+                  546,
+                  547,
+                  548,
+                  549,
+                  550
+                ],
+                "emaxi_bready": [
+                  551
+                ],
+                "emaxi_bresp": [
+                  552,
+                  553
+                ],
+                "emaxi_bvalid": [
+                  554
+                ],
+                "emaxi_rdata": [
+                  555,
+                  556,
+                  557,
+                  558,
+                  559,
+                  560,
+                  561,
+                  562,
+                  563,
+                  564,
+                  565,
+                  566,
+                  567,
+                  568,
+                  569,
+                  570,
+                  571,
+                  572,
+                  573,
+                  574,
+                  575,
+                  576,
+                  577,
+                  578,
+                  579,
+                  580,
+                  581,
+                  582,
+                  583,
+                  584,
+                  585,
+                  586,
+                  587,
+                  588,
+                  589,
+                  590,
+                  591,
+                  592,
+                  593,
+                  594,
+                  595,
+                  596,
+                  597,
+                  598,
+                  599,
+                  600,
+                  601,
+                  602,
+                  603,
+                  604,
+                  605,
+                  606,
+                  607,
+                  608,
+                  609,
+                  610,
+                  611,
+                  612,
+                  613,
+                  614,
+                  615,
+                  616,
+                  617,
+                  618
+                ],
+                "emaxi_rid": [
+                  619,
+                  620,
+                  621,
+                  622,
+                  623,
+                  624
+                ],
+                "emaxi_rlast": [
+                  625
+                ],
+                "emaxi_rready": [
+                  626
+                ],
+                "emaxi_rresp": [
+                  627,
+                  628
+                ],
+                "emaxi_rvalid": [
+                  629
+                ],
+                "emaxi_wdata": [
+                  630,
+                  631,
+                  632,
+                  633,
+                  634,
+                  635,
+                  636,
+                  637,
+                  638,
+                  639,
+                  640,
+                  641,
+                  642,
+                  643,
+                  644,
+                  645,
+                  646,
+                  647,
+                  648,
+                  649,
+                  650,
+                  651,
+                  652,
+                  653,
+                  654,
+                  655,
+                  656,
+                  657,
+                  658,
+                  659,
+                  660,
+                  661,
+                  662,
+                  663,
+                  664,
+                  665,
+                  666,
+                  667,
+                  668,
+                  669,
+                  670,
+                  671,
+                  672,
+                  673,
+                  674,
+                  675,
+                  676,
+                  677,
+                  678,
+                  679,
+                  680,
+                  681,
+                  682,
+                  683,
+                  684,
+                  685,
+                  686,
+                  687,
+                  688,
+                  689,
+                  690,
+                  691,
+                  692,
+                  693
+                ],
+                "emaxi_wid": [
+                  694,
+                  695,
+                  696,
+                  697,
+                  698,
+                  699
+                ],
+                "emaxi_wlast": [
+                  700
+                ],
+                "emaxi_wready": [
+                  701
+                ],
+                "emaxi_wstrb": [
+                  702,
+                  703,
+                  704,
+                  705,
+                  706,
+                  707,
+                  708,
+                  709
+                ],
+                "emaxi_wvalid": [
+                  710
+                ],
+                "esaxi_aclk": [
+                  382
+                ],
+                "esaxi_araddr": [
+                  711,
+                  712,
+                  713,
+                  714,
+                  715,
+                  716,
+                  717,
+                  718,
+                  719,
+                  720,
+                  721,
+                  722,
+                  723,
+                  724,
+                  725,
+                  726,
+                  727,
+                  728,
+                  729,
+                  730,
+                  731,
+                  732,
+                  733,
+                  734,
+                  735,
+                  736,
+                  737,
+                  738,
+                  739,
+                  740,
+                  741,
+                  742
+                ],
+                "esaxi_arburst": [
+                  743,
+                  744
+                ],
+                "esaxi_arcache": [
+                  745,
+                  746,
+                  747,
+                  748
+                ],
+                "esaxi_aresetn": [
+                  362
+                ],
+                "esaxi_arid": [
+                  749,
+                  750,
+                  751,
+                  752,
+                  753,
+                  754,
+                  755,
+                  756,
+                  757,
+                  758,
+                  759,
+                  760
+                ],
+                "esaxi_arlen": [
+                  761,
+                  762,
+                  763,
+                  764
+                ],
+                "esaxi_arlock": [
+                  765,
+                  766
+                ],
+                "esaxi_arprot": [
+                  767,
+                  768,
+                  769
+                ],
+                "esaxi_arqos": [
+                  770,
+                  771,
+                  772,
+                  773
+                ],
+                "esaxi_arready": [
+                  774
+                ],
+                "esaxi_arsize": [
+                  775,
+                  776,
+                  777
+                ],
+                "esaxi_arvalid": [
+                  778
+                ],
+                "esaxi_awaddr": [
+                  779,
+                  780,
+                  781,
+                  782,
+                  783,
+                  784,
+                  785,
+                  786,
+                  787,
+                  788,
+                  789,
+                  790,
+                  791,
+                  792,
+                  793,
+                  794,
+                  795,
+                  796,
+                  797,
+                  798,
+                  799,
+                  800,
+                  801,
+                  802,
+                  803,
+                  804,
+                  805,
+                  806,
+                  807,
+                  808,
+                  809,
+                  810
+                ],
+                "esaxi_awburst": [
+                  811,
+                  812
+                ],
+                "esaxi_awcache": [
+                  813,
+                  814,
+                  815,
+                  816
+                ],
+                "esaxi_awid": [
+                  817,
+                  818,
+                  819,
+                  820,
+                  821,
+                  822,
+                  823,
+                  824,
+                  825,
+                  826,
+                  827,
+                  828
+                ],
+                "esaxi_awlen": [
+                  829,
+                  830,
+                  831,
+                  832
+                ],
+                "esaxi_awlock": [
+                  833,
+                  834
+                ],
+                "esaxi_awprot": [
+                  835,
+                  836,
+                  837
+                ],
+                "esaxi_awqos": [
+                  838,
+                  839,
+                  840,
+                  841
+                ],
+                "esaxi_awready": [
+                  842
+                ],
+                "esaxi_awsize": [
+                  843,
+                  844,
+                  845
+                ],
+                "esaxi_awvalid": [
+                  846
+                ],
+                "esaxi_bid": [
+                  847,
+                  848,
+                  849,
+                  850,
+                  851,
+                  852,
+                  853,
+                  854,
+                  855,
+                  856,
+                  857,
+                  858
+                ],
+                "esaxi_bready": [
+                  859
+                ],
+                "esaxi_bresp": [
+                  860,
+                  861
+                ],
+                "esaxi_bvalid": [
+                  862
+                ],
+                "esaxi_rdata": [
+                  863,
+                  864,
+                  865,
+                  866,
+                  867,
+                  868,
+                  869,
+                  870,
+                  871,
+                  872,
+                  873,
+                  874,
+                  875,
+                  876,
+                  877,
+                  878,
+                  879,
+                  880,
+                  881,
+                  882,
+                  883,
+                  884,
+                  885,
+                  886,
+                  887,
+                  888,
+                  889,
+                  890,
+                  891,
+                  892,
+                  893,
+                  894
+                ],
+                "esaxi_rid": [
+                  895,
+                  896,
+                  897,
+                  898,
+                  899,
+                  900,
+                  901,
+                  902,
+                  903,
+                  904,
+                  905,
+                  906
+                ],
+                "esaxi_rlast": [
+                  907
+                ],
+                "esaxi_rready": [
+                  908
+                ],
+                "esaxi_rresp": [
+                  909,
+                  910
+                ],
+                "esaxi_rvalid": [
+                  911
+                ],
+                "esaxi_wdata": [
+                  912,
+                  913,
+                  914,
+                  915,
+                  916,
+                  917,
+                  918,
+                  919,
+                  920,
+                  921,
+                  922,
+                  923,
+                  924,
+                  925,
+                  926,
+                  927,
+                  928,
+                  929,
+                  930,
+                  931,
+                  932,
+                  933,
+                  934,
+                  935,
+                  936,
+                  937,
+                  938,
+                  939,
+                  940,
+                  941,
+                  942,
+                  943
+                ],
+                "esaxi_wid": [
+                  944,
+                  945,
+                  946,
+                  947,
+                  948,
+                  949,
+                  950,
+                  951,
+                  952,
+                  953,
+                  954,
+                  955
+                ],
+                "esaxi_wlast": [
+                  956
+                ],
+                "esaxi_wready": [
+                  957
+                ],
+                "esaxi_wstrb": [
+                  958,
+                  959,
+                  960,
+                  961
+                ],
+                "esaxi_wvalid": [
+                  962
+                ],
+                "reset": [
+                  379
+                ],
+                "reset_chip": [
+                  381
+                ],
+                "reset_fpga": [
+                  378
+                ],
+                "rxi_cclk_n": [
+                  52
+                ],
+                "rxi_cclk_p": [
+                  51
+                ],
+                "rxi_data_n": [
+                  215,
+                  216,
+                  217,
+                  218,
+                  219,
+                  220,
+                  221,
+                  222
+                ],
+                "rxi_data_p": [
+                  207,
+                  208,
+                  209,
+                  210,
+                  211,
+                  212,
+                  213,
+                  214
+                ],
+                "rxi_frame_n": [
+                  224
+                ],
+                "rxi_frame_p": [
+                  223
+                ],
+                "rxi_lclk_n": [
+                  226
+                ],
+                "rxi_lclk_p": [
+                  225
+                ],
+                "rxi_rd_wait_n": [
+                  50
+                ],
+                "rxi_rd_wait_p": [
+                  49
+                ],
+                "rxi_wr_wait_n": [
+                  48
+                ],
+                "rxi_wr_wait_p": [
+                  47
+                ],
+                "txo_data_n": [
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42
+                ],
+                "txo_data_p": [
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "txo_frame_n": [
+                  44
+                ],
+                "txo_frame_p": [
+                  43
+                ],
+                "txo_lclk_n": [
+                  46
+                ],
+                "txo_lclk_p": [
+                  45
+                ],
+                "txo_rd_wait_n": [
+                  230
+                ],
+                "txo_rd_wait_p": [
+                  229
+                ],
+                "txo_wr_wait_n": [
+                  228
+                ],
+                "txo_wr_wait_p": [
+                  227
+                ]
+              }
+            },
+            "system_stub": {
+              "type": "system_stub",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "hdmi_clk": [
+                  248
+                ],
+                "hdmi_data": [
+                  247,
+                  246,
+                  245,
+                  244,
+                  243,
+                  242,
+                  241,
+                  240,
+                  239,
+                  238,
+                  237,
+                  236,
+                  235,
+                  234,
+                  233,
+                  232
+                ],
+                "hdmi_data_e": [
+                  251
+                ],
+                "hdmi_hsync": [
+                  249
+                ],
+                "hdmi_int": [
+                  "0"
+                ],
+                "hdmi_vsync": [
+                  250
+                ],
+                "processing_system7_0_DDR_Addr": [
+                  117,
+                  118,
+                  119,
+                  120,
+                  121,
+                  122,
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131
+                ],
+                "processing_system7_0_DDR_BankAddr": [
+                  114,
+                  115,
+                  116
+                ],
+                "processing_system7_0_DDR_CAS_n": [
+                  113
+                ],
+                "processing_system7_0_DDR_CKE": [
+                  110
+                ],
+                "processing_system7_0_DDR_CS_n": [
+                  111
+                ],
+                "processing_system7_0_DDR_Clk": [
+                  108
+                ],
+                "processing_system7_0_DDR_Clk_n": [
+                  109
+                ],
+                "processing_system7_0_DDR_DM": [
+                  166,
+                  167,
+                  168,
+                  169
+                ],
+                "processing_system7_0_DDR_DQ": [
+                  134,
+                  135,
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143,
+                  144,
+                  145,
+                  146,
+                  147,
+                  148,
+                  149,
+                  150,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162,
+                  163,
+                  164,
+                  165
+                ],
+                "processing_system7_0_DDR_DQS": [
+                  170,
+                  171,
+                  172,
+                  173
+                ],
+                "processing_system7_0_DDR_DQS_n": [
+                  174,
+                  175,
+                  176,
+                  177
+                ],
+                "processing_system7_0_DDR_DRSTB": [
+                  133
+                ],
+                "processing_system7_0_DDR_ODT": [
+                  132
+                ],
+                "processing_system7_0_DDR_RAS_n": [
+                  112
+                ],
+                "processing_system7_0_DDR_VRN": [
+                  178
+                ],
+                "processing_system7_0_DDR_VRP": [
+                  179
+                ],
+                "processing_system7_0_DDR_WEB_pin": [
+                  2
+                ],
+                "processing_system7_0_FCLK_CLK0_pin": [
+                  418
+                ],
+                "processing_system7_0_FCLK_CLK3_pin": [
+                  382
+                ],
+                "processing_system7_0_I2C0_SCL_pin": [
+                  252
+                ],
+                "processing_system7_0_I2C0_SDA_pin": [
+                  253
+                ],
+                "processing_system7_0_MIO": [
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76,
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104,
+                  105,
+                  106,
+                  107
+                ],
+                "processing_system7_0_M_AXI_GP1_ACLK_pin": [
+                  382
+                ],
+                "processing_system7_0_M_AXI_GP1_ARADDR_pin": [
+                  711,
+                  712,
+                  713,
+                  714,
+                  715,
+                  716,
+                  717,
+                  718,
+                  719,
+                  720,
+                  721,
+                  722,
+                  723,
+                  724,
+                  725,
+                  726,
+                  727,
+                  728,
+                  729,
+                  730,
+                  731,
+                  732,
+                  733,
+                  734,
+                  735,
+                  736,
+                  737,
+                  738,
+                  739,
+                  740,
+                  741,
+                  742
+                ],
+                "processing_system7_0_M_AXI_GP1_ARBURST_pin": [
+                  743,
+                  744
+                ],
+                "processing_system7_0_M_AXI_GP1_ARCACHE_pin": [
+                  745,
+                  746,
+                  747,
+                  748
+                ],
+                "processing_system7_0_M_AXI_GP1_ARESETN_pin": [
+                  362
+                ],
+                "processing_system7_0_M_AXI_GP1_ARID_pin": [
+                  749,
+                  750,
+                  751,
+                  752,
+                  753,
+                  754,
+                  755,
+                  756,
+                  757,
+                  758,
+                  759,
+                  760
+                ],
+                "processing_system7_0_M_AXI_GP1_ARLEN_pin": [
+                  761,
+                  762,
+                  763,
+                  764
+                ],
+                "processing_system7_0_M_AXI_GP1_ARLOCK_pin": [
+                  765,
+                  766
+                ],
+                "processing_system7_0_M_AXI_GP1_ARPROT_pin": [
+                  767,
+                  768,
+                  769
+                ],
+                "processing_system7_0_M_AXI_GP1_ARQOS_pin": [
+                  770,
+                  771,
+                  772,
+                  773
+                ],
+                "processing_system7_0_M_AXI_GP1_ARREADY_pin": [
+                  774
+                ],
+                "processing_system7_0_M_AXI_GP1_ARSIZE_pin": [
+                  775,
+                  776,
+                  777
+                ],
+                "processing_system7_0_M_AXI_GP1_ARVALID_pin": [
+                  778
+                ],
+                "processing_system7_0_M_AXI_GP1_AWADDR_pin": [
+                  779,
+                  780,
+                  781,
+                  782,
+                  783,
+                  784,
+                  785,
+                  786,
+                  787,
+                  788,
+                  789,
+                  790,
+                  791,
+                  792,
+                  793,
+                  794,
+                  795,
+                  796,
+                  797,
+                  798,
+                  799,
+                  800,
+                  801,
+                  802,
+                  803,
+                  804,
+                  805,
+                  806,
+                  807,
+                  808,
+                  809,
+                  810
+                ],
+                "processing_system7_0_M_AXI_GP1_AWBURST_pin": [
+                  811,
+                  812
+                ],
+                "processing_system7_0_M_AXI_GP1_AWCACHE_pin": [
+                  813,
+                  814,
+                  815,
+                  816
+                ],
+                "processing_system7_0_M_AXI_GP1_AWID_pin": [
+                  817,
+                  818,
+                  819,
+                  820,
+                  821,
+                  822,
+                  823,
+                  824,
+                  825,
+                  826,
+                  827,
+                  828
+                ],
+                "processing_system7_0_M_AXI_GP1_AWLEN_pin": [
+                  829,
+                  830,
+                  831,
+                  832
+                ],
+                "processing_system7_0_M_AXI_GP1_AWLOCK_pin": [
+                  833,
+                  834
+                ],
+                "processing_system7_0_M_AXI_GP1_AWPROT_pin": [
+                  835,
+                  836,
+                  837
+                ],
+                "processing_system7_0_M_AXI_GP1_AWQOS_pin": [
+                  838,
+                  839,
+                  840,
+                  841
+                ],
+                "processing_system7_0_M_AXI_GP1_AWREADY_pin": [
+                  842
+                ],
+                "processing_system7_0_M_AXI_GP1_AWSIZE_pin": [
+                  843,
+                  844,
+                  845
+                ],
+                "processing_system7_0_M_AXI_GP1_AWVALID_pin": [
+                  846
+                ],
+                "processing_system7_0_M_AXI_GP1_BID_pin": [
+                  847,
+                  848,
+                  849,
+                  850,
+                  851,
+                  852,
+                  853,
+                  854,
+                  855,
+                  856,
+                  857,
+                  858
+                ],
+                "processing_system7_0_M_AXI_GP1_BREADY_pin": [
+                  859
+                ],
+                "processing_system7_0_M_AXI_GP1_BRESP_pin": [
+                  860,
+                  861
+                ],
+                "processing_system7_0_M_AXI_GP1_BVALID_pin": [
+                  862
+                ],
+                "processing_system7_0_M_AXI_GP1_RDATA_pin": [
+                  863,
+                  864,
+                  865,
+                  866,
+                  867,
+                  868,
+                  869,
+                  870,
+                  871,
+                  872,
+                  873,
+                  874,
+                  875,
+                  876,
+                  877,
+                  878,
+                  879,
+                  880,
+                  881,
+                  882,
+                  883,
+                  884,
+                  885,
+                  886,
+                  887,
+                  888,
+                  889,
+                  890,
+                  891,
+                  892,
+                  893,
+                  894
+                ],
+                "processing_system7_0_M_AXI_GP1_RID_pin": [
+                  895,
+                  896,
+                  897,
+                  898,
+                  899,
+                  900,
+                  901,
+                  902,
+                  903,
+                  904,
+                  905,
+                  906
+                ],
+                "processing_system7_0_M_AXI_GP1_RLAST_pin": [
+                  907
+                ],
+                "processing_system7_0_M_AXI_GP1_RREADY_pin": [
+                  908
+                ],
+                "processing_system7_0_M_AXI_GP1_RRESP_pin": [
+                  909,
+                  910
+                ],
+                "processing_system7_0_M_AXI_GP1_RVALID_pin": [
+                  911
+                ],
+                "processing_system7_0_M_AXI_GP1_WDATA_pin": [
+                  912,
+                  913,
+                  914,
+                  915,
+                  916,
+                  917,
+                  918,
+                  919,
+                  920,
+                  921,
+                  922,
+                  923,
+                  924,
+                  925,
+                  926,
+                  927,
+                  928,
+                  929,
+                  930,
+                  931,
+                  932,
+                  933,
+                  934,
+                  935,
+                  936,
+                  937,
+                  938,
+                  939,
+                  940,
+                  941,
+                  942,
+                  943
+                ],
+                "processing_system7_0_M_AXI_GP1_WID_pin": [
+                  944,
+                  945,
+                  946,
+                  947,
+                  948,
+                  949,
+                  950,
+                  951,
+                  952,
+                  953,
+                  954,
+                  955
+                ],
+                "processing_system7_0_M_AXI_GP1_WLAST_pin": [
+                  956
+                ],
+                "processing_system7_0_M_AXI_GP1_WREADY_pin": [
+                  957
+                ],
+                "processing_system7_0_M_AXI_GP1_WSTRB_pin": [
+                  958,
+                  959,
+                  960,
+                  961
+                ],
+                "processing_system7_0_M_AXI_GP1_WVALID_pin": [
+                  962
+                ],
+                "processing_system7_0_PS_CLK": [
+                  181
+                ],
+                "processing_system7_0_PS_PORB": [
+                  182
+                ],
+                "processing_system7_0_PS_SRSTB": [
+                  180
+                ],
+                "processing_system7_0_S_AXI_HP1_ACLK_pin": [
+                  382
+                ],
+                "processing_system7_0_S_AXI_HP1_ARADDR_pin": [
+                  420,
+                  421,
+                  422,
+                  423,
+                  424,
+                  425,
+                  426,
+                  427,
+                  428,
+                  429,
+                  430,
+                  431,
+                  432,
+                  433,
+                  434,
+                  435,
+                  436,
+                  437,
+                  438,
+                  439,
+                  440,
+                  441,
+                  442,
+                  443,
+                  444,
+                  445,
+                  446,
+                  447,
+                  448,
+                  449,
+                  450,
+                  451
+                ],
+                "processing_system7_0_S_AXI_HP1_ARBURST_pin": [
+                  452,
+                  453
+                ],
+                "processing_system7_0_S_AXI_HP1_ARCACHE_pin": [
+                  454,
+                  455,
+                  456,
+                  457
+                ],
+                "processing_system7_0_S_AXI_HP1_ARESETN_pin": [
+                  458
+                ],
+                "processing_system7_0_S_AXI_HP1_ARID_pin": [
+                  459,
+                  460,
+                  461,
+                  462,
+                  463,
+                  464
+                ],
+                "processing_system7_0_S_AXI_HP1_ARLEN_pin": [
+                  465,
+                  466,
+                  467,
+                  468
+                ],
+                "processing_system7_0_S_AXI_HP1_ARLOCK_pin": [
+                  469,
+                  470
+                ],
+                "processing_system7_0_S_AXI_HP1_ARPROT_pin": [
+                  471,
+                  472,
+                  473
+                ],
+                "processing_system7_0_S_AXI_HP1_ARQOS_pin": [
+                  474,
+                  475,
+                  476,
+                  477
+                ],
+                "processing_system7_0_S_AXI_HP1_ARREADY_pin": [
+                  478
+                ],
+                "processing_system7_0_S_AXI_HP1_ARSIZE_pin": [
+                  479,
+                  480,
+                  481
+                ],
+                "processing_system7_0_S_AXI_HP1_ARVALID_pin": [
+                  482
+                ],
+                "processing_system7_0_S_AXI_HP1_AWADDR_pin": [
+                  483,
+                  484,
+                  485,
+                  486,
+                  487,
+                  488,
+                  489,
+                  490,
+                  491,
+                  492,
+                  493,
+                  494,
+                  495,
+                  496,
+                  497,
+                  498,
+                  499,
+                  500,
+                  501,
+                  502,
+                  503,
+                  504,
+                  505,
+                  506,
+                  507,
+                  508,
+                  509,
+                  510,
+                  511,
+                  512,
+                  513,
+                  514
+                ],
+                "processing_system7_0_S_AXI_HP1_AWBURST_pin": [
+                  515,
+                  516
+                ],
+                "processing_system7_0_S_AXI_HP1_AWCACHE_pin": [
+                  517,
+                  518,
+                  519,
+                  520
+                ],
+                "processing_system7_0_S_AXI_HP1_AWID_pin": [
+                  521,
+                  522,
+                  523,
+                  524,
+                  525,
+                  526
+                ],
+                "processing_system7_0_S_AXI_HP1_AWLEN_pin": [
+                  527,
+                  528,
+                  529,
+                  530
+                ],
+                "processing_system7_0_S_AXI_HP1_AWLOCK_pin": [
+                  531,
+                  532
+                ],
+                "processing_system7_0_S_AXI_HP1_AWPROT_pin": [
+                  533,
+                  534,
+                  535
+                ],
+                "processing_system7_0_S_AXI_HP1_AWQOS_pin": [
+                  536,
+                  537,
+                  538,
+                  539
+                ],
+                "processing_system7_0_S_AXI_HP1_AWREADY_pin": [
+                  540
+                ],
+                "processing_system7_0_S_AXI_HP1_AWSIZE_pin": [
+                  541,
+                  542,
+                  543
+                ],
+                "processing_system7_0_S_AXI_HP1_AWVALID_pin": [
+                  544
+                ],
+                "processing_system7_0_S_AXI_HP1_BID_pin": [
+                  545,
+                  546,
+                  547,
+                  548,
+                  549,
+                  550
+                ],
+                "processing_system7_0_S_AXI_HP1_BREADY_pin": [
+                  551
+                ],
+                "processing_system7_0_S_AXI_HP1_BRESP_pin": [
+                  552,
+                  553
+                ],
+                "processing_system7_0_S_AXI_HP1_BVALID_pin": [
+                  554
+                ],
+                "processing_system7_0_S_AXI_HP1_RDATA_pin": [
+                  555,
+                  556,
+                  557,
+                  558,
+                  559,
+                  560,
+                  561,
+                  562,
+                  563,
+                  564,
+                  565,
+                  566,
+                  567,
+                  568,
+                  569,
+                  570,
+                  571,
+                  572,
+                  573,
+                  574,
+                  575,
+                  576,
+                  577,
+                  578,
+                  579,
+                  580,
+                  581,
+                  582,
+                  583,
+                  584,
+                  585,
+                  586,
+                  587,
+                  588,
+                  589,
+                  590,
+                  591,
+                  592,
+                  593,
+                  594,
+                  595,
+                  596,
+                  597,
+                  598,
+                  599,
+                  600,
+                  601,
+                  602,
+                  603,
+                  604,
+                  605,
+                  606,
+                  607,
+                  608,
+                  609,
+                  610,
+                  611,
+                  612,
+                  613,
+                  614,
+                  615,
+                  616,
+                  617,
+                  618
+                ],
+                "processing_system7_0_S_AXI_HP1_RID_pin": [
+                  619,
+                  620,
+                  621,
+                  622,
+                  623,
+                  624
+                ],
+                "processing_system7_0_S_AXI_HP1_RLAST_pin": [
+                  625
+                ],
+                "processing_system7_0_S_AXI_HP1_RREADY_pin": [
+                  626
+                ],
+                "processing_system7_0_S_AXI_HP1_RRESP_pin": [
+                  627,
+                  628
+                ],
+                "processing_system7_0_S_AXI_HP1_RVALID_pin": [
+                  629
+                ],
+                "processing_system7_0_S_AXI_HP1_WDATA_pin": [
+                  630,
+                  631,
+                  632,
+                  633,
+                  634,
+                  635,
+                  636,
+                  637,
+                  638,
+                  639,
+                  640,
+                  641,
+                  642,
+                  643,
+                  644,
+                  645,
+                  646,
+                  647,
+                  648,
+                  649,
+                  650,
+                  651,
+                  652,
+                  653,
+                  654,
+                  655,
+                  656,
+                  657,
+                  658,
+                  659,
+                  660,
+                  661,
+                  662,
+                  663,
+                  664,
+                  665,
+                  666,
+                  667,
+                  668,
+                  669,
+                  670,
+                  671,
+                  672,
+                  673,
+                  674,
+                  675,
+                  676,
+                  677,
+                  678,
+                  679,
+                  680,
+                  681,
+                  682,
+                  683,
+                  684,
+                  685,
+                  686,
+                  687,
+                  688,
+                  689,
+                  690,
+                  691,
+                  692,
+                  693
+                ],
+                "processing_system7_0_S_AXI_HP1_WID_pin": [
+                  694,
+                  695,
+                  696,
+                  697,
+                  698,
+                  699
+                ],
+                "processing_system7_0_S_AXI_HP1_WLAST_pin": [
+                  700
+                ],
+                "processing_system7_0_S_AXI_HP1_WREADY_pin": [
+                  701
+                ],
+                "processing_system7_0_S_AXI_HP1_WSTRB_pin": [
+                  702,
+                  703,
+                  704,
+                  705,
+                  706,
+                  707,
+                  708,
+                  709
+                ],
+                "processing_system7_0_S_AXI_HP1_WVALID_pin": [
+                  710
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

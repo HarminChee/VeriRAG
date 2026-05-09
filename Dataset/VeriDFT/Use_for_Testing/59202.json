@@ -1,0 +1,211 @@
+{
+  "modules": {
+    "altera_pli_streaming": {
+      "modules": {
+        "altera_pli_streaming": {
+          "ports": {
+            "clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "reset_n": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "source_valid": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "source_data": {
+              "direction": "output",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            },
+            "source_ready": {
+              "direction": "input",
+              "bits": [
+                13
+              ]
+            },
+            "sink_valid": {
+              "direction": "input",
+              "bits": [
+                14
+              ]
+            },
+            "sink_data": {
+              "direction": "input",
+              "bits": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22
+              ]
+            },
+            "sink_ready": {
+              "direction": "output",
+              "bits": [
+                23
+              ]
+            },
+            "resetrequest": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            }
+          },
+          "cells": {
+            "$logic_not$./module_59202.v:29$2": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  24
+                ]
+              }
+            },
+            "$procdff$4": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  4
+                ],
+                "Q": [
+                  4
+                ]
+              }
+            },
+            "$procdff$5": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  23
+                ],
+                "Q": [
+                  23
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  3
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "Q": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ]
+              }
+            },
+            "jtag_dc_streaming": {
+              "type": "altera_jtag_dc_streaming",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "reset_n": [
+                  3
+                ],
+                "resetrequest": [
+                  25
+                ],
+                "sink_data": [
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22
+                ],
+                "sink_ready": [
+                  26
+                ],
+                "sink_valid": [
+                  14
+                ],
+                "source_data": [
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "source_valid": [
+                  35
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

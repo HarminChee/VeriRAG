@@ -1,0 +1,109 @@
+{
+  "modules": {
+    "ccgc": {
+      "modules": {
+        "ccgc": {
+          "ports": {
+            "clk_i": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "clk_o": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "enable_i": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "test_i": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {}
+        }
+      }
+    },
+    "sync_generic": {
+      "modules": {
+        "sync_generic": {
+          "ports": {
+            "clk_r": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "clk_s": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "rcv_o": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "rst_r": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "rst_s": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "snd_i": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            }
+          },
+          "cells": {}
+        }
+      }
+    },
+    "sync_rst": {
+      "modules": {
+        "sync_rst": {
+          "ports": {
+            "clk_r": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "rst_i": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "rst_o": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            }
+          },
+          "cells": {}
+        }
+      }
+    }
+  }
+}

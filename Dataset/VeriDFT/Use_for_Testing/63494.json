@@ -1,0 +1,390 @@
+{
+  "modules": {
+    "altera_avalon_st_jtag_interface": {
+      "modules": {
+        "altera_avalon_st_jtag_interface": {
+          "ports": {
+            "jtag_tck": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "jtag_tms": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "jtag_tdi": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "jtag_tdo": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "jtag_ena": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "jtag_usr1": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "jtag_clr": {
+              "direction": "input",
+              "bits": [
+                7
+              ]
+            },
+            "jtag_clrn": {
+              "direction": "input",
+              "bits": [
+                8
+              ]
+            },
+            "jtag_state_tlr": {
+              "direction": "input",
+              "bits": [
+                9
+              ]
+            },
+            "jtag_state_rti": {
+              "direction": "input",
+              "bits": [
+                10
+              ]
+            },
+            "jtag_state_sdrs": {
+              "direction": "input",
+              "bits": [
+                11
+              ]
+            },
+            "jtag_state_cdr": {
+              "direction": "input",
+              "bits": [
+                12
+              ]
+            },
+            "jtag_state_sdr": {
+              "direction": "input",
+              "bits": [
+                13
+              ]
+            },
+            "jtag_state_e1dr": {
+              "direction": "input",
+              "bits": [
+                14
+              ]
+            },
+            "jtag_state_pdr": {
+              "direction": "input",
+              "bits": [
+                15
+              ]
+            },
+            "jtag_state_e2dr": {
+              "direction": "input",
+              "bits": [
+                16
+              ]
+            },
+            "jtag_state_udr": {
+              "direction": "input",
+              "bits": [
+                17
+              ]
+            },
+            "jtag_state_sirs": {
+              "direction": "input",
+              "bits": [
+                18
+              ]
+            },
+            "jtag_state_cir": {
+              "direction": "input",
+              "bits": [
+                19
+              ]
+            },
+            "jtag_state_sir": {
+              "direction": "input",
+              "bits": [
+                20
+              ]
+            },
+            "jtag_state_e1ir": {
+              "direction": "input",
+              "bits": [
+                21
+              ]
+            },
+            "jtag_state_pir": {
+              "direction": "input",
+              "bits": [
+                22
+              ]
+            },
+            "jtag_state_e2ir": {
+              "direction": "input",
+              "bits": [
+                23
+              ]
+            },
+            "jtag_state_uir": {
+              "direction": "input",
+              "bits": [
+                24
+              ]
+            },
+            "jtag_ir_in": {
+              "direction": "input",
+              "bits": [
+                25,
+                26,
+                27
+              ]
+            },
+            "jtag_irq": {
+              "direction": "output",
+              "bits": [
+                "0"
+              ]
+            },
+            "jtag_ir_out": {
+              "direction": "output",
+              "bits": [
+                "0",
+                "0",
+                "0"
+              ]
+            },
+            "clk": {
+              "direction": "input",
+              "bits": [
+                28
+              ]
+            },
+            "reset_n": {
+              "direction": "input",
+              "bits": [
+                29
+              ]
+            },
+            "source_ready": {
+              "direction": "input",
+              "bits": [
+                30
+              ]
+            },
+            "source_data": {
+              "direction": "output",
+              "bits": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ]
+            },
+            "source_valid": {
+              "direction": "output",
+              "bits": [
+                39
+              ]
+            },
+            "sink_data": {
+              "direction": "input",
+              "bits": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ]
+            },
+            "sink_valid": {
+              "direction": "input",
+              "bits": [
+                48
+              ]
+            },
+            "sink_ready": {
+              "direction": "output",
+              "bits": [
+                49
+              ]
+            },
+            "resetrequest": {
+              "direction": "output",
+              "bits": [
+                50
+              ]
+            },
+            "debug_reset": {
+              "direction": "output",
+              "bits": [
+                51
+              ]
+            },
+            "mgmt_valid": {
+              "direction": "output",
+              "bits": [
+                52
+              ]
+            },
+            "mgmt_channel": {
+              "direction": "output",
+              "bits": [
+                53
+              ]
+            },
+            "mgmt_data": {
+              "direction": "output",
+              "bits": [
+                54
+              ]
+            }
+          },
+          "cells": {
+            "node": {
+              "type": "altera_jtag_sld_node",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ir_in": [
+                  55,
+                  56,
+                  57
+                ],
+                "ir_out": [
+                  "0"
+                ],
+                "tck": [
+                  58
+                ],
+                "tdi": [
+                  59
+                ],
+                "tdo": [
+                  60
+                ],
+                "virtual_state_cdr": [
+                  61
+                ],
+                "virtual_state_cir": [],
+                "virtual_state_e1dr": [],
+                "virtual_state_e2dr": [],
+                "virtual_state_pdr": [],
+                "virtual_state_sdr": [
+                  62
+                ],
+                "virtual_state_udr": [
+                  63
+                ],
+                "virtual_state_uir": []
+              }
+            },
+            "normal.jtag_dc_streaming": {
+              "type": "altera_jtag_dc_streaming",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  28
+                ],
+                "debug_reset": [
+                  51
+                ],
+                "ir_in": [
+                  55,
+                  56,
+                  57
+                ],
+                "mgmt_channel": [
+                  53
+                ],
+                "mgmt_data": [
+                  54
+                ],
+                "mgmt_valid": [
+                  52
+                ],
+                "reset_n": [
+                  29
+                ],
+                "resetrequest": [
+                  50
+                ],
+                "sink_data": [
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "sink_ready": [
+                  49
+                ],
+                "sink_valid": [
+                  48
+                ],
+                "source_data": [
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ],
+                "source_valid": [
+                  39
+                ],
+                "tck": [
+                  58
+                ],
+                "tdi": [
+                  59
+                ],
+                "tdo": [
+                  60
+                ],
+                "virtual_state_cdr": [
+                  61
+                ],
+                "virtual_state_sdr": [
+                  62
+                ],
+                "virtual_state_udr": [
+                  63
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

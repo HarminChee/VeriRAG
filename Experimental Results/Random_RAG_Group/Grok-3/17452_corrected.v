@@ -1,0 +1,134 @@
+`define CLKDEL_PIPE_SZ 3
+`define RIPPLE_DIVIDER
+`ifdef USE_DIVIDER_23
+  `define USE_LATCH_ENABLE 1
+`endif
+`define SINGLE_HS_RETIMER 1
+module clkctrl_phi2(
+               input  wire hsclk_in,
+               input  wire lsclk_in,
+               input  wire rst_b,
+               input  wire hsclk_sel,
+               input  wire delay_bypass,
+               input  wire cpuclk_div_sel,
+               input  wire test_i,
+               output wire hsclk_selected,
+               output wire lsclk_selected,
+               output wire clkout,              
+               output wire fast_clkout          
+               );
+  reg                      hs_enable_q, ls_enable_q;
+  reg                      selected_ls_q;
+  reg                      selected_hs_q;
+`ifdef SINGLE_HS_RETIMER
+  reg                      retimed_ls_enable_q;
+`else
+  reg [1:0]                retimed_ls_enable_q;
+`endif
+  reg                      retimed_hs_enable_q;
+  reg [`CLKDEL_PIPE_SZ-1:0] del_q;
+  wire                     retimed_ls_enable_w;
+  wire                     cpuclk_w;
+  wire                     lsclk_del_w;
+  wire                     dft_hsclk, dft_lsclk, dft_rst_b, dft_cpuclk;
+  
+  assign dft_hsclk = test_i ? hsclk_in : hsclk_in;
+  assign dft_lsclk = test_i ? lsclk_in : lsclk_del_w;
+  assign dft_rst_b = test_i ? rst_b : rst_b;
+  assign dft_cpuclk = test_i ? hsclk_in : cpuclk_w;
+  
+  assign lsclk_del_w = (delay_bypass) ? lsclk_in : del_q[0];
+  assign clkout = (cpuclk_w & hs_enable_q) | (lsclk_del_w & ls_enable_q);
+  assign lsclk_selected = selected_ls_q;
+  assign hsclk_selected = selected_hs_q;
+  assign fast_clkout = cpuclk_w;
+
+`ifdef RIPPLE_DIVIDER
+  reg                       ripple_div2_q;
+  reg                       ripple_div4_q;
+  `ifdef RIPPLE_DIV8
+  reg                       ripple_div8_q;
+  `endif
+  always @ (posedge dft_hsclk)
+    ripple_div2_q <= !ripple_div2_q;
+  always @ (posedge ripple_div2_q)
+    ripple_div4_q <= !ripple_div4_q;
+  `ifdef RIPPLE_DIV8
+  always @ (posedge ripple_div4_q)
+    ripple_div8_q <= !ripple_div8_q;
+  assign cpuclk_w = (cpuclk_div_sel) ? ripple_div8_q : ripple_div2_q;
+  `else
+  assign cpuclk_w = (cpuclk_div_sel) ? ripple_div4_q : ripple_div2_q;
+  `endif
+`else
+  clkdiv234 divider_u ( .clkin(hsclk_in),
+                        .rstb(dft_rst_b),
+`ifdef USE_DIVIDER_23
+                        .div4(1'b0),
+                        .div3(cpuclk_div_sel==1'b1),
+`else
+                        .div4(cpuclk_div_sel==1'b1),
+                        .div3(1'b0),
+`endif
+                        .div2(cpuclk_div_sel==1'b0),
+                        .clkout(cpuclk_w));
+`endif 
+
+  always @ (posedge dft_hsclk) begin
+    del_q <= { lsclk_in, del_q[`CLKDEL_PIPE_SZ-1:1]};
+  end
+  
+  always @ (posedge dft_lsclk or negedge dft_rst_b)
+    if (!dft_rst_b)
+      selected_ls_q <= 1'b1;
+    else
+      selected_ls_q <= !hsclk_sel & !retimed_hs_enable_q;
+      
+  always @ (posedge dft_cpuclk or negedge dft_rst_b)
+    if (!dft_rst_b)
+      selected_hs_q <= 1'b0;
+    else
+      selected_hs_q <= hs_enable_q;
+
+`ifdef USE_LATCH_ENABLE
+  always @ (dft_cpuclk or dft_rst_b)
+    if (!dft_rst_b)
+      hs_enable_q <= 1'b0;
+    else if (!dft_cpuclk)
+      hs_enable_q <= hsclk_sel & !retimed_ls_enable_w;
+`else
+  always @ (negedge dft_hsclk or negedge dft_rst_b)
+    if (!dft_rst_b)
+      hs_enable_q <= 1'b0;
+    else if (!dft_cpuclk)
+      hs_enable_q <= hsclk_sel & !retimed_ls_enable_w;
+`endif 
+
+  always @ (negedge dft_lsclk or negedge dft_rst_b)
+    if (!dft_rst_b)
+      ls_enable_q <= 1'b1;
+    else
+      ls_enable_q <= !hsclk_sel & !retimed_hs_enable_q;
+
+  always @ (negedge dft_lsclk or posedge hs_enable_q)
+    if (hs_enable_q)
+      retimed_hs_enable_q <= 1'b1;
+    else
+      retimed_hs_enable_q <= selected_hs_q;
+
+`ifdef SINGLE_HS_RETIMER
+  always @ (negedge dft_cpuclk or posedge ls_enable_q)
+    if (ls_enable_q)
+      retimed_ls_enable_q <= 1'b1;
+    else
+      retimed_ls_enable_q <= selected_ls_q;
+  assign retimed_ls_enable_w = retimed_ls_enable_q;
+`else
+  always @ (negedge dft_cpuclk or posedge ls_enable_q)
+    if (ls_enable_q)
+      retimed_ls_enable_q <= 2'b11;
+    else
+      retimed_ls_enable_q <= {selected_ls_q, retimed_ls_enable_q[1]};
+  assign retimed_ls_enable_w = retimed_ls_enable_q[0];
+`endif 
+endmodule

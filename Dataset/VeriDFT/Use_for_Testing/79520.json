@@ -1,0 +1,835 @@
+{
+  "modules": {
+    "dvi_decoder_nok": {
+      "modules": {
+        "dvi_decoder_nok": {
+          "ports": {
+            "tmdsclk_p": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "tmdsclk_n": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "blue_p": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "green_p": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "red_p": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "blue_n": {
+              "direction": "input",
+              "bits": [
+                7
+              ]
+            },
+            "green_n": {
+              "direction": "input",
+              "bits": [
+                8
+              ]
+            },
+            "red_n": {
+              "direction": "input",
+              "bits": [
+                9
+              ]
+            },
+            "exrst": {
+              "direction": "input",
+              "bits": [
+                10
+              ]
+            },
+            "reset": {
+              "direction": "output",
+              "bits": [
+                11
+              ]
+            },
+            "pclk": {
+              "direction": "output",
+              "bits": [
+                12
+              ]
+            },
+            "pclkx2": {
+              "direction": "output",
+              "bits": [
+                13
+              ]
+            },
+            "pclkx10": {
+              "direction": "output",
+              "bits": [
+                14
+              ]
+            },
+            "pllclk0": {
+              "direction": "output",
+              "bits": [
+                15
+              ]
+            },
+            "pllclk1": {
+              "direction": "output",
+              "bits": [
+                16
+              ]
+            },
+            "pllclk2": {
+              "direction": "output",
+              "bits": [
+                17
+              ]
+            },
+            "pll_lckd": {
+              "direction": "output",
+              "bits": [
+                18
+              ]
+            },
+            "serdesstrobe": {
+              "direction": "output",
+              "bits": [
+                19
+              ]
+            },
+            "tmdsclk": {
+              "direction": "output",
+              "bits": [
+                20
+              ]
+            },
+            "hsync": {
+              "direction": "output",
+              "bits": [
+                21
+              ]
+            },
+            "vsync": {
+              "direction": "output",
+              "bits": [
+                22
+              ]
+            },
+            "de": {
+              "direction": "output",
+              "bits": [
+                23
+              ]
+            },
+            "blue_vld": {
+              "direction": "output",
+              "bits": [
+                24
+              ]
+            },
+            "green_vld": {
+              "direction": "output",
+              "bits": [
+                25
+              ]
+            },
+            "red_vld": {
+              "direction": "output",
+              "bits": [
+                26
+              ]
+            },
+            "blue_rdy": {
+              "direction": "output",
+              "bits": [
+                27
+              ]
+            },
+            "green_rdy": {
+              "direction": "output",
+              "bits": [
+                28
+              ]
+            },
+            "red_rdy": {
+              "direction": "output",
+              "bits": [
+                29
+              ]
+            },
+            "psalgnerr": {
+              "direction": "output",
+              "bits": [
+                30
+              ]
+            },
+            "sdout": {
+              "direction": "output",
+              "bits": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60
+              ]
+            },
+            "red": {
+              "direction": "output",
+              "bits": [
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68
+              ]
+            },
+            "green": {
+              "direction": "output",
+              "bits": [
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76
+              ]
+            },
+            "blue": {
+              "direction": "output",
+              "bits": [
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84
+              ]
+            }
+          },
+          "cells": {
+            "$eqx$./module_79520.v:56$4": {
+              "type": "$eqx",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  85,
+                  86,
+                  87,
+                  88
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "Y": [
+                  89
+                ]
+              }
+            },
+            "$eqx$./module_79520.v:57$5": {
+              "type": "$eqx",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  85,
+                  86,
+                  87,
+                  88
+                ],
+                "B": [
+                  "0",
+                  "1",
+                  "0",
+                  "1"
+                ],
+                "Y": [
+                  90
+                ]
+              }
+            },
+            "$not$./module_79520.v:91$6": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  91
+                ],
+                "Y": [
+                  11
+                ]
+              }
+            },
+            "$or$./module_79520.v:170$7": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  92
+                ],
+                "B": [
+                  93
+                ],
+                "Y": [
+                  94
+                ]
+              }
+            },
+            "$or$./module_79520.v:170$8": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  94
+                ],
+                "B": [
+                  95
+                ],
+                "Y": [
+                  30
+                ]
+              }
+            },
+            "$procdff$10": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  12
+                ],
+                "D": [
+                  90
+                ],
+                "Q": [
+                  96
+                ]
+              }
+            },
+            "$procdff$9": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  12
+                ],
+                "D": [
+                  89
+                ],
+                "Q": [
+                  97
+                ]
+              }
+            },
+            "$ternary$./module_79520.v:50$1": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  98
+                ],
+                "B": [
+                  99
+                ],
+                "S": [
+                  100
+                ],
+                "Y": [
+                  21
+                ]
+              }
+            },
+            "$ternary$./module_79520.v:51$2": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  101
+                ],
+                "B": [
+                  102
+                ],
+                "S": [
+                  100
+                ],
+                "Y": [
+                  22
+                ]
+              }
+            },
+            "PLL_ISERDES": {
+              "type": "PLL_BASE",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLKFBIN": [
+                  103
+                ],
+                "CLKFBOUT": [
+                  103
+                ],
+                "CLKIN": [
+                  104
+                ],
+                "CLKOUT0": [
+                  15
+                ],
+                "CLKOUT1": [
+                  16
+                ],
+                "CLKOUT2": [
+                  17
+                ],
+                "CLKOUT3": [],
+                "CLKOUT4": [],
+                "CLKOUT5": [],
+                "LOCKED": [
+                  18
+                ],
+                "RST": [
+                  10
+                ]
+              }
+            },
+            "bufio_tmdsclk": {
+              "type": "BUFIO2",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "DIVCLK": [
+                  104
+                ],
+                "I": [
+                  105
+                ],
+                "IOCLK": [],
+                "SERDESSTROBE": []
+              }
+            },
+            "dec_b": {
+              "type": "decode_nok",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ade": [
+                  100
+                ],
+                "adout": [
+                  99,
+                  102,
+                  106,
+                  107
+                ],
+                "c0": [
+                  98
+                ],
+                "c1": [
+                  101
+                ],
+                "dilndpreamble": [
+                  96
+                ],
+                "din_n": [
+                  7
+                ],
+                "din_p": [
+                  4
+                ],
+                "iamrdy": [
+                  27
+                ],
+                "iamvld": [
+                  24
+                ],
+                "other_ch0_rdy": [
+                  28
+                ],
+                "other_ch0_vld": [
+                  25
+                ],
+                "other_ch1_rdy": [
+                  29
+                ],
+                "other_ch1_vld": [
+                  26
+                ],
+                "pclk": [
+                  12
+                ],
+                "pclkx10": [
+                  14
+                ],
+                "pclkx2": [
+                  13
+                ],
+                "psalgnerr": [
+                  93
+                ],
+                "reset": [
+                  11
+                ],
+                "sdout": [
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50
+                ],
+                "serdesstrobe": [
+                  19
+                ],
+                "vde": [
+                  108
+                ],
+                "vdout": [
+                  77,
+                  78,
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84
+                ],
+                "videopreamble": [
+                  97
+                ]
+              }
+            },
+            "dec_g": {
+              "type": "decode_nok",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ade": [
+                  109
+                ],
+                "adout": [
+                  110,
+                  111,
+                  112,
+                  113
+                ],
+                "c0": [
+                  88
+                ],
+                "c1": [
+                  87
+                ],
+                "dilndpreamble": [
+                  96
+                ],
+                "din_n": [
+                  8
+                ],
+                "din_p": [
+                  5
+                ],
+                "iamrdy": [
+                  28
+                ],
+                "iamvld": [
+                  25
+                ],
+                "other_ch0_rdy": [
+                  27
+                ],
+                "other_ch0_vld": [
+                  24
+                ],
+                "other_ch1_rdy": [
+                  29
+                ],
+                "other_ch1_vld": [
+                  26
+                ],
+                "pclk": [
+                  12
+                ],
+                "pclkx10": [
+                  14
+                ],
+                "pclkx2": [
+                  13
+                ],
+                "psalgnerr": [
+                  95
+                ],
+                "reset": [
+                  11
+                ],
+                "sdout": [
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55
+                ],
+                "serdesstrobe": [
+                  19
+                ],
+                "vde": [
+                  114
+                ],
+                "vdout": [
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  76
+                ],
+                "videopreamble": [
+                  97
+                ]
+              }
+            },
+            "dec_r": {
+              "type": "decode_nok",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "ade": [
+                  115
+                ],
+                "adout": [
+                  116,
+                  117,
+                  118,
+                  119
+                ],
+                "c0": [
+                  86
+                ],
+                "c1": [
+                  85
+                ],
+                "dilndpreamble": [
+                  96
+                ],
+                "din_n": [
+                  9
+                ],
+                "din_p": [
+                  6
+                ],
+                "iamrdy": [
+                  29
+                ],
+                "iamvld": [
+                  26
+                ],
+                "other_ch0_rdy": [
+                  27
+                ],
+                "other_ch0_vld": [
+                  24
+                ],
+                "other_ch1_rdy": [
+                  28
+                ],
+                "other_ch1_vld": [
+                  25
+                ],
+                "pclk": [
+                  12
+                ],
+                "pclkx10": [
+                  14
+                ],
+                "pclkx2": [
+                  13
+                ],
+                "psalgnerr": [
+                  92
+                ],
+                "reset": [
+                  11
+                ],
+                "sdout": [
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60
+                ],
+                "serdesstrobe": [
+                  19
+                ],
+                "vde": [
+                  23
+                ],
+                "vdout": [
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68
+                ],
+                "videopreamble": [
+                  97
+                ]
+              }
+            },
+            "ibuf_rxclk": {
+              "type": "IBUFDS",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  2
+                ],
+                "IB": [
+                  3
+                ],
+                "O": [
+                  105
+                ]
+              }
+            },
+            "ioclk_buf": {
+              "type": "BUFPLL",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "GCLK": [
+                  13
+                ],
+                "IOCLK": [
+                  14
+                ],
+                "LOCK": [
+                  91
+                ],
+                "LOCKED": [
+                  18
+                ],
+                "PLLIN": [
+                  15
+                ],
+                "SERDESSTROBE": [
+                  19
+                ]
+              }
+            },
+            "pclkbufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  16
+                ],
+                "O": [
+                  12
+                ]
+              }
+            },
+            "pclkx2bufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  17
+                ],
+                "O": [
+                  13
+                ]
+              }
+            },
+            "tmdsclk_bufg": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  104
+                ],
+                "O": [
+                  20
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

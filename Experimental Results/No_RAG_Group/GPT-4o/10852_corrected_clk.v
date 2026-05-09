@@ -1,0 +1,313 @@
+`timescale 1ps/1ps
+module example_top_corrected_clk #
+  (
+   parameter BEGIN_ADDRESS         = 32'h00000000,
+   parameter END_ADDRESS           = 32'h00ffffff,
+   parameter PRBS_EADDR_MASK_POS   = 32'hff000000,
+   parameter ENFORCE_RD_WR         = 0,
+   parameter ENFORCE_RD_WR_CMD     = 8'h11,
+   parameter ENFORCE_RD_WR_PATTERN = 3'b000,
+   parameter C_EN_WRAP_TRANS       = 0,
+   parameter C_AXI_NBURST_TEST     = 0,
+   parameter BANK_WIDTH            = 3,
+   parameter COL_WIDTH             = 10,
+   parameter CS_WIDTH              = 1,
+   parameter DQ_WIDTH              = 16,
+   parameter DQS_WIDTH             = 2,
+   parameter DQS_CNT_WIDTH         = 1,
+   parameter DRAM_WIDTH            = 8,
+   parameter ECC                   = "OFF",
+   parameter ECC_TEST              = "OFF",
+   parameter nBANK_MACHS           = 4,
+   parameter RANKS                 = 1,
+   parameter ROW_WIDTH             = 13,
+   parameter ADDR_WIDTH            = 27,
+   parameter BURST_MODE            = "8",
+   parameter SIMULATION            = "FALSE",
+   parameter TCQ                   = 100,
+   parameter nCK_PER_CLK           = 2,
+   parameter UI_EXTRA_CLOCKS       = "FALSE",
+   parameter C_S_AXI_ID_WIDTH      = 4,
+   parameter C_S_AXI_ADDR_WIDTH    = 32,
+   parameter C_S_AXI_DATA_WIDTH    = 32,
+   parameter C_S_AXI_SUPPORTS_NARROW_BURST = 0,
+   parameter C_S_AXI_CTRL_ADDR_WIDTH = 32,
+   parameter C_S_AXI_CTRL_DATA_WIDTH = 32,
+   parameter DEBUG_PORT            = "OFF"
+   )
+  (
+   inout [15:0]                         ddr2_dq,
+   inout [1:0]                          ddr2_dqs_n,
+   inout [1:0]                          ddr2_dqs_p,
+   output [12:0]                        ddr2_addr,
+   output [2:0]                         ddr2_ba,
+   output                               ddr2_ras_n,
+   output                               ddr2_cas_n,
+   output                               ddr2_we_n,
+   output [0:0]                         ddr2_ck_p,
+   output [0:0]                         ddr2_ck_n,
+   output [0:0]                         ddr2_cke,
+   output [0:0]                         ddr2_cs_n,
+   output [1:0]                         ddr2_dm,
+   output [0:0]                         ddr2_odt,
+   input                                sys_clk_i,
+   output                               tg_compare_error,
+   output                               init_calib_complete,
+   input  [11:0]                        device_temp_i,
+   input                                sys_rst
+   );
+function integer clogb2 (input integer size);
+    begin
+      size = size - 1;
+      for (clogb2=1; size>1; clogb2=clogb2+1)
+        size = size >> 1;
+    end
+endfunction 
+function integer STR_TO_INT;
+    input [7:0] in;
+    begin
+      if(in == "8")
+        STR_TO_INT = 8;
+      else if(in == "4")
+        STR_TO_INT = 4;
+      else
+        STR_TO_INT = 0;
+    end
+endfunction
+localparam DATA_WIDTH            = 16;
+localparam RANK_WIDTH = clogb2(RANKS);
+localparam PAYLOAD_WIDTH         = (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH;
+localparam BURST_LENGTH          = STR_TO_INT(BURST_MODE);
+localparam APP_DATA_WIDTH        = 2 * nCK_PER_CLK * PAYLOAD_WIDTH;
+localparam APP_MASK_WIDTH        = APP_DATA_WIDTH / 8;
+localparam  TG_ADDR_WIDTH = ((CS_WIDTH == 1) ? 0 : RANK_WIDTH)
+                             + BANK_WIDTH + ROW_WIDTH + COL_WIDTH;
+localparam MASK_SIZE             = DATA_WIDTH/8;
+localparam DBG_WR_STS_WIDTH      = 40;
+localparam DBG_RD_STS_WIDTH      = 40;
+wire                              clk;
+wire                              rst;
+wire                              mmcm_locked;
+reg                               aresetn;
+wire                              app_sr_active;
+wire                              app_ref_ack;
+wire                              app_zq_ack;
+wire                              app_rd_data_valid;
+wire [APP_DATA_WIDTH-1:0]         app_rd_data;
+wire                              mem_pattern_init_done;
+wire                              cmd_err;
+wire                              data_msmatch_err;
+wire                              write_err;
+wire                              read_err;
+wire                              test_cmptd;
+wire                              write_cmptd;
+wire                              read_cmptd;
+wire                              cmptd_one_wr_rd;
+wire [C_S_AXI_ID_WIDTH-1:0]       s_axi_awid;
+wire [C_S_AXI_ADDR_WIDTH-1:0]     s_axi_awaddr;
+wire [7:0]                        s_axi_awlen;
+wire [2:0]                        s_axi_awsize;
+wire [1:0]                        s_axi_awburst;
+wire [0:0]                        s_axi_awlock;
+wire [3:0]                        s_axi_awcache;
+wire [2:0]                        s_axi_awprot;
+wire                              s_axi_awvalid;
+wire                              s_axi_awready;
+wire [C_S_AXI_DATA_WIDTH-1:0]     s_axi_wdata;
+wire [(C_S_AXI_DATA_WIDTH/8)-1:0] s_axi_wstrb;
+wire                              s_axi_wlast;
+wire                              s_axi_wvalid;
+wire                              s_axi_wready;
+wire                              s_axi_bready;
+wire [C_S_AXI_ID_WIDTH-1:0]       s_axi_bid;
+wire [1:0]                        s_axi_bresp;
+wire                              s_axi_bvalid;
+wire [C_S_AXI_ID_WIDTH-1:0]       s_axi_arid;
+wire [C_S_AXI_ADDR_WIDTH-1:0]     s_axi_araddr;
+wire [7:0]                        s_axi_arlen;
+wire [2:0]                        s_axi_arsize;
+wire [1:0]                        s_axi_arburst;
+wire [0:0]                        s_axi_arlock;
+wire [3:0]                        s_axi_arcache;
+wire [2:0]                        s_axi_arprot;
+wire                              s_axi_arvalid;
+wire                              s_axi_arready;
+wire                              s_axi_rready;
+wire [C_S_AXI_ID_WIDTH-1:0]       s_axi_rid;
+wire [C_S_AXI_DATA_WIDTH-1:0]     s_axi_rdata;
+wire [1:0]                        s_axi_rresp;
+wire                              s_axi_rlast;
+wire                              s_axi_rvalid;
+wire                              cmp_data_valid;
+wire [C_S_AXI_DATA_WIDTH-1:0]     cmp_data;     
+wire [C_S_AXI_DATA_WIDTH-1:0]     rdata_cmp;      
+wire                              dbg_wr_sts_vld;
+wire [DBG_WR_STS_WIDTH-1:0]       dbg_wr_sts;
+wire                              dbg_rd_sts_vld;
+wire [DBG_RD_STS_WIDTH-1:0]       dbg_rd_sts;
+assign tg_compare_error = cmd_err | data_msmatch_err | write_err | read_err;
+
+// Using sys_clk_i as the clock for all operations to avoid CLKNPI error
+assign clk = sys_clk_i;
+
+ddr_axi #
+    (
+     )
+    u_ddr_axi
+      (
+       .ddr2_addr                      (ddr2_addr),
+       .ddr2_ba                        (ddr2_ba),
+       .ddr2_cas_n                     (ddr2_cas_n),
+       .ddr2_ck_n                      (ddr2_ck_n),
+       .ddr2_ck_p                      (ddr2_ck_p),
+       .ddr2_cke                       (ddr2_cke),
+       .ddr2_ras_n                     (ddr2_ras_n),
+       .ddr2_we_n                      (ddr2_we_n),
+       .ddr2_dq                        (ddr2_dq),
+       .ddr2_dqs_n                     (ddr2_dqs_n),
+       .ddr2_dqs_p                     (ddr2_dqs_p),
+       .init_calib_complete            (init_calib_complete),
+       .ddr2_cs_n                      (ddr2_cs_n),
+       .ddr2_dm                        (ddr2_dm),
+       .ddr2_odt                       (ddr2_odt),
+       .ui_clk                         (clk),
+       .ui_clk_sync_rst                (rst),
+       .mmcm_locked                    (mmcm_locked),
+       .aresetn                        (aresetn),
+       .app_sr_req                     (1'b0),
+       .app_ref_req                    (1'b0),
+       .app_zq_req                     (1'b0),
+       .app_sr_active                  (app_sr_active),
+       .app_ref_ack                    (app_ref_ack),
+       .app_zq_ack                     (app_zq_ack),
+       .s_axi_awid                     (s_axi_awid),
+       .s_axi_awaddr                   (s_axi_awaddr),
+       .s_axi_awlen                    (s_axi_awlen),
+       .s_axi_awsize                   (s_axi_awsize),
+       .s_axi_awburst                  (s_axi_awburst),
+       .s_axi_awlock                   (s_axi_awlock),
+       .s_axi_awcache                  (s_axi_awcache),
+       .s_axi_awprot                   (s_axi_awprot),
+       .s_axi_awqos                    (4'h0),
+       .s_axi_awvalid                  (s_axi_awvalid),
+       .s_axi_awready                  (s_axi_awready),
+       .s_axi_wdata                    (s_axi_wdata),
+       .s_axi_wstrb                    (s_axi_wstrb),
+       .s_axi_wlast                    (s_axi_wlast),
+       .s_axi_wvalid                   (s_axi_wvalid),
+       .s_axi_wready                   (s_axi_wready),
+       .s_axi_bid                      (s_axi_bid),
+       .s_axi_bresp                    (s_axi_bresp),
+       .s_axi_bvalid                   (s_axi_bvalid),
+       .s_axi_bready                   (s_axi_bready),
+       .s_axi_arid                     (s_axi_arid),
+       .s_axi_araddr                   (s_axi_araddr),
+       .s_axi_arlen                    (s_axi_arlen),
+       .s_axi_arsize                   (s_axi_arsize),
+       .s_axi_arburst                  (s_axi_arburst),
+       .s_axi_arlock                   (s_axi_arlock),
+       .s_axi_arcache                  (s_axi_arcache),
+       .s_axi_arprot                   (s_axi_arprot),
+       .s_axi_arqos                    (4'h0),
+       .s_axi_arvalid                  (s_axi_arvalid),
+       .s_axi_arready                  (s_axi_arready),
+       .s_axi_rid                      (s_axi_rid),
+       .s_axi_rdata                    (s_axi_rdata),
+       .s_axi_rresp                    (s_axi_rresp),
+       .s_axi_rlast                    (s_axi_rlast),
+       .s_axi_rvalid                   (s_axi_rvalid),
+       .s_axi_rready                   (s_axi_rready),
+       .sys_clk_i                      (sys_clk_i),
+       .device_temp_i                  (device_temp_i),
+       .sys_rst                        (sys_rst)
+       );
+
+always @(posedge clk) begin
+  aresetn <= ~rst;
+end
+
+mig_7series_v4_0_axi4_tg #(
+     .C_AXI_ID_WIDTH                   (C_S_AXI_ID_WIDTH),
+     .C_AXI_ADDR_WIDTH                 (C_S_AXI_ADDR_WIDTH),
+     .C_AXI_DATA_WIDTH                 (C_S_AXI_DATA_WIDTH),
+     .C_AXI_NBURST_SUPPORT             (C_AXI_NBURST_TEST),
+     .C_EN_WRAP_TRANS                  (C_EN_WRAP_TRANS),
+     .C_BEGIN_ADDRESS                  (BEGIN_ADDRESS),
+     .C_END_ADDRESS                    (END_ADDRESS),
+     .PRBS_EADDR_MASK_POS              (PRBS_EADDR_MASK_POS),
+     .DBG_WR_STS_WIDTH                 (DBG_WR_STS_WIDTH),
+     .DBG_RD_STS_WIDTH                 (DBG_RD_STS_WIDTH),
+     .ENFORCE_RD_WR                    (ENFORCE_RD_WR),
+     .ENFORCE_RD_WR_CMD                (ENFORCE_RD_WR_CMD),
+     .EN_UPSIZER                       (C_S_AXI_SUPPORTS_NARROW_BURST),
+     .ENFORCE_RD_WR_PATTERN            (ENFORCE_RD_WR_PATTERN)
+   ) u_axi4_tg_inst
+   (
+     .aclk                             (clk),
+     .aresetn                          (aresetn),
+     .init_cmptd                       (init_calib_complete),
+     .init_test                        (1'b0),
+     .wdog_mask                        (~init_calib_complete),
+     .wrap_en                          (1'b0),
+     .axi_wready                       (s_axi_awready),
+     .axi_wid                          (s_axi_awid),
+     .axi_waddr                        (s_axi_awaddr),
+     .axi_wlen                         (s_axi_awlen),
+     .axi_wsize                        (s_axi_awsize),
+     .axi_wburst                       (s_axi_awburst),
+     .axi_wlock                        (s_axi_awlock),
+     .axi_wcache                       (s_axi_awcache),
+     .axi_wprot                        (s_axi_awprot),
+     .axi_wvalid                       (s_axi_awvalid),
+     .axi_wd_wready                    (s_axi_wready),
+     .axi_wd_wid                       (s_axi_wid),
+     .axi_wd_data                      (s_axi_wdata),
+     .axi_wd_strb                      (s_axi_wstrb),
+     .axi_wd_last                      (s_axi_wlast),
+     .axi_wd_valid                     (s_axi_wvalid),
+     .axi_wd_bid                       (s_axi_bid),
+     .axi_wd_bresp                     (s_axi_bresp),
+     .axi_wd_bvalid                    (s_axi_bvalid),
+     .axi_wd_bready                    (s_axi_bready),
+     .axi_rready                       (s_axi_arready),
+     .axi_rid                          (s_axi_arid),
+     .axi_raddr                        (s_axi_araddr),
+     .axi_rlen                         (s_axi_arlen),
+     .axi_rsize                        (s_axi_arsize),
+     .axi_rburst                       (s_axi_arburst),
+     .axi_rlock                        (s_axi_arlock),
+     .axi_rcache                       (s_axi_arcache),
+     .axi_rprot                        (s_axi_arprot),
+     .axi_rvalid                       (s_axi_arvalid),
+     .axi_rd_bid                       (s_axi_rid),
+     .axi_rd_rresp                     (s_axi_rresp),
+     .axi_rd_rvalid                    (s_axi_rvalid),
+     .axi_rd_data                      (s_axi_rdata),
+     .axi_rd_last                      (s_axi_rlast),
+     .axi_rd_rready                    (s_axi_rready),
+     .cmd_err                          (cmd_err),
+     .data_msmatch_err                 (data_msmatch_err),
+     .write_err                        (write_err),
+     .read_err                         (read_err),
+     .test_cmptd                       (test_cmptd),
+     .write_cmptd                      (write_cmptd),
+     .read_cmptd                       (read_cmptd),
+     .cmptd_one_wr_rd                  (cmptd_one_wr_rd),
+     .cmp_data_en                      (cmp_data_valid),
+     .cmp_data_o                       (cmp_data),
+     .rdata_cmp                        (rdata_cmp),
+     .dbg_wr_sts_vld                   (dbg_wr_sts_vld),
+     .dbg_wr_sts                       (dbg_wr_sts),
+     .dbg_rd_sts_vld                   (dbg_rd_sts_vld),
+     .dbg_rd_sts                       (dbg_rd_sts)
+);
+   assign dbg_sel_pi_incdec       = 'b0;
+   assign dbg_sel_po_incdec       = 'b0;
+   assign dbg_pi_f_inc            = 'b0;
+   assign dbg_pi_f_dec            = 'b0;
+   assign dbg_po_f_inc            = 'b0;
+   assign dbg_po_f_dec            = 'b0;
+   assign dbg_po_f_stg23_sel      = 'b0;
+   assign po_win_tg_rst           = 'b0;
+   assign vio_tg_rst              = 'b0;
+endmodule

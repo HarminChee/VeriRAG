@@ -1,0 +1,361 @@
+{
+  "modules": {
+    "UART_loop": {
+      "modules": {
+        "UART_loop": {
+          "ports": {
+            "UartRx": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "UartTx": {
+              "direction": "output",
+              "bits": [
+                3
+              ]
+            },
+            "clk100": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "LED": {
+              "direction": "output",
+              "bits": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          },
+          "cells": {
+            "$eq$./module_49538.v:42$2": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  13
+                ],
+                "B": [
+                  "0"
+                ],
+                "Y": [
+                  14
+                ]
+              }
+            },
+            "$eq$./module_49538.v:42$3": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  15
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  16
+                ]
+              }
+            },
+            "$logic_and$./module_49538.v:42$4": {
+              "type": "$logic_and",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  14
+                ],
+                "B": [
+                  16
+                ],
+                "Y": [
+                  17
+                ]
+              }
+            },
+            "$logic_not$./module_49538.v:46$5": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  18
+                ],
+                "Y": [
+                  19
+                ]
+              }
+            },
+            "$procdff$23": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  20
+                ],
+                "Q": [
+                  21
+                ]
+              }
+            },
+            "$procdff$24": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  22
+                ],
+                "Q": [
+                  23
+                ]
+              }
+            },
+            "$procdff$25": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "Q": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39
+                ]
+              }
+            },
+            "$procdff$26": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  40
+                ],
+                "Q": [
+                  18
+                ]
+              }
+            },
+            "$procdff$27": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  15
+                ],
+                "Q": [
+                  13
+                ]
+              }
+            },
+            "$procmux$12": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  18
+                ],
+                "B": [
+                  19
+                ],
+                "S": [
+                  17
+                ],
+                "Y": [
+                  40
+                ]
+              }
+            },
+            "$procmux$15": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39
+                ],
+                "B": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "S": [
+                  17
+                ],
+                "Y": [
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ]
+              }
+            },
+            "$procmux$18": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  17
+                ],
+                "Y": [
+                  22
+                ]
+              }
+            },
+            "$procmux$21": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  17
+                ],
+                "Y": [
+                  20
+                ]
+              }
+            },
+            "rx_module": {
+              "type": "UART_Rx",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "RD": [
+                  23
+                ],
+                "RST": [
+                  "0"
+                ],
+                "RX": [
+                  2
+                ],
+                "RXNE": [
+                  15
+                ]
+              }
+            },
+            "tx_module": {
+              "type": "UART_Tx",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39
+                ],
+                "RST": [
+                  "0"
+                ],
+                "TX": [
+                  3
+                ],
+                "TXE": [
+                  41
+                ],
+                "WR": [
+                  21
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

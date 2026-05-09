@@ -1,0 +1,50 @@
+module JtagUserIdentifier #(
+	parameter IDCODE_VID = 24'h000000,
+	parameter IDCODE_PID = 8'h00
+)(
+  input tdi,
+  input tms,
+  input tap_tck_raw,
+  output tdo
+);
+	reg[31:0]	tap_shreg = 0;
+	wire		tap_active;
+	wire		tap_shift;
+	wire		tap_clear;
+	//wire		tap_tck_raw;
+	wire		tap_tck_bufh;
+    wire        tap_tck;
+	JtagTAP #(
+		.USER_INSTRUCTION(1)
+	) tap_tap (
+		.instruction_active(tap_active),
+		.state_capture_dr(tap_clear),
+		.state_reset(),
+		.state_runtest(),
+		.state_shift_dr(tap_shift),
+		.state_update_dr(),
+		.tck(tap_tck),
+		.tck_gated(),
+		.tms(tms),
+		.tdi(tdi),
+		.tdo(tdo)
+	);
+	ClockBuffer #(
+		.TYPE("LOCAL"),
+		.CE("NO")
+	) tap_tck_clkbuf (
+		.clkin(tap_tck_raw),
+		.clkout(tap_tck_bufh),
+		.ce(1'b1)
+	);
+
+    assign tap_tck = tap_tck_bufh;
+	always @(posedge tap_tck_bufh) begin
+		if(!tap_active) begin
+		end
+		else if(tap_clear)
+			tap_shreg	<= {IDCODE_VID, IDCODE_PID};
+		else if(tap_shift)
+			tap_shreg	<= {1'b1, tap_shreg[31:1]};
+	end
+endmodule

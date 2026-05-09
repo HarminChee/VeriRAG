@@ -1,0 +1,2617 @@
+{
+  "modules": {
+    "pipeline_switch": {
+      "modules": {
+        "pipeline_switch": {
+          "ports": {
+            "axis_aclk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "axis_aresetn": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "s_axi_lite_aclk": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "s_axi_lite_aresetn": {
+              "direction": "input",
+              "bits": [
+                5
+              ]
+            },
+            "s_axi_lite_awaddr": {
+              "direction": "input",
+              "bits": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32
+              ]
+            },
+            "s_axi_lite_awprot": {
+              "direction": "input",
+              "bits": [
+                33,
+                34,
+                35
+              ]
+            },
+            "s_axi_lite_awvalid": {
+              "direction": "input",
+              "bits": [
+                36
+              ]
+            },
+            "s_axi_lite_awready": {
+              "direction": "output",
+              "bits": [
+                37
+              ]
+            },
+            "s_axi_lite_wdata": {
+              "direction": "input",
+              "bits": [
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69
+              ]
+            },
+            "s_axi_lite_wstrb": {
+              "direction": "input",
+              "bits": [
+                70,
+                71,
+                72,
+                73
+              ]
+            },
+            "s_axi_lite_wvalid": {
+              "direction": "input",
+              "bits": [
+                74
+              ]
+            },
+            "s_axi_lite_wready": {
+              "direction": "output",
+              "bits": [
+                75
+              ]
+            },
+            "s_axi_lite_bresp": {
+              "direction": "output",
+              "bits": [
+                76,
+                77
+              ]
+            },
+            "s_axi_lite_bvalid": {
+              "direction": "output",
+              "bits": [
+                78
+              ]
+            },
+            "s_axi_lite_bready": {
+              "direction": "input",
+              "bits": [
+                79
+              ]
+            },
+            "s_axi_lite_araddr": {
+              "direction": "input",
+              "bits": [
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                106
+              ]
+            },
+            "s_axi_lite_arprot": {
+              "direction": "input",
+              "bits": [
+                107,
+                108,
+                109
+              ]
+            },
+            "s_axi_lite_arvalid": {
+              "direction": "input",
+              "bits": [
+                110
+              ]
+            },
+            "s_axi_lite_arready": {
+              "direction": "output",
+              "bits": [
+                111
+              ]
+            },
+            "s_axi_lite_rdata": {
+              "direction": "output",
+              "bits": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143
+              ]
+            },
+            "s_axi_lite_rresp": {
+              "direction": "output",
+              "bits": [
+                144,
+                145
+              ]
+            },
+            "s_axi_lite_rvalid": {
+              "direction": "output",
+              "bits": [
+                146
+              ]
+            },
+            "s_axi_lite_rready": {
+              "direction": "input",
+              "bits": [
+                147
+              ]
+            },
+            "s_axis_rxd_0_aclk": {
+              "direction": "input",
+              "bits": [
+                148
+              ]
+            },
+            "s_axis_rxd_0_aresetn": {
+              "direction": "input",
+              "bits": [
+                149
+              ]
+            },
+            "s_axis_rxd_0_tready": {
+              "direction": "output",
+              "bits": [
+                150
+              ]
+            },
+            "s_axis_rxd_0_tdata": {
+              "direction": "input",
+              "bits": [
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                182
+              ]
+            },
+            "s_axis_rxd_0_tkeep": {
+              "direction": "input",
+              "bits": [
+                183,
+                184,
+                185,
+                186
+              ]
+            },
+            "s_axis_rxd_0_tlast": {
+              "direction": "input",
+              "bits": [
+                187
+              ]
+            },
+            "s_axis_rxd_0_tvalid": {
+              "direction": "input",
+              "bits": [
+                188
+              ]
+            },
+            "m_axis_txd_0_aclk": {
+              "direction": "input",
+              "bits": [
+                189
+              ]
+            },
+            "m_axis_txd_0_aresetn": {
+              "direction": "input",
+              "bits": [
+                190
+              ]
+            },
+            "m_axis_txd_0_tvalid": {
+              "direction": "output",
+              "bits": [
+                191
+              ]
+            },
+            "m_axis_txd_0_tdata": {
+              "direction": "output",
+              "bits": [
+                192,
+                193,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223
+              ]
+            },
+            "m_axis_txd_0_tkeep": {
+              "direction": "output",
+              "bits": [
+                224,
+                225,
+                226,
+                227
+              ]
+            },
+            "m_axis_txd_0_tlast": {
+              "direction": "output",
+              "bits": [
+                228
+              ]
+            },
+            "m_axis_txd_0_tready": {
+              "direction": "input",
+              "bits": [
+                229
+              ]
+            },
+            "s_axis_rxd_1_aclk": {
+              "direction": "input",
+              "bits": [
+                230
+              ]
+            },
+            "s_axis_rxd_1_aresetn": {
+              "direction": "input",
+              "bits": [
+                231
+              ]
+            },
+            "s_axis_rxd_1_tready": {
+              "direction": "output",
+              "bits": [
+                232
+              ]
+            },
+            "s_axis_rxd_1_tdata": {
+              "direction": "input",
+              "bits": [
+                233,
+                234,
+                235,
+                236,
+                237,
+                238,
+                239,
+                240,
+                241,
+                242,
+                243,
+                244,
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251,
+                252,
+                253,
+                254,
+                255,
+                256,
+                257,
+                258,
+                259,
+                260,
+                261,
+                262,
+                263,
+                264
+              ]
+            },
+            "s_axis_rxd_1_tkeep": {
+              "direction": "input",
+              "bits": [
+                265,
+                266,
+                267,
+                268
+              ]
+            },
+            "s_axis_rxd_1_tlast": {
+              "direction": "input",
+              "bits": [
+                269
+              ]
+            },
+            "s_axis_rxd_1_tvalid": {
+              "direction": "input",
+              "bits": [
+                270
+              ]
+            },
+            "m_axis_txd_1_aclk": {
+              "direction": "input",
+              "bits": [
+                271
+              ]
+            },
+            "m_axis_txd_1_aresetn": {
+              "direction": "input",
+              "bits": [
+                272
+              ]
+            },
+            "m_axis_txd_1_tvalid": {
+              "direction": "output",
+              "bits": [
+                273
+              ]
+            },
+            "m_axis_txd_1_tdata": {
+              "direction": "output",
+              "bits": [
+                274,
+                275,
+                276,
+                277,
+                278,
+                279,
+                280,
+                281,
+                282,
+                283,
+                284,
+                285,
+                286,
+                287,
+                288,
+                289,
+                290,
+                291,
+                292,
+                293,
+                294,
+                295,
+                296,
+                297,
+                298,
+                299,
+                300,
+                301,
+                302,
+                303,
+                304,
+                305
+              ]
+            },
+            "m_axis_txd_1_tkeep": {
+              "direction": "output",
+              "bits": [
+                306,
+                307,
+                308,
+                309
+              ]
+            },
+            "m_axis_txd_1_tlast": {
+              "direction": "output",
+              "bits": [
+                310
+              ]
+            },
+            "m_axis_txd_1_tready": {
+              "direction": "input",
+              "bits": [
+                311
+              ]
+            },
+            "s_axis_rxd_2_aclk": {
+              "direction": "input",
+              "bits": [
+                312
+              ]
+            },
+            "s_axis_rxd_2_aresetn": {
+              "direction": "input",
+              "bits": [
+                313
+              ]
+            },
+            "s_axis_rxd_2_tready": {
+              "direction": "output",
+              "bits": [
+                314
+              ]
+            },
+            "s_axis_rxd_2_tdata": {
+              "direction": "input",
+              "bits": [
+                315,
+                316,
+                317,
+                318,
+                319,
+                320,
+                321,
+                322,
+                323,
+                324,
+                325,
+                326,
+                327,
+                328,
+                329,
+                330,
+                331,
+                332,
+                333,
+                334,
+                335,
+                336,
+                337,
+                338,
+                339,
+                340,
+                341,
+                342,
+                343,
+                344,
+                345,
+                346
+              ]
+            },
+            "s_axis_rxd_2_tkeep": {
+              "direction": "input",
+              "bits": [
+                347,
+                348,
+                349,
+                350
+              ]
+            },
+            "s_axis_rxd_2_tlast": {
+              "direction": "input",
+              "bits": [
+                351
+              ]
+            },
+            "s_axis_rxd_2_tvalid": {
+              "direction": "input",
+              "bits": [
+                352
+              ]
+            },
+            "m_axis_txd_2_aclk": {
+              "direction": "input",
+              "bits": [
+                353
+              ]
+            },
+            "m_axis_txd_2_aresetn": {
+              "direction": "input",
+              "bits": [
+                354
+              ]
+            },
+            "m_axis_txd_2_tvalid": {
+              "direction": "output",
+              "bits": [
+                355
+              ]
+            },
+            "m_axis_txd_2_tdata": {
+              "direction": "output",
+              "bits": [
+                356,
+                357,
+                358,
+                359,
+                360,
+                361,
+                362,
+                363,
+                364,
+                365,
+                366,
+                367,
+                368,
+                369,
+                370,
+                371,
+                372,
+                373,
+                374,
+                375,
+                376,
+                377,
+                378,
+                379,
+                380,
+                381,
+                382,
+                383,
+                384,
+                385,
+                386,
+                387
+              ]
+            },
+            "m_axis_txd_2_tkeep": {
+              "direction": "output",
+              "bits": [
+                388,
+                389,
+                390,
+                391
+              ]
+            },
+            "m_axis_txd_2_tlast": {
+              "direction": "output",
+              "bits": [
+                392
+              ]
+            },
+            "m_axis_txd_2_tready": {
+              "direction": "input",
+              "bits": [
+                393
+              ]
+            },
+            "s_axis_rxd_3_aclk": {
+              "direction": "input",
+              "bits": [
+                394
+              ]
+            },
+            "s_axis_rxd_3_aresetn": {
+              "direction": "input",
+              "bits": [
+                395
+              ]
+            },
+            "s_axis_rxd_3_tready": {
+              "direction": "output",
+              "bits": [
+                396
+              ]
+            },
+            "s_axis_rxd_3_tdata": {
+              "direction": "input",
+              "bits": [
+                397,
+                398,
+                399,
+                400,
+                401,
+                402,
+                403,
+                404,
+                405,
+                406,
+                407,
+                408,
+                409,
+                410,
+                411,
+                412,
+                413,
+                414,
+                415,
+                416,
+                417,
+                418,
+                419,
+                420,
+                421,
+                422,
+                423,
+                424,
+                425,
+                426,
+                427,
+                428
+              ]
+            },
+            "s_axis_rxd_3_tkeep": {
+              "direction": "input",
+              "bits": [
+                429,
+                430,
+                431,
+                432
+              ]
+            },
+            "s_axis_rxd_3_tlast": {
+              "direction": "input",
+              "bits": [
+                433
+              ]
+            },
+            "s_axis_rxd_3_tvalid": {
+              "direction": "input",
+              "bits": [
+                434
+              ]
+            },
+            "m_axis_txd_3_aclk": {
+              "direction": "input",
+              "bits": [
+                435
+              ]
+            },
+            "m_axis_txd_3_aresetn": {
+              "direction": "input",
+              "bits": [
+                436
+              ]
+            },
+            "m_axis_txd_3_tvalid": {
+              "direction": "output",
+              "bits": [
+                437
+              ]
+            },
+            "m_axis_txd_3_tdata": {
+              "direction": "output",
+              "bits": [
+                438,
+                439,
+                440,
+                441,
+                442,
+                443,
+                444,
+                445,
+                446,
+                447,
+                448,
+                449,
+                450,
+                451,
+                452,
+                453,
+                454,
+                455,
+                456,
+                457,
+                458,
+                459,
+                460,
+                461,
+                462,
+                463,
+                464,
+                465,
+                466,
+                467,
+                468,
+                469
+              ]
+            },
+            "m_axis_txd_3_tkeep": {
+              "direction": "output",
+              "bits": [
+                470,
+                471,
+                472,
+                473
+              ]
+            },
+            "m_axis_txd_3_tlast": {
+              "direction": "output",
+              "bits": [
+                474
+              ]
+            },
+            "m_axis_txd_3_tready": {
+              "direction": "input",
+              "bits": [
+                475
+              ]
+            },
+            "s_axis_rxs_0_aclk": {
+              "direction": "input",
+              "bits": [
+                476
+              ]
+            },
+            "s_axis_rxs_0_aresetn": {
+              "direction": "input",
+              "bits": [
+                477
+              ]
+            },
+            "s_axis_rxs_0_tready": {
+              "direction": "output",
+              "bits": [
+                478
+              ]
+            },
+            "s_axis_rxs_0_tdata": {
+              "direction": "input",
+              "bits": [
+                479,
+                480,
+                481,
+                482,
+                483,
+                484,
+                485,
+                486,
+                487,
+                488,
+                489,
+                490,
+                491,
+                492,
+                493,
+                494,
+                495,
+                496,
+                497,
+                498,
+                499,
+                500,
+                501,
+                502,
+                503,
+                504,
+                505,
+                506,
+                507,
+                508,
+                509,
+                510
+              ]
+            },
+            "s_axis_rxs_0_tkeep": {
+              "direction": "input",
+              "bits": [
+                511,
+                512,
+                513,
+                514
+              ]
+            },
+            "s_axis_rxs_0_tlast": {
+              "direction": "input",
+              "bits": [
+                515
+              ]
+            },
+            "s_axis_rxs_0_tvalid": {
+              "direction": "input",
+              "bits": [
+                516
+              ]
+            },
+            "m_axis_txc_0_aclk": {
+              "direction": "input",
+              "bits": [
+                517
+              ]
+            },
+            "m_axis_txc_0_aresetn": {
+              "direction": "input",
+              "bits": [
+                518
+              ]
+            },
+            "m_axis_txc_0_tvalid": {
+              "direction": "output",
+              "bits": [
+                519
+              ]
+            },
+            "m_axis_txc_0_tdata": {
+              "direction": "output",
+              "bits": [
+                520,
+                521,
+                522,
+                523,
+                524,
+                525,
+                526,
+                527,
+                528,
+                529,
+                530,
+                531,
+                532,
+                533,
+                534,
+                535,
+                536,
+                537,
+                538,
+                539,
+                540,
+                541,
+                542,
+                543,
+                544,
+                545,
+                546,
+                547,
+                548,
+                549,
+                550,
+                551
+              ]
+            },
+            "m_axis_txc_0_tkeep": {
+              "direction": "output",
+              "bits": [
+                552,
+                553,
+                554,
+                555
+              ]
+            },
+            "m_axis_txc_0_tlast": {
+              "direction": "output",
+              "bits": [
+                556
+              ]
+            },
+            "m_axis_txc_0_tready": {
+              "direction": "input",
+              "bits": [
+                557
+              ]
+            },
+            "s_axis_rxs_1_aclk": {
+              "direction": "input",
+              "bits": [
+                558
+              ]
+            },
+            "s_axis_rxs_1_aresetn": {
+              "direction": "input",
+              "bits": [
+                559
+              ]
+            },
+            "s_axis_rxs_1_tready": {
+              "direction": "output",
+              "bits": [
+                560
+              ]
+            },
+            "s_axis_rxs_1_tdata": {
+              "direction": "input",
+              "bits": [
+                561,
+                562,
+                563,
+                564,
+                565,
+                566,
+                567,
+                568,
+                569,
+                570,
+                571,
+                572,
+                573,
+                574,
+                575,
+                576,
+                577,
+                578,
+                579,
+                580,
+                581,
+                582,
+                583,
+                584,
+                585,
+                586,
+                587,
+                588,
+                589,
+                590,
+                591,
+                592
+              ]
+            },
+            "s_axis_rxs_1_tkeep": {
+              "direction": "input",
+              "bits": [
+                593,
+                594,
+                595,
+                596
+              ]
+            },
+            "s_axis_rxs_1_tlast": {
+              "direction": "input",
+              "bits": [
+                597
+              ]
+            },
+            "s_axis_rxs_1_tvalid": {
+              "direction": "input",
+              "bits": [
+                598
+              ]
+            },
+            "m_axis_txc_1_aclk": {
+              "direction": "input",
+              "bits": [
+                599
+              ]
+            },
+            "m_axis_txc_1_aresetn": {
+              "direction": "input",
+              "bits": [
+                600
+              ]
+            },
+            "m_axis_txc_1_tvalid": {
+              "direction": "output",
+              "bits": [
+                601
+              ]
+            },
+            "m_axis_txc_1_tdata": {
+              "direction": "output",
+              "bits": [
+                602,
+                603,
+                604,
+                605,
+                606,
+                607,
+                608,
+                609,
+                610,
+                611,
+                612,
+                613,
+                614,
+                615,
+                616,
+                617,
+                618,
+                619,
+                620,
+                621,
+                622,
+                623,
+                624,
+                625,
+                626,
+                627,
+                628,
+                629,
+                630,
+                631,
+                632,
+                633
+              ]
+            },
+            "m_axis_txc_1_tkeep": {
+              "direction": "output",
+              "bits": [
+                634,
+                635,
+                636,
+                637
+              ]
+            },
+            "m_axis_txc_1_tlast": {
+              "direction": "output",
+              "bits": [
+                638
+              ]
+            },
+            "m_axis_txc_1_tready": {
+              "direction": "input",
+              "bits": [
+                639
+              ]
+            },
+            "s_axis_rxs_2_aclk": {
+              "direction": "input",
+              "bits": [
+                640
+              ]
+            },
+            "s_axis_rxs_2_aresetn": {
+              "direction": "input",
+              "bits": [
+                641
+              ]
+            },
+            "s_axis_rxs_2_tready": {
+              "direction": "output",
+              "bits": [
+                642
+              ]
+            },
+            "s_axis_rxs_2_tdata": {
+              "direction": "input",
+              "bits": [
+                643,
+                644,
+                645,
+                646,
+                647,
+                648,
+                649,
+                650,
+                651,
+                652,
+                653,
+                654,
+                655,
+                656,
+                657,
+                658,
+                659,
+                660,
+                661,
+                662,
+                663,
+                664,
+                665,
+                666,
+                667,
+                668,
+                669,
+                670,
+                671,
+                672,
+                673,
+                674
+              ]
+            },
+            "s_axis_rxs_2_tkeep": {
+              "direction": "input",
+              "bits": [
+                675,
+                676,
+                677,
+                678
+              ]
+            },
+            "s_axis_rxs_2_tlast": {
+              "direction": "input",
+              "bits": [
+                679
+              ]
+            },
+            "s_axis_rxs_2_tvalid": {
+              "direction": "input",
+              "bits": [
+                680
+              ]
+            },
+            "m_axis_txc_2_aclk": {
+              "direction": "input",
+              "bits": [
+                681
+              ]
+            },
+            "m_axis_txc_2_aresetn": {
+              "direction": "input",
+              "bits": [
+                682
+              ]
+            },
+            "m_axis_txc_2_tvalid": {
+              "direction": "output",
+              "bits": [
+                683
+              ]
+            },
+            "m_axis_txc_2_tdata": {
+              "direction": "output",
+              "bits": [
+                684,
+                685,
+                686,
+                687,
+                688,
+                689,
+                690,
+                691,
+                692,
+                693,
+                694,
+                695,
+                696,
+                697,
+                698,
+                699,
+                700,
+                701,
+                702,
+                703,
+                704,
+                705,
+                706,
+                707,
+                708,
+                709,
+                710,
+                711,
+                712,
+                713,
+                714,
+                715
+              ]
+            },
+            "m_axis_txc_2_tkeep": {
+              "direction": "output",
+              "bits": [
+                716,
+                717,
+                718,
+                719
+              ]
+            },
+            "m_axis_txc_2_tlast": {
+              "direction": "output",
+              "bits": [
+                720
+              ]
+            },
+            "m_axis_txc_2_tready": {
+              "direction": "input",
+              "bits": [
+                721
+              ]
+            },
+            "s_axis_rxs_3_aclk": {
+              "direction": "input",
+              "bits": [
+                722
+              ]
+            },
+            "s_axis_rxs_3_aresetn": {
+              "direction": "input",
+              "bits": [
+                723
+              ]
+            },
+            "s_axis_rxs_3_tready": {
+              "direction": "output",
+              "bits": [
+                724
+              ]
+            },
+            "s_axis_rxs_3_tdata": {
+              "direction": "input",
+              "bits": [
+                725,
+                726,
+                727,
+                728,
+                729,
+                730,
+                731,
+                732,
+                733,
+                734,
+                735,
+                736,
+                737,
+                738,
+                739,
+                740,
+                741,
+                742,
+                743,
+                744,
+                745,
+                746,
+                747,
+                748,
+                749,
+                750,
+                751,
+                752,
+                753,
+                754,
+                755,
+                756
+              ]
+            },
+            "s_axis_rxs_3_tkeep": {
+              "direction": "input",
+              "bits": [
+                757,
+                758,
+                759,
+                760
+              ]
+            },
+            "s_axis_rxs_3_tlast": {
+              "direction": "input",
+              "bits": [
+                761
+              ]
+            },
+            "s_axis_rxs_3_tvalid": {
+              "direction": "input",
+              "bits": [
+                762
+              ]
+            },
+            "m_axis_txc_3_aclk": {
+              "direction": "input",
+              "bits": [
+                763
+              ]
+            },
+            "m_axis_txc_3_aresetn": {
+              "direction": "input",
+              "bits": [
+                764
+              ]
+            },
+            "m_axis_txc_3_tvalid": {
+              "direction": "output",
+              "bits": [
+                765
+              ]
+            },
+            "m_axis_txc_3_tdata": {
+              "direction": "output",
+              "bits": [
+                766,
+                767,
+                768,
+                769,
+                770,
+                771,
+                772,
+                773,
+                774,
+                775,
+                776,
+                777,
+                778,
+                779,
+                780,
+                781,
+                782,
+                783,
+                784,
+                785,
+                786,
+                787,
+                788,
+                789,
+                790,
+                791,
+                792,
+                793,
+                794,
+                795,
+                796,
+                797
+              ]
+            },
+            "m_axis_txc_3_tkeep": {
+              "direction": "output",
+              "bits": [
+                798,
+                799,
+                800,
+                801
+              ]
+            },
+            "m_axis_txc_3_tlast": {
+              "direction": "output",
+              "bits": [
+                802
+              ]
+            },
+            "m_axis_txc_3_tready": {
+              "direction": "input",
+              "bits": [
+                803
+              ]
+            }
+          },
+          "cells": {
+            "$not$/home/master/Desktop/dataset/code_delete_comments/module_52496.v:237$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  804
+                ]
+              }
+            },
+            "eth_axis_control_if_0": {
+              "type": "axis_control_if",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "m_axis_txc_aclk": [
+                  2
+                ],
+                "m_axis_txc_aresetn": [
+                  3
+                ],
+                "m_axis_txc_tdata": [
+                  520,
+                  521,
+                  522,
+                  523,
+                  524,
+                  525,
+                  526,
+                  527,
+                  528,
+                  529,
+                  530,
+                  531,
+                  532,
+                  533,
+                  534,
+                  535,
+                  536,
+                  537,
+                  538,
+                  539,
+                  540,
+                  541,
+                  542,
+                  543,
+                  544,
+                  545,
+                  546,
+                  547,
+                  548,
+                  549,
+                  550,
+                  551
+                ],
+                "m_axis_txc_tkeep": [
+                  552,
+                  553,
+                  554,
+                  555
+                ],
+                "m_axis_txc_tlast": [
+                  556
+                ],
+                "m_axis_txc_tready": [
+                  557
+                ],
+                "m_axis_txc_tvalid": [
+                  519
+                ],
+                "m_axis_txd_tlast": [
+                  228
+                ],
+                "m_axis_txd_tready": [
+                  229
+                ],
+                "m_axis_txd_tvalid": [
+                  191
+                ],
+                "s_axis_rxs_aclk": [
+                  2
+                ],
+                "s_axis_rxs_aresetn": [
+                  3
+                ],
+                "s_axis_rxs_tdata": [
+                  479,
+                  480,
+                  481,
+                  482,
+                  483,
+                  484,
+                  485,
+                  486,
+                  487,
+                  488,
+                  489,
+                  490,
+                  491,
+                  492,
+                  493,
+                  494,
+                  495,
+                  496,
+                  497,
+                  498,
+                  499,
+                  500,
+                  501,
+                  502,
+                  503,
+                  504,
+                  505,
+                  506,
+                  507,
+                  508,
+                  509,
+                  510
+                ],
+                "s_axis_rxs_tkeep": [
+                  511,
+                  512,
+                  513,
+                  514
+                ],
+                "s_axis_rxs_tlast": [
+                  515
+                ],
+                "s_axis_rxs_tready": [
+                  478
+                ],
+                "s_axis_rxs_tvalid": [
+                  516
+                ],
+                "tx_pkt_byte_cnt": [],
+                "tx_pkt_byte_cnt_vld": []
+              }
+            },
+            "eth_axis_control_if_1": {
+              "type": "axis_control_if",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "m_axis_txc_aclk": [
+                  2
+                ],
+                "m_axis_txc_aresetn": [
+                  3
+                ],
+                "m_axis_txc_tdata": [
+                  602,
+                  603,
+                  604,
+                  605,
+                  606,
+                  607,
+                  608,
+                  609,
+                  610,
+                  611,
+                  612,
+                  613,
+                  614,
+                  615,
+                  616,
+                  617,
+                  618,
+                  619,
+                  620,
+                  621,
+                  622,
+                  623,
+                  624,
+                  625,
+                  626,
+                  627,
+                  628,
+                  629,
+                  630,
+                  631,
+                  632,
+                  633
+                ],
+                "m_axis_txc_tkeep": [
+                  634,
+                  635,
+                  636,
+                  637
+                ],
+                "m_axis_txc_tlast": [
+                  638
+                ],
+                "m_axis_txc_tready": [
+                  639
+                ],
+                "m_axis_txc_tvalid": [
+                  601
+                ],
+                "m_axis_txd_tlast": [
+                  310
+                ],
+                "m_axis_txd_tready": [
+                  311
+                ],
+                "m_axis_txd_tvalid": [
+                  273
+                ],
+                "s_axis_rxs_aclk": [
+                  2
+                ],
+                "s_axis_rxs_aresetn": [
+                  3
+                ],
+                "s_axis_rxs_tdata": [
+                  561,
+                  562,
+                  563,
+                  564,
+                  565,
+                  566,
+                  567,
+                  568,
+                  569,
+                  570,
+                  571,
+                  572,
+                  573,
+                  574,
+                  575,
+                  576,
+                  577,
+                  578,
+                  579,
+                  580,
+                  581,
+                  582,
+                  583,
+                  584,
+                  585,
+                  586,
+                  587,
+                  588,
+                  589,
+                  590,
+                  591,
+                  592
+                ],
+                "s_axis_rxs_tkeep": [
+                  593,
+                  594,
+                  595,
+                  596
+                ],
+                "s_axis_rxs_tlast": [
+                  597
+                ],
+                "s_axis_rxs_tready": [
+                  560
+                ],
+                "s_axis_rxs_tvalid": [
+                  598
+                ],
+                "tx_pkt_byte_cnt": [],
+                "tx_pkt_byte_cnt_vld": []
+              }
+            },
+            "eth_axis_control_if_2": {
+              "type": "axis_control_if",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "m_axis_txc_aclk": [
+                  2
+                ],
+                "m_axis_txc_aresetn": [
+                  3
+                ],
+                "m_axis_txc_tdata": [
+                  684,
+                  685,
+                  686,
+                  687,
+                  688,
+                  689,
+                  690,
+                  691,
+                  692,
+                  693,
+                  694,
+                  695,
+                  696,
+                  697,
+                  698,
+                  699,
+                  700,
+                  701,
+                  702,
+                  703,
+                  704,
+                  705,
+                  706,
+                  707,
+                  708,
+                  709,
+                  710,
+                  711,
+                  712,
+                  713,
+                  714,
+                  715
+                ],
+                "m_axis_txc_tkeep": [
+                  716,
+                  717,
+                  718,
+                  719
+                ],
+                "m_axis_txc_tlast": [
+                  720
+                ],
+                "m_axis_txc_tready": [
+                  721
+                ],
+                "m_axis_txc_tvalid": [
+                  683
+                ],
+                "m_axis_txd_tlast": [
+                  392
+                ],
+                "m_axis_txd_tready": [
+                  393
+                ],
+                "m_axis_txd_tvalid": [
+                  355
+                ],
+                "s_axis_rxs_aclk": [
+                  2
+                ],
+                "s_axis_rxs_aresetn": [
+                  3
+                ],
+                "s_axis_rxs_tdata": [
+                  643,
+                  644,
+                  645,
+                  646,
+                  647,
+                  648,
+                  649,
+                  650,
+                  651,
+                  652,
+                  653,
+                  654,
+                  655,
+                  656,
+                  657,
+                  658,
+                  659,
+                  660,
+                  661,
+                  662,
+                  663,
+                  664,
+                  665,
+                  666,
+                  667,
+                  668,
+                  669,
+                  670,
+                  671,
+                  672,
+                  673,
+                  674
+                ],
+                "s_axis_rxs_tkeep": [
+                  675,
+                  676,
+                  677,
+                  678
+                ],
+                "s_axis_rxs_tlast": [
+                  679
+                ],
+                "s_axis_rxs_tready": [
+                  642
+                ],
+                "s_axis_rxs_tvalid": [
+                  680
+                ],
+                "tx_pkt_byte_cnt": [],
+                "tx_pkt_byte_cnt_vld": []
+              }
+            },
+            "eth_axis_control_if_3": {
+              "type": "axis_control_if",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "m_axis_txc_aclk": [
+                  2
+                ],
+                "m_axis_txc_aresetn": [
+                  3
+                ],
+                "m_axis_txc_tdata": [
+                  766,
+                  767,
+                  768,
+                  769,
+                  770,
+                  771,
+                  772,
+                  773,
+                  774,
+                  775,
+                  776,
+                  777,
+                  778,
+                  779,
+                  780,
+                  781,
+                  782,
+                  783,
+                  784,
+                  785,
+                  786,
+                  787,
+                  788,
+                  789,
+                  790,
+                  791,
+                  792,
+                  793,
+                  794,
+                  795,
+                  796,
+                  797
+                ],
+                "m_axis_txc_tkeep": [
+                  798,
+                  799,
+                  800,
+                  801
+                ],
+                "m_axis_txc_tlast": [
+                  802
+                ],
+                "m_axis_txc_tready": [
+                  803
+                ],
+                "m_axis_txc_tvalid": [
+                  765
+                ],
+                "m_axis_txd_tlast": [
+                  474
+                ],
+                "m_axis_txd_tready": [
+                  475
+                ],
+                "m_axis_txd_tvalid": [
+                  437
+                ],
+                "s_axis_rxs_aclk": [
+                  2
+                ],
+                "s_axis_rxs_aresetn": [
+                  3
+                ],
+                "s_axis_rxs_tdata": [
+                  725,
+                  726,
+                  727,
+                  728,
+                  729,
+                  730,
+                  731,
+                  732,
+                  733,
+                  734,
+                  735,
+                  736,
+                  737,
+                  738,
+                  739,
+                  740,
+                  741,
+                  742,
+                  743,
+                  744,
+                  745,
+                  746,
+                  747,
+                  748,
+                  749,
+                  750,
+                  751,
+                  752,
+                  753,
+                  754,
+                  755,
+                  756
+                ],
+                "s_axis_rxs_tkeep": [
+                  757,
+                  758,
+                  759,
+                  760
+                ],
+                "s_axis_rxs_tlast": [
+                  761
+                ],
+                "s_axis_rxs_tready": [
+                  724
+                ],
+                "s_axis_rxs_tvalid": [
+                  762
+                ],
+                "tx_pkt_byte_cnt": [],
+                "tx_pkt_byte_cnt_vld": []
+              }
+            },
+            "onet_core_logic": {
+              "type": "onet_core_logic",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "m_axis_eth_tx_tdata_0": [
+                  192,
+                  193,
+                  194,
+                  195,
+                  196,
+                  197,
+                  198,
+                  199,
+                  200,
+                  201,
+                  202,
+                  203,
+                  204,
+                  205,
+                  206,
+                  207,
+                  208,
+                  209,
+                  210,
+                  211,
+                  212,
+                  213,
+                  214,
+                  215,
+                  216,
+                  217,
+                  218,
+                  219,
+                  220,
+                  221,
+                  222,
+                  223
+                ],
+                "m_axis_eth_tx_tdata_1": [
+                  274,
+                  275,
+                  276,
+                  277,
+                  278,
+                  279,
+                  280,
+                  281,
+                  282,
+                  283,
+                  284,
+                  285,
+                  286,
+                  287,
+                  288,
+                  289,
+                  290,
+                  291,
+                  292,
+                  293,
+                  294,
+                  295,
+                  296,
+                  297,
+                  298,
+                  299,
+                  300,
+                  301,
+                  302,
+                  303,
+                  304,
+                  305
+                ],
+                "m_axis_eth_tx_tdata_2": [
+                  356,
+                  357,
+                  358,
+                  359,
+                  360,
+                  361,
+                  362,
+                  363,
+                  364,
+                  365,
+                  366,
+                  367,
+                  368,
+                  369,
+                  370,
+                  371,
+                  372,
+                  373,
+                  374,
+                  375,
+                  376,
+                  377,
+                  378,
+                  379,
+                  380,
+                  381,
+                  382,
+                  383,
+                  384,
+                  385,
+                  386,
+                  387
+                ],
+                "m_axis_eth_tx_tdata_3": [
+                  438,
+                  439,
+                  440,
+                  441,
+                  442,
+                  443,
+                  444,
+                  445,
+                  446,
+                  447,
+                  448,
+                  449,
+                  450,
+                  451,
+                  452,
+                  453,
+                  454,
+                  455,
+                  456,
+                  457,
+                  458,
+                  459,
+                  460,
+                  461,
+                  462,
+                  463,
+                  464,
+                  465,
+                  466,
+                  467,
+                  468,
+                  469
+                ],
+                "m_axis_eth_tx_tkeep_0": [
+                  224,
+                  225,
+                  226,
+                  227
+                ],
+                "m_axis_eth_tx_tkeep_1": [
+                  306,
+                  307,
+                  308,
+                  309
+                ],
+                "m_axis_eth_tx_tkeep_2": [
+                  388,
+                  389,
+                  390,
+                  391
+                ],
+                "m_axis_eth_tx_tkeep_3": [
+                  470,
+                  471,
+                  472,
+                  473
+                ],
+                "m_axis_eth_tx_tlast_0": [
+                  228
+                ],
+                "m_axis_eth_tx_tlast_1": [
+                  310
+                ],
+                "m_axis_eth_tx_tlast_2": [
+                  392
+                ],
+                "m_axis_eth_tx_tlast_3": [
+                  474
+                ],
+                "m_axis_eth_tx_tready_0": [
+                  229
+                ],
+                "m_axis_eth_tx_tready_1": [
+                  311
+                ],
+                "m_axis_eth_tx_tready_2": [
+                  393
+                ],
+                "m_axis_eth_tx_tready_3": [
+                  475
+                ],
+                "m_axis_eth_tx_tvalid_0": [
+                  191
+                ],
+                "m_axis_eth_tx_tvalid_1": [
+                  273
+                ],
+                "m_axis_eth_tx_tvalid_2": [
+                  355
+                ],
+                "m_axis_eth_tx_tvalid_3": [
+                  437
+                ],
+                "reset": [
+                  804
+                ],
+                "s_axi_aclk": [
+                  4
+                ],
+                "s_axi_araddr": [
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86,
+                  87,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  97,
+                  98,
+                  99,
+                  100,
+                  101,
+                  102,
+                  103,
+                  104,
+                  105,
+                  106
+                ],
+                "s_axi_aresetn": [
+                  5
+                ],
+                "s_axi_arprot": [
+                  107,
+                  108,
+                  109
+                ],
+                "s_axi_arready": [
+                  111
+                ],
+                "s_axi_arvalid": [
+                  110
+                ],
+                "s_axi_awaddr": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "s_axi_awprot": [
+                  805
+                ],
+                "s_axi_awready": [
+                  37
+                ],
+                "s_axi_awvalid": [
+                  36
+                ],
+                "s_axi_bready": [
+                  79
+                ],
+                "s_axi_bresp": [
+                  76,
+                  77
+                ],
+                "s_axi_bvalid": [
+                  78
+                ],
+                "s_axi_rdata": [
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  117,
+                  118,
+                  119,
+                  120,
+                  121,
+                  122,
+                  123,
+                  124,
+                  125,
+                  126,
+                  127,
+                  128,
+                  129,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  137,
+                  138,
+                  139,
+                  140,
+                  141,
+                  142,
+                  143
+                ],
+                "s_axi_rready": [
+                  147
+                ],
+                "s_axi_rresp": [
+                  144,
+                  145
+                ],
+                "s_axi_rvalid": [
+                  146
+                ],
+                "s_axi_wdata": [
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69
+                ],
+                "s_axi_wready": [
+                  75
+                ],
+                "s_axi_wstrb": [
+                  70,
+                  71,
+                  72,
+                  73
+                ],
+                "s_axi_wvalid": [
+                  74
+                ],
+                "s_axis_eth_aclk_0": [
+                  148
+                ],
+                "s_axis_eth_aclk_1": [
+                  230
+                ],
+                "s_axis_eth_aclk_2": [
+                  312
+                ],
+                "s_axis_eth_aclk_3": [
+                  394
+                ],
+                "s_axis_eth_rx_tdata_0": [
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  157,
+                  158,
+                  159,
+                  160,
+                  161,
+                  162,
+                  163,
+                  164,
+                  165,
+                  166,
+                  167,
+                  168,
+                  169,
+                  170,
+                  171,
+                  172,
+                  173,
+                  174,
+                  175,
+                  176,
+                  177,
+                  178,
+                  179,
+                  180,
+                  181,
+                  182
+                ],
+                "s_axis_eth_rx_tdata_1": [
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238,
+                  239,
+                  240,
+                  241,
+                  242,
+                  243,
+                  244,
+                  245,
+                  246,
+                  247,
+                  248,
+                  249,
+                  250,
+                  251,
+                  252,
+                  253,
+                  254,
+                  255,
+                  256,
+                  257,
+                  258,
+                  259,
+                  260,
+                  261,
+                  262,
+                  263,
+                  264
+                ],
+                "s_axis_eth_rx_tdata_2": [
+                  315,
+                  316,
+                  317,
+                  318,
+                  319,
+                  320,
+                  321,
+                  322,
+                  323,
+                  324,
+                  325,
+                  326,
+                  327,
+                  328,
+                  329,
+                  330,
+                  331,
+                  332,
+                  333,
+                  334,
+                  335,
+                  336,
+                  337,
+                  338,
+                  339,
+                  340,
+                  341,
+                  342,
+                  343,
+                  344,
+                  345,
+                  346
+                ],
+                "s_axis_eth_rx_tdata_3": [
+                  397,
+                  398,
+                  399,
+                  400,
+                  401,
+                  402,
+                  403,
+                  404,
+                  405,
+                  406,
+                  407,
+                  408,
+                  409,
+                  410,
+                  411,
+                  412,
+                  413,
+                  414,
+                  415,
+                  416,
+                  417,
+                  418,
+                  419,
+                  420,
+                  421,
+                  422,
+                  423,
+                  424,
+                  425,
+                  426,
+                  427,
+                  428
+                ],
+                "s_axis_eth_rx_tkeep_0": [
+                  183,
+                  184,
+                  185,
+                  186
+                ],
+                "s_axis_eth_rx_tkeep_1": [
+                  265,
+                  266,
+                  267,
+                  268
+                ],
+                "s_axis_eth_rx_tkeep_2": [
+                  347,
+                  348,
+                  349,
+                  350
+                ],
+                "s_axis_eth_rx_tkeep_3": [
+                  429,
+                  430,
+                  431,
+                  432
+                ],
+                "s_axis_eth_rx_tlast_0": [
+                  187
+                ],
+                "s_axis_eth_rx_tlast_1": [
+                  269
+                ],
+                "s_axis_eth_rx_tlast_2": [
+                  351
+                ],
+                "s_axis_eth_rx_tlast_3": [
+                  433
+                ],
+                "s_axis_eth_rx_tready_0": [
+                  150
+                ],
+                "s_axis_eth_rx_tready_1": [
+                  232
+                ],
+                "s_axis_eth_rx_tready_2": [
+                  314
+                ],
+                "s_axis_eth_rx_tready_3": [
+                  396
+                ],
+                "s_axis_eth_rx_tvalid_0": [
+                  188
+                ],
+                "s_axis_eth_rx_tvalid_1": [
+                  270
+                ],
+                "s_axis_eth_rx_tvalid_2": [
+                  352
+                ],
+                "s_axis_eth_rx_tvalid_3": [
+                  434
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

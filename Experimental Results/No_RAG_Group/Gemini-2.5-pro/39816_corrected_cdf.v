@@ -1,0 +1,137 @@
+// 1_corrected_cdf.v
+module spdr
+(
+    input clk,
+    input clk_50,
+    input rst,
+    input avm_waitrequest,
+    input [31:0] avm_readdata,
+    input avm_readdatavalid,
+    input [1:0] avm_response,
+    input avm_writeresponsevalid,
+    output avm_burstcount,
+    output [31:0] avm_writedata,
+    output [31:0] avm_address,
+    output avm_write,
+    output avm_read,
+    output [3:0] avm_byteenable,
+    input [31:0] gpi,
+    output reg gpi_strobe,
+    output reg [31:0] gpo,
+    output reg gpo_strobe,
+    output uart_tx,
+    input uart_rx
+    // input scan_mode // Example: Add scan_mode for DFT if needed
+);
+    parameter SAMPLE_CLK_DIV = 6'd62;
+    reg cs;
+    wire busy;
+    reg wr;
+    reg [3:0] mask;
+    reg [31:0] addr;
+    reg [31:0] wdata_final;
+    wire rdone;
+    wire wdone;
+    wire [31:0] rsp_data;
+    wire rsp_is_err = (avm_response != 2'b00);
+    assign busy = avm_waitrequest;
+    assign avm_address = addr;
+    assign avm_read = cs && !wr;
+    assign avm_write = cs && wr;
+    assign avm_byteenable = mask;
+    assign avm_writedata = wdata_final;
+    assign avm_burstcount = 1'b1;
+    assign rdone = avm_readdatavalid;
+    assign rsp_data = avm_readdata;
+    assign wdone = avm_writeresponsevalid;
+    wire tx_busy;
+    wire tx_vld;
+    wire [7:0] tx_data;
+    wire rx_vld;
+    wire [7:0] rx_data;
+    spdr_uart_framer #(.SAMPLE_CLK_DIV(SAMPLE_CLK_DIV)) uart_framer
+    (
+        .clk_50(clk_50),
+        .rst(rst),
+        .tx_busy(tx_busy),
+        .tx_vld(tx_vld),
+        .tx_data(tx_data),
+        .rx_vld(rx_vld),
+        .rx_data(rx_data),
+        .rx_frame_error(),
+        .uart_tx(uart_tx),
+        .uart_rx(uart_rx)
+    );
+    reg [7:0] tx_byte;
+    reg tx_push;
+    wire tx_full;
+    wire tx_empty;
+    assign tx_vld = !tx_empty;
+    spdr_fifo tx_fifo
+    (
+        .rst_in(rst),
+        .clk_in(clk),
+        .clk_out(clk_50),
+        .din(tx_byte),
+        .push(tx_push),
+        .full(tx_full),
+        .dout(tx_data),
+        .pop(!tx_busy),
+        .empty(tx_empty)
+    );
+    wire [7:0] rx_byte;
+    reg rx_pop;
+    wire rx_empty;
+    spdr_fifo rx_fifo
+    (
+        .rst_in(rst),
+        .clk_in(clk_50),
+        .clk_out(clk),
+        .din(rx_data),
+        .push(rx_vld),
+        .full(),
+        .dout(rx_byte),
+        .pop(rx_pop),
+        .empty(rx_empty)
+    );
+    reg rx_is_num;
+    reg rx_is_backspace;
+    reg [3:0] rx_number;
+    reg [31:0] rx_number_shift;
+    always @ *
+    begin
+        rx_is_num = 1'b1;
+        rx_is_backspace = 1'b0;
+        rx_number = 4'd0;
+        case (rx_byte)
+        "0": rx_number = 4'h0;
+        "1": rx_number = 4'h1;
+        "2": rx_number = 4'h2;
+        "3": rx_number = 4'h3;
+        "4": rx_number = 4'h4;
+        "5": rx_number = 4'h5;
+        "6": rx_number = 4'h6;
+        "7": rx_number = 4'h7;
+        "8": rx_number = 4'h8;
+        "9": rx_number = 4'h9;
+        "A": rx_number = 4'hA;
+        "B": rx_number = 4'hB;
+        "C": rx_number = 4'hC;
+        "D": rx_number = 4'hD;
+        "E": rx_number = 4'hE;
+        "F": rx_number = 4'hF;
+        "a": rx_number = 4'hA;
+        "b": rx_number = 4'hB;
+        "c": rx_number = 4'hC;
+        "d": rx_number = 4'hD;
+        "e": rx_number = 4'hE;
+        "f": rx_number = 4'hF;
+        8'h08:
+        begin
+            rx_is_num = 1'b0;
+            rx_is_backspace = 1'b1;
+        end
+        default: rx_is_num = 1'b0;
+        endcase
+    end
+    always @ (posedge clk)

@@ -1,0 +1,299 @@
+{
+  "modules": {
+    "bclk_dll_exdes": {
+      "modules": {
+        "bclk_dll_exdes": {
+          "ports": {
+            "CLK_IN1": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "COUNTER_RESET": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "CLK_OUT": {
+              "direction": "output",
+              "offset": 1,
+              "bits": [
+                4
+              ]
+            },
+            "COUNT": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "RESET": {
+              "direction": "input",
+              "bits": [
+                6
+              ]
+            },
+            "LOCKED": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_58612.v:53$6": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  5
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ]
+              }
+            },
+            "$logic_not$./module_58612.v:16$1": {
+              "type": "$logic_not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  7
+                ],
+                "Y": [
+                  39
+                ]
+              }
+            },
+            "$logic_or$./module_58612.v:16$2": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  39
+                ],
+                "B": [
+                  6
+                ],
+                "Y": [
+                  40
+                ]
+              }
+            },
+            "$logic_or$./module_58612.v:16$3": {
+              "type": "$logic_or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  40
+                ],
+                "B": [
+                  3
+                ],
+                "Y": [
+                  41
+                ]
+              }
+            },
+            "$procdff$10": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  41
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  42
+                ],
+                "Q": [
+                  43
+                ]
+              }
+            },
+            "$procdff$11": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  41
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  43
+                ],
+                "Q": [
+                  44
+                ]
+              }
+            },
+            "$procdff$7": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  44
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ],
+                "Q": [
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  5
+                ]
+              }
+            },
+            "$procdff$8": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  41
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  "0"
+                ],
+                "Q": [
+                  45
+                ]
+              }
+            },
+            "$procdff$9": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  41
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  45
+                ],
+                "Q": [
+                  42
+                ]
+              }
+            },
+            "clkin1_buf": {
+              "type": "BUFG",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "I": [
+                  2
+                ],
+                "O": [
+                  46
+                ]
+              }
+            },
+            "clknetwork": {
+              "type": "bclk_dll",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "LOCKED": [
+                  7
+                ],
+                "RESET": [
+                  6
+                ],
+                "clk133": [
+                  4
+                ],
+                "clk133in": [
+                  46
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

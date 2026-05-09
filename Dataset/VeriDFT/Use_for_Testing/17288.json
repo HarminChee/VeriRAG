@@ -1,0 +1,206 @@
+{
+  "modules": {
+    "monostable": {
+      "modules": {
+        "monostable": {
+          "ports": {
+            "clk": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "reset": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "trigger": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "pulse": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            }
+          },
+          "cells": {
+            "$add$code_after_filter/module_17288.v:22$5": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "B": [
+                  "1"
+                ],
+                "Y": [
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+                ]
+              }
+            },
+            "$eq$code_after_filter/module_17288.v:9$1": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "B": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  16
+                ]
+              }
+            },
+            "$or$code_after_filter/module_17288.v:9$2": {
+              "type": "$or",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "B": [
+                  16
+                ],
+                "Y": [
+                  17
+                ]
+              }
+            },
+            "$procdff$11": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  17
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  18,
+                  19,
+                  20,
+                  21,
+                  22
+                ],
+                "Q": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              }
+            },
+            "$procdff$12": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  17
+                ],
+                "CLK": [
+                  4
+                ],
+                "D": [
+                  "1"
+                ],
+                "Q": [
+                  5
+                ]
+              }
+            },
+            "$procmux$9": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  10
+                ],
+                "B": [
+                  11,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "S": [
+                  5
+                ],
+                "Y": [
+                  18,
+                  19,
+                  20,
+                  21,
+                  22
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

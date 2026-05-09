@@ -1,0 +1,55 @@
+{
+  "modules": {
+    "ps2_keyboard": {
+      "modules": {
+        "ps2_keyboard": {
+          "ports": {
+            "RESET_N": {
+              "direction": "output",
+              "bits": [
+                2
+              ]
+            },
+            "CLK": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "PS2_CLK": {
+              "direction": "output",
+              "bits": [
+                4
+              ]
+            },
+            "PS2_DATA": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "RX_SCAN": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "RX_PRESSED": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "RX_EXTENDED": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            }
+          },
+          "cells": {}
+        }
+      }
+    }
+  }
+}

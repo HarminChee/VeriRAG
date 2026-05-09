@@ -1,0 +1,868 @@
+{
+  "modules": {
+    "wiggle": {
+      "modules": {
+        "wiggle": {
+          "ports": {
+            "osc": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "rstn": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "led": {
+              "direction": "output",
+              "bits": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
+            },
+            "gpio": {
+              "direction": "output",
+              "bits": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35
+              ]
+            },
+            "perstn": {
+              "direction": "input",
+              "bits": [
+                36
+              ]
+            },
+            "refclkp": {
+              "direction": "input",
+              "bits": [
+                37
+              ]
+            },
+            "refclkn": {
+              "direction": "input",
+              "bits": [
+                38
+              ]
+            },
+            "hdinp0": {
+              "direction": "input",
+              "bits": [
+                39
+              ]
+            },
+            "hdinn0": {
+              "direction": "input",
+              "bits": [
+                40
+              ]
+            },
+            "hdoutp0": {
+              "direction": "output",
+              "bits": [
+                41
+              ]
+            },
+            "hdoutn0": {
+              "direction": "output",
+              "bits": [
+                42
+              ]
+            }
+          },
+          "cells": {
+            "$add$./module_21058.v:21$3": {
+              "type": "$add",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66,
+                  67,
+                  68,
+                  69,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74
+                ]
+              }
+            },
+            "$eq$./module_21058.v:27$5": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35
+                ],
+                "B": [
+                  "1",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  75
+                ]
+              }
+            },
+            "$eq$./module_21058.v:36$7": {
+              "type": "$eq",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  76
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  77
+                ]
+              }
+            },
+            "$not$./module_21058.v:14$1": {
+              "type": "$not",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  3
+                ],
+                "Y": [
+                  78
+                ]
+              }
+            },
+            "$procdff$16": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  78
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  79,
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86
+                ],
+                "Q": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ]
+              }
+            },
+            "$procdff$17": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  78
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  87
+                ],
+                "Q": [
+                  76
+                ]
+              }
+            },
+            "$procdff$18": {
+              "type": "$adff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "ARST": [
+                  78
+                ],
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51,
+                  52,
+                  53,
+                  54,
+                  55,
+                  56,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62,
+                  63,
+                  64,
+                  65,
+                  66
+                ],
+                "Q": [
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35
+                ]
+              }
+            },
+            "$procmux$11": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4
+                ],
+                "B": [
+                  11
+                ],
+                "S": [
+                  77
+                ],
+                "Y": [
+                  79
+                ]
+              }
+            },
+            "$procmux$14": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  "0"
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  75
+                ],
+                "Y": [
+                  87
+                ]
+              }
+            },
+            "$procmux$9": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "B": [
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94
+                ],
+                "S": [
+                  77
+                ],
+                "Y": [
+                  80,
+                  81,
+                  82,
+                  83,
+                  84,
+                  85,
+                  86
+                ]
+              }
+            },
+            "$shl$./module_21058.v:37$8": {
+              "type": "$shl",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "B": [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "Y": [
+                  95,
+                  88,
+                  89,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94
+                ]
+              }
+            },
+            "_inst": {
+              "type": "claritycores",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "pcie_x1_bus_num": [],
+                "pcie_x1_cmd_reg_out": [],
+                "pcie_x1_cmpln_tout": [],
+                "pcie_x1_cmpltr_abort_np": [],
+                "pcie_x1_cmpltr_abort_p": [
+                  "0"
+                ],
+                "pcie_x1_dev_cntl_out": [],
+                "pcie_x1_dev_num": [],
+                "pcie_x1_dl_active": [],
+                "pcie_x1_dl_inactive": [],
+                "pcie_x1_dl_init": [],
+                "pcie_x1_dl_up": [],
+                "pcie_x1_flip_lanes": [
+                  "0"
+                ],
+                "pcie_x1_force_disable_scr": [
+                  "0"
+                ],
+                "pcie_x1_force_lsm_active": [
+                  "0"
+                ],
+                "pcie_x1_force_phy_status": [
+                  "0"
+                ],
+                "pcie_x1_force_rec_ei": [
+                  "0"
+                ],
+                "pcie_x1_func_num": [],
+                "pcie_x1_hdinn0": [
+                  40
+                ],
+                "pcie_x1_hdinp0": [
+                  39
+                ],
+                "pcie_x1_hdoutn0": [
+                  42
+                ],
+                "pcie_x1_hdoutp0": [
+                  41
+                ],
+                "pcie_x1_hl_disable_scr": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_cfg": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_det": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_dis": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_hrst": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_l0stx": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_l0stxfts": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_l1": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_l2": [
+                  "0"
+                ],
+                "pcie_x1_hl_gto_lbk": [
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_hl_gto_rcvry": [
+                  "0"
+                ],
+                "pcie_x1_hl_snd_beacon": [
+                  "0"
+                ],
+                "pcie_x1_inta_n": [
+                  "1"
+                ],
+                "pcie_x1_lnk_cntl_out": [],
+                "pcie_x1_mm_enable": [],
+                "pcie_x1_msi": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_msi_enable": [],
+                "pcie_x1_no_pcie_train": [
+                  "0"
+                ],
+                "pcie_x1_np_req_pend": [
+                  "0"
+                ],
+                "pcie_x1_npd_buf_status_vc0": [
+                  "0"
+                ],
+                "pcie_x1_npd_num_vc0": [
+                  "0"
+                ],
+                "pcie_x1_npd_processed_vc0": [
+                  "0"
+                ],
+                "pcie_x1_nph_buf_status_vc0": [
+                  "0"
+                ],
+                "pcie_x1_nph_processed_vc0": [
+                  "0"
+                ],
+                "pcie_x1_pd_buf_status_vc0": [
+                  "0"
+                ],
+                "pcie_x1_pd_num_vc0": [
+                  "0"
+                ],
+                "pcie_x1_pd_processed_vc0": [
+                  "0"
+                ],
+                "pcie_x1_ph_buf_status_vc0": [
+                  "0"
+                ],
+                "pcie_x1_ph_processed_vc0": [
+                  "0"
+                ],
+                "pcie_x1_phy_ltssm_state": [],
+                "pcie_x1_phy_pol_compliance": [],
+                "pcie_x1_pm_power_state": [],
+                "pcie_x1_pme_en": [],
+                "pcie_x1_pme_status": [
+                  "0"
+                ],
+                "pcie_x1_rst_n": [
+                  36
+                ],
+                "pcie_x1_rx_bar_hit": [],
+                "pcie_x1_rx_data_vc0": [],
+                "pcie_x1_rx_end_vc0": [],
+                "pcie_x1_rx_lbk_data": [],
+                "pcie_x1_rx_lbk_kcntl": [],
+                "pcie_x1_rx_malf_tlp_vc0": [],
+                "pcie_x1_rx_st_vc0": [],
+                "pcie_x1_rx_us_req_vc0": [],
+                "pcie_x1_rxdp_dllp_val": [],
+                "pcie_x1_rxdp_pmd_type": [],
+                "pcie_x1_rxdp_vsd_data": [],
+                "pcie_x1_sys_clk_125": [],
+                "pcie_x1_tx_ca_cpl_recheck_vc0": [],
+                "pcie_x1_tx_ca_cpld_vc0": [],
+                "pcie_x1_tx_ca_cplh_vc0": [],
+                "pcie_x1_tx_ca_npd_vc0": [],
+                "pcie_x1_tx_ca_nph_vc0": [],
+                "pcie_x1_tx_ca_p_recheck_vc0": [],
+                "pcie_x1_tx_ca_pd_vc0": [],
+                "pcie_x1_tx_ca_ph_vc0": [],
+                "pcie_x1_tx_data_vc0": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_tx_dllp_sent": [],
+                "pcie_x1_tx_dllp_val": [
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_tx_end_vc0": [
+                  "0"
+                ],
+                "pcie_x1_tx_lbk_data": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_tx_lbk_kcntl": [
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_tx_lbk_rdy": [],
+                "pcie_x1_tx_nlfy_vc0": [
+                  "0"
+                ],
+                "pcie_x1_tx_pmtype": [
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_tx_rdy_vc0": [],
+                "pcie_x1_tx_req_vc0": [
+                  "0"
+                ],
+                "pcie_x1_tx_st_vc0": [
+                  "0"
+                ],
+                "pcie_x1_tx_vsd_data": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                "pcie_x1_unexp_cmpln": [
+                  "0"
+                ],
+                "pcie_x1_ur_np_ext": [
+                  "0"
+                ],
+                "pcie_x1_ur_p_ext": [
+                  "0"
+                ],
+                "refclk_refclkn": [
+                  38
+                ],
+                "refclk_refclkp": [
+                  37
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

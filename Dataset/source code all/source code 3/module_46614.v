@@ -1,0 +1,263 @@
+`timescale 1ns/10ps
+`timescale 1ns/10ps
+module mm_medtop (
+    clock,
+    reset,
+    x,
+    dvi,
+    med,
+    dvo
+);
+input clock;
+input reset;
+input [7:0] x;
+input dvi;
+output [7:0] med;
+reg [7:0] med;
+output dvo;
+reg dvo;
+reg ok;
+wire [7:0] _med;
+reg [3:0] xcnt;
+reg [9:0] okd;
+reg [7:0] win [0:9-1];
+reg [7:0] won [0:9-1];
+reg [7:0] gmed_gcmp_8_x [0:9-1];
+reg [7:0] gmed_gcmp_7_x [0:9-1];
+reg [7:0] gmed_gcmp_6_x [0:9-1];
+reg [7:0] gmed_gcmp_5_x [0:9-1];
+reg [7:0] gmed_gcmp_4_x [0:9-1];
+reg [7:0] gmed_gcmp_3_x [0:9-1];
+reg [7:0] gmed_gcmp_2_x [0:9-1];
+reg [7:0] gmed_gcmp_1_x [0:9-1];
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_0_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_1_x[0] <= 0;
+        gmed_gcmp_1_x[1] <= 0;
+        gmed_gcmp_1_x[2] <= 0;
+        gmed_gcmp_1_x[3] <= 0;
+        gmed_gcmp_1_x[4] <= 0;
+        gmed_gcmp_1_x[5] <= 0;
+        gmed_gcmp_1_x[6] <= 0;
+        gmed_gcmp_1_x[7] <= 0;
+        gmed_gcmp_1_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_1_x[0] <= win[0];
+        for (ii=1; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_1_x[ii] <= (win[ii] < win[(ii + 1)]) ? win[ii] : win[(ii + 1)];
+            gmed_gcmp_1_x[(ii + 1)] <= (win[ii] > win[(ii + 1)]) ? win[ii] : win[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_1_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_2_x[0] <= 0;
+        gmed_gcmp_2_x[1] <= 0;
+        gmed_gcmp_2_x[2] <= 0;
+        gmed_gcmp_2_x[3] <= 0;
+        gmed_gcmp_2_x[4] <= 0;
+        gmed_gcmp_2_x[5] <= 0;
+        gmed_gcmp_2_x[6] <= 0;
+        gmed_gcmp_2_x[7] <= 0;
+        gmed_gcmp_2_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_2_x[8] <= gmed_gcmp_1_x[8];
+        for (ii=0; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_2_x[ii] <= (gmed_gcmp_1_x[ii] < gmed_gcmp_1_x[(ii + 1)]) ? gmed_gcmp_1_x[ii] : gmed_gcmp_1_x[(ii + 1)];
+            gmed_gcmp_2_x[(ii + 1)] <= (gmed_gcmp_1_x[ii] > gmed_gcmp_1_x[(ii + 1)]) ? gmed_gcmp_1_x[ii] : gmed_gcmp_1_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_2_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_3_x[0] <= 0;
+        gmed_gcmp_3_x[1] <= 0;
+        gmed_gcmp_3_x[2] <= 0;
+        gmed_gcmp_3_x[3] <= 0;
+        gmed_gcmp_3_x[4] <= 0;
+        gmed_gcmp_3_x[5] <= 0;
+        gmed_gcmp_3_x[6] <= 0;
+        gmed_gcmp_3_x[7] <= 0;
+        gmed_gcmp_3_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_3_x[0] <= gmed_gcmp_2_x[0];
+        for (ii=1; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_3_x[ii] <= (gmed_gcmp_2_x[ii] < gmed_gcmp_2_x[(ii + 1)]) ? gmed_gcmp_2_x[ii] : gmed_gcmp_2_x[(ii + 1)];
+            gmed_gcmp_3_x[(ii + 1)] <= (gmed_gcmp_2_x[ii] > gmed_gcmp_2_x[(ii + 1)]) ? gmed_gcmp_2_x[ii] : gmed_gcmp_2_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_3_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_4_x[0] <= 0;
+        gmed_gcmp_4_x[1] <= 0;
+        gmed_gcmp_4_x[2] <= 0;
+        gmed_gcmp_4_x[3] <= 0;
+        gmed_gcmp_4_x[4] <= 0;
+        gmed_gcmp_4_x[5] <= 0;
+        gmed_gcmp_4_x[6] <= 0;
+        gmed_gcmp_4_x[7] <= 0;
+        gmed_gcmp_4_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_4_x[8] <= gmed_gcmp_3_x[8];
+        for (ii=0; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_4_x[ii] <= (gmed_gcmp_3_x[ii] < gmed_gcmp_3_x[(ii + 1)]) ? gmed_gcmp_3_x[ii] : gmed_gcmp_3_x[(ii + 1)];
+            gmed_gcmp_4_x[(ii + 1)] <= (gmed_gcmp_3_x[ii] > gmed_gcmp_3_x[(ii + 1)]) ? gmed_gcmp_3_x[ii] : gmed_gcmp_3_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_4_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_5_x[0] <= 0;
+        gmed_gcmp_5_x[1] <= 0;
+        gmed_gcmp_5_x[2] <= 0;
+        gmed_gcmp_5_x[3] <= 0;
+        gmed_gcmp_5_x[4] <= 0;
+        gmed_gcmp_5_x[5] <= 0;
+        gmed_gcmp_5_x[6] <= 0;
+        gmed_gcmp_5_x[7] <= 0;
+        gmed_gcmp_5_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_5_x[0] <= gmed_gcmp_4_x[0];
+        for (ii=1; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_5_x[ii] <= (gmed_gcmp_4_x[ii] < gmed_gcmp_4_x[(ii + 1)]) ? gmed_gcmp_4_x[ii] : gmed_gcmp_4_x[(ii + 1)];
+            gmed_gcmp_5_x[(ii + 1)] <= (gmed_gcmp_4_x[ii] > gmed_gcmp_4_x[(ii + 1)]) ? gmed_gcmp_4_x[ii] : gmed_gcmp_4_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_5_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_6_x[0] <= 0;
+        gmed_gcmp_6_x[1] <= 0;
+        gmed_gcmp_6_x[2] <= 0;
+        gmed_gcmp_6_x[3] <= 0;
+        gmed_gcmp_6_x[4] <= 0;
+        gmed_gcmp_6_x[5] <= 0;
+        gmed_gcmp_6_x[6] <= 0;
+        gmed_gcmp_6_x[7] <= 0;
+        gmed_gcmp_6_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_6_x[8] <= gmed_gcmp_5_x[8];
+        for (ii=0; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_6_x[ii] <= (gmed_gcmp_5_x[ii] < gmed_gcmp_5_x[(ii + 1)]) ? gmed_gcmp_5_x[ii] : gmed_gcmp_5_x[(ii + 1)];
+            gmed_gcmp_6_x[(ii + 1)] <= (gmed_gcmp_5_x[ii] > gmed_gcmp_5_x[(ii + 1)]) ? gmed_gcmp_5_x[ii] : gmed_gcmp_5_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_6_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_7_x[0] <= 0;
+        gmed_gcmp_7_x[1] <= 0;
+        gmed_gcmp_7_x[2] <= 0;
+        gmed_gcmp_7_x[3] <= 0;
+        gmed_gcmp_7_x[4] <= 0;
+        gmed_gcmp_7_x[5] <= 0;
+        gmed_gcmp_7_x[6] <= 0;
+        gmed_gcmp_7_x[7] <= 0;
+        gmed_gcmp_7_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_7_x[0] <= gmed_gcmp_6_x[0];
+        for (ii=1; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_7_x[ii] <= (gmed_gcmp_6_x[ii] < gmed_gcmp_6_x[(ii + 1)]) ? gmed_gcmp_6_x[ii] : gmed_gcmp_6_x[(ii + 1)];
+            gmed_gcmp_7_x[(ii + 1)] <= (gmed_gcmp_6_x[ii] > gmed_gcmp_6_x[(ii + 1)]) ? gmed_gcmp_6_x[ii] : gmed_gcmp_6_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_7_RTL
+    integer ii;
+    if (reset == 1) begin
+        gmed_gcmp_8_x[0] <= 0;
+        gmed_gcmp_8_x[1] <= 0;
+        gmed_gcmp_8_x[2] <= 0;
+        gmed_gcmp_8_x[3] <= 0;
+        gmed_gcmp_8_x[4] <= 0;
+        gmed_gcmp_8_x[5] <= 0;
+        gmed_gcmp_8_x[6] <= 0;
+        gmed_gcmp_8_x[7] <= 0;
+        gmed_gcmp_8_x[8] <= 0;
+    end
+    else begin
+        gmed_gcmp_8_x[8] <= gmed_gcmp_7_x[8];
+        for (ii=0; ii<(9 - 1); ii=ii+2) begin
+            gmed_gcmp_8_x[ii] <= (gmed_gcmp_7_x[ii] < gmed_gcmp_7_x[(ii + 1)]) ? gmed_gcmp_7_x[ii] : gmed_gcmp_7_x[(ii + 1)];
+            gmed_gcmp_8_x[(ii + 1)] <= (gmed_gcmp_7_x[ii] > gmed_gcmp_7_x[(ii + 1)]) ? gmed_gcmp_7_x[ii] : gmed_gcmp_7_x[(ii + 1)];
+        end
+    end
+end
+always @(posedge clock) begin: MM_MEDTOP_GMED_GCMP_8_RTL
+    integer ii;
+    if (reset == 1) begin
+        won[0] <= 0;
+        won[1] <= 0;
+        won[2] <= 0;
+        won[3] <= 0;
+        won[4] <= 0;
+        won[5] <= 0;
+        won[6] <= 0;
+        won[7] <= 0;
+        won[8] <= 0;
+    end
+    else begin
+        won[0] <= gmed_gcmp_8_x[0];
+        for (ii=1; ii<(9 - 1); ii=ii+2) begin
+            won[ii] <= (gmed_gcmp_8_x[ii] < gmed_gcmp_8_x[(ii + 1)]) ? gmed_gcmp_8_x[ii] : gmed_gcmp_8_x[(ii + 1)];
+            won[(ii + 1)] <= (gmed_gcmp_8_x[ii] > gmed_gcmp_8_x[(ii + 1)]) ? gmed_gcmp_8_x[ii] : gmed_gcmp_8_x[(ii + 1)];
+        end
+    end
+end
+assign _med = won[4];
+always @(okd) begin: MM_MEDTOP_RTL_ROR
+    integer ii;
+    reg o;
+    o = okd[0];
+    for (ii=1; ii<9; ii=ii+1) begin
+        o = (okd[ii] || o);
+    end
+    ok = o ? 1'b0 : 1'b1;
+end
+always @(posedge clock) begin: MM_MEDTOP_RTL_IN
+    if (reset == 1) begin
+        med <= 0;
+        dvo <= 0;
+        xcnt <= 1;
+        okd <= 0;
+        win[0] <= 0;
+        win[1] <= 0;
+        win[2] <= 0;
+        win[3] <= 0;
+        win[4] <= 0;
+        win[5] <= 0;
+        win[6] <= 0;
+        win[7] <= 0;
+        win[8] <= 0;
+    end
+    else begin
+        okd <= (okd >>> 1);
+        dvo <= okd[0];
+        med <= _med;
+        if (((xcnt == 9) && dvi)) begin
+            win[($signed({1'b0, xcnt}) - 1)] <= x;
+            okd[9] <= 1'b1;
+            xcnt <= 1;
+        end
+        else if ((ok && dvi)) begin
+            win[($signed({1'b0, xcnt}) - 1)] <= x;
+            xcnt <= (xcnt + 1);
+        end
+    end
+end
+endmodule

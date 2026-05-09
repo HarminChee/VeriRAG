@@ -1,0 +1,211 @@
+{
+  "modules": {
+    "audio_direct": {
+      "modules": {
+        "audio_direct": {
+          "ports": {
+            "clk_i": {
+              "direction": "input",
+              "bits": [
+                2
+              ]
+            },
+            "en_i": {
+              "direction": "input",
+              "bits": [
+                3
+              ]
+            },
+            "pdm_audio_i": {
+              "direction": "input",
+              "bits": [
+                4
+              ]
+            },
+            "pdm_m_clk_o": {
+              "direction": "output",
+              "bits": [
+                5
+              ]
+            },
+            "pwm_audio_o": {
+              "direction": "output",
+              "bits": [
+                6
+              ]
+            },
+            "done_o": {
+              "direction": "output",
+              "bits": [
+                7
+              ]
+            },
+            "pwm_audio_shutdown": {
+              "direction": "output",
+              "bits": [
+                8
+              ]
+            }
+          },
+          "cells": {
+            "$procdff$5": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  2
+                ],
+                "D": [
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24
+                ],
+                "Q": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ]
+              }
+            },
+            "$procdff$6": {
+              "type": "$dff",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "CLK": [
+                  41
+                ],
+                "D": [
+                  42
+                ],
+                "Q": [
+                  8
+                ]
+              }
+            },
+            "$procmux$3": {
+              "type": "$mux",
+              "hide_name": 1,
+              "port_direction": "",
+              "connections": {
+                "A": [
+                  8
+                ],
+                "B": [
+                  "1"
+                ],
+                "S": [
+                  3
+                ],
+                "Y": [
+                  42
+                ]
+              }
+            },
+            "PdmDes_Inst": {
+              "type": "PdmDes",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "dout": [
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24
+                ],
+                "en": [
+                  3
+                ],
+                "pdm_m_clk_o": [
+                  5
+                ],
+                "pdm_m_data_i": [
+                  4
+                ]
+              }
+            },
+            "PdmSer_Inst": {
+              "type": "PdmSer",
+              "hide_name": 0,
+              "port_direction": "",
+              "connections": {
+                "clk": [
+                  2
+                ],
+                "din": [
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ],
+                "done": [
+                  7
+                ],
+                "en": [
+                  8
+                ],
+                "pwm_audio_o": [
+                  6
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
